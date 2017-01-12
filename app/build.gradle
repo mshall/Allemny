@@ -34,6 +34,8 @@ dependencies {
     compile 'com.github.ViksaaSkool:AwesomeSplash:v1.0.0'
     //------------------Welcome screen---------------------------------------------------
     compile 'com.stephentuso:welcome:0.7.2'
+    //----------------------------Picasso------------------------------------------------
+    compile 'com.squareup.picasso:picasso:2.5.2'
 
 
 }
