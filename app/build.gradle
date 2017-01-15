@@ -25,6 +25,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:24.1.1'
     compile 'com.android.support:design:24.1.1'
+    compile 'com.android.support:cardview-v7:24.0.0'
     compile 'com.jakewharton:butterknife:8.3.0'
     apt 'com.jakewharton:butterknife-compiler:8.3.0'
     //------------------First Splash Screen----------------------------------------------
@@ -36,6 +37,8 @@ dependencies {
     compile 'com.stephentuso:welcome:0.7.2'
     //----------------------------Picasso------------------------------------------------
     compile 'com.squareup.picasso:picasso:2.5.2'
+    //----------------------------Button------------------------------------------------
+    compile 'me.spark:submitbutton:1.0.1'
 
 
 }

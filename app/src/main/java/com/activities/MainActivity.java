@@ -24,9 +24,9 @@ public class MainActivity extends AppCompatActivity {
         boolean isFirstTimeRun = Utils.getBooleanFromPreferences(MainActivity.this, Constants.IS_FIRST_TIME_RUN);
         Log.e("is first time", isFirstTimeRun + " Is 1st Time?");
         if (isFirstTimeRun) {
-            Toast.makeText(this, "already appeared before", Toast.LENGTH_LONG).show();
-        } else {
             welcomeScreen.show(savedInstanceState);
+        } else {
+//            Toast.makeText(this, "already appeared before", Toast.LENGTH_LONG).show();
 
         }
         /*findViewById(R.id.button_show).setOnClickListener(new View.OnClickListener() {

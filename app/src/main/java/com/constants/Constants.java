@@ -26,5 +26,23 @@ public class Constants {
     public final static String DATABASE_NAME = "NutritionGenerator";
     public final static int DATABASE_VERSION = 1;
 
+    //    ---------------------------------------------------
+    public final static int FOOD_CARB = 1;
+    public final static int FOOD_PROTEIN = 2;
+    public final static int FOOD_FAT = 3;
+
+    //    ---------------------------------------------------
+    public final static int BODY_ECTOMERPH = 1;
+    public final static int BODY_MESOMERPH = 2;
+    public final static int BODY_ENDOMERPH = 3;
+
+    //    ---------------------------------------------------
+    public final static int NUTRITION_CUT = 1;
+    public final static int NUTRITION_MAINTAIN = 2;
+    public final static int NUTRITION_BULK = 3;
+
+    //    ---------------------------------------------------
+    public final static int GENDER_FEMALE = 1;
+    public final static int GENDER_MALE = 2;
 }
 

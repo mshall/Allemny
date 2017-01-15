@@ -22,9 +22,9 @@
         <activity
             android:name="com.activities.HomeTabbedActivity"
             android:label="@string/title_activity_home_tabbed"
-            android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name="com.activities.LoginActivity"/>
+        <activity android:name="com.activities.RegisterActivity"></activity>
     </application>
 
 </manifest>
