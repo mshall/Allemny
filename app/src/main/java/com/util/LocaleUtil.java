@@ -11,9 +11,10 @@ import com.activities.SplashActivity;
 import java.util.Locale;
 
 /**
- * Created by Shall on 29/6/2016.
+ * Created by elsaidel on 1/16/2017.
  */
-public class Utils{
+
+public class LocaleUtil {
     //----------------------------------------------------------------------------------------------
     //Set Language locale
     //----------------------------------------------------------------------------------------------
@@ -28,5 +29,4 @@ public class Utils{
         Intent refresh = new Intent(context, SplashActivity.class);
         context.startActivity(refresh);
     }
-
 }

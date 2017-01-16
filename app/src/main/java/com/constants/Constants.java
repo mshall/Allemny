@@ -9,6 +9,7 @@ public class Constants {
     public static String SHRED_PREFS_KEY = "com.myNutritionGeneratorPal.sharedprefs";
     public static String IS_FIRST_TIME_RUN = "isFirstTimeRun";
     //----------------------------------------------------------------------------
+    public static final String USER = "User";
     public final static String USERS_TABLE = "Users";
     public final static String USER_ID="userId";
     public final static String FIRST_NAME = "firstName";
@@ -44,5 +45,6 @@ public class Constants {
     //    ---------------------------------------------------
     public final static int GENDER_FEMALE = 1;
     public final static int GENDER_MALE = 2;
+
 }
 

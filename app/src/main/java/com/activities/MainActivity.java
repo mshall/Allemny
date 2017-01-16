@@ -9,7 +9,7 @@ import android.widget.Toast;
 import com.allemny.R;
 import com.constants.Constants;
 import com.stephentuso.welcome.WelcomeScreenHelper;
-import com.util.Utils;
+import com.util.SharedPreferencesUtils;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         welcomeScreen = new WelcomeScreenHelper(this, WelcomeActivity.class);
-        boolean isFirstTimeRun = Utils.getBooleanFromPreferences(MainActivity.this, Constants.IS_FIRST_TIME_RUN);
+        boolean isFirstTimeRun = SharedPreferencesUtils.getBooleanFromSharedPreferences(MainActivity.this, Constants.IS_FIRST_TIME_RUN);
         Log.e("is first time", isFirstTimeRun + " Is 1st Time?");
         if (isFirstTimeRun) {
             welcomeScreen.show(savedInstanceState);
@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
             if (resultCode == RESULT_OK) {
                 Toast.makeText(getApplicationContext(), welcomeKey + " completed", Toast.LENGTH_SHORT).show();
-                Utils.saveBooleanToPreferences(MainActivity.this, Constants.IS_FIRST_TIME_RUN, false);
+                SharedPreferencesUtils.saveBooleanToSharedPreferences(MainActivity.this, Constants.IS_FIRST_TIME_RUN, false);
             } else {
                 Toast.makeText(getApplicationContext(), welcomeKey + " canceled", Toast.LENGTH_SHORT).show();
             }
