@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import com.allemny.R;
 import com.database.dao.UserDAO;
+import com.pojo.User;
 import com.spark.submitbutton.SubmitButton;
 import com.util.Validator;
 
@@ -62,7 +63,8 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 if (isFormValid) {//Valid form fields
                     boolean isLoginSuccess = userDAO.loginUser(etEmail.getText().toString().trim(), etPassword.getText().toString());
                     if (isLoginSuccess) {//Valid credentials
-                        Snackbar.make(cardView, getString(R.string.welcome_back) + etEmail.getText().toString(), Snackbar.LENGTH_LONG).show();
+                        User user = userDAO.getUserByEmail(etEmail.getText().toString().trim());
+                        Snackbar.make(cardView, getString(R.string.welcome_back) + " " + user.getFirstName(), Snackbar.LENGTH_LONG).show();
                         tvMessage.setText(getString(R.string.login_success));
                         tvMessage.setTextColor(ContextCompat.getColor(this, R.color.teal_background));
                     } else {//Not valid credentials
