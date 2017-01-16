@@ -99,4 +99,13 @@ public class SharedPreferencesUtils {
         String json = sharedPreferences.getString(Constants.USER, " ");
         return gson.fromJson(json, User.class);
     }
+
+    //----------------------------------------------------------------------------------------------
+    //Get User data from shared preferences
+    //----------------------------------------------------------------------------------------------
+    public static void saveUserDataToSharedPreferences(Context context, User user) {
+        Gson gson = new Gson();
+        SharedPreferences sharedPreferences = context.getSharedPreferences(Constants.SHRED_PREFS_KEY, Context.MODE_PRIVATE);
+        sharedPreferences.edit().putString(Constants.USER, gson.toJson(user)).commit();
+    }
 }

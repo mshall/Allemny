@@ -70,7 +70,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                 formFields.add(etPassword);
                 boolean isValidToRegister = new Validator().isValidForm(this, formFields);
                 if (isValidToRegister) {//Now all fields are valid
-                    boolean isEmailExist = userDAO.isUserExist(etEmail.getText().toString());
+                    boolean isEmailExist = userDAO.isUserExist(etEmail.getText().toString().trim());
                     if (isEmailExist) {//Email exists on the system
                         tvMessage.setText(getString(R.string.email_already_exist));
                     } else {//Now add the user

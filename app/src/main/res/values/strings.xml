@@ -27,4 +27,12 @@
     <string name="error_adding_user">Error! Couldn\'t register you with us...</string>
     <string name="wrong_credenials">Email or password is incorrect!</string>
     <string name="welcome_back">Welcome back</string>
+    <string name="title_activity_home">Home</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="update_my_weight">Update my weight</string>
+    <string name="my_weight_progress">My weight progress</string>
+    <string name="add_new_plan">Add new plan</string>
+    <string name="view_my_plans">View my plans</string>
 </resources>

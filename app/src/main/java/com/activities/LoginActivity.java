@@ -67,6 +67,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                         Snackbar.make(cardView, getString(R.string.welcome_back) + " " + user.getFirstName(), Snackbar.LENGTH_LONG).show();
                         tvMessage.setText(getString(R.string.login_success));
                         tvMessage.setTextColor(ContextCompat.getColor(this, R.color.teal_background));
+                        startActivity(new Intent(this, HomeActivity.class));
                     } else {//Not valid credentials
                         Snackbar.make(cardView, getString(R.string.wrong_credenials), Snackbar.LENGTH_LONG).show();
                         tvMessage.setText(getString(R.string.wrong_credenials));
