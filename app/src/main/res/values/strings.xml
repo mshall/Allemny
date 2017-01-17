@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Boost me</string>
+    <string name="app_name">FAT LAB</string>
     <string name="app_slogan">Your way to excel</string>
     <string name="title_activity_home_tabbed">HomeTabbedActivity</string>
     <string name="action_settings">Settings</string>

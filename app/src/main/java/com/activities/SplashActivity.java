@@ -59,6 +59,6 @@ public class SplashActivity extends AwesomeSplash {
         //transit to another activity here
         //or do whatever you want
         finish();
-        startActivity(new Intent(this,RegisterActivity.class));
+        startActivity(new Intent(this,HomeActivity.class));
     }
 }

@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.FragmentManager;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
@@ -23,6 +25,10 @@ public class HomeActivity extends AppCompatActivity
 
     @BindView(R.id.drawer_layout)
     DrawerLayout drawer;
+
+    FragmentManager mFragmentManager;
+    FragmentTransaction mFragmentTransaction;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -48,6 +54,12 @@ public class HomeActivity extends AppCompatActivity
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        //-------------------Handling the replacement of fragments------------
+        mFragmentManager = getSupportFragmentManager();
+        mFragmentTransaction = mFragmentManager.beginTransaction();
+        //mFragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
+
     }
 
     @Override
@@ -88,8 +100,13 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
+        Bundle bundle = new Bundle();
+
         if (id == R.id.nav_add_nutrition_plan) {
-            // Handle the camera action
+            bundle.putInt("tabNumber", 1);
+            //tabFragment.setArguments(bundle);
+            FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
+            //xfragmentTransaction.replace(R.id.containerView, tabFragment).commit();
         } else if (id == R.id.nav_view_my_nutrition_plans) {
 
         } else if (id == R.id.nav_update_my_weight) {
