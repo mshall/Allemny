@@ -16,6 +16,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.allemny.R;
+import com.fragments.MainFragment;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -58,7 +59,7 @@ public class HomeActivity extends AppCompatActivity
         //-------------------Handling the replacement of fragments------------
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
-        //mFragmentTransaction.replace(R.id.containerView, new TabFragment()).commit();
+        mFragmentTransaction.replace(R.id.content_home, new MainFragment()).commit();
 
     }
 
@@ -106,7 +107,7 @@ public class HomeActivity extends AppCompatActivity
             bundle.putInt("tabNumber", 1);
             //tabFragment.setArguments(bundle);
             FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
-            //xfragmentTransaction.replace(R.id.containerView, tabFragment).commit();
+            //xfragmentTransaction.replace(R.id.content_home, tabFragment).commit();
         } else if (id == R.id.nav_view_my_nutrition_plans) {
 
         } else if (id == R.id.nav_update_my_weight) {

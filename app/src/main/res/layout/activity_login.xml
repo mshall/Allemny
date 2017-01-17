@@ -95,7 +95,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textColorHint="#c5c5c5">
-
+                    <!--<in.anshul.libray.PasswordEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        app:hide_drawable="@drawable/hide_password"
+                        app:password_visible="true"
+                        android:hint="Confirm password"
+                        app:show_drawable="@drawable/show_password" />-->
                     <EditText
                         android:id="@+id/etLoginPassword"
                         android:layout_width="match_parent"
