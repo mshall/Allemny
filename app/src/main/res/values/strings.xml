@@ -42,4 +42,12 @@
     <string name="select_date">Select date</string>
     <string name="update_weight">Update weight</string>
     <string name="update">Update</string>
+    <string name="take_photo">Take photo</string>
+    <string name="choose_from_library">Choose from gallery</string>
+    <string name="cancel">Cancel</string>
+    <string name="select_file">Select file</string>
+    <string name="choose_option">Select an option</string>
+    <string name="error">Error</string>
+    <string name="missing_image">Please, make sure to add user image</string>
+    <string name="weight_update_added">Successfully added weight update</string>
 </resources>

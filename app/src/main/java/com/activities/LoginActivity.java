@@ -11,15 +11,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.allemny.R;
+import com.constants.Constants;
 import com.database.dao.UserDAO;
 import com.pojo.User;
 import com.spark.submitbutton.SubmitButton;
+import com.util.SharedPreferencesUtils;
 import com.util.Validator;
 
 import java.util.ArrayList;
 
 import butterknife.BindView;
-import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.cv)
@@ -65,6 +66,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                     boolean isLoginSuccess = userDAO.loginUser(etEmail.getText().toString().trim(), etPassword.getText().toString());
                     if (isLoginSuccess) {//Valid credentials
                         User user = userDAO.getUserByEmail(etEmail.getText().toString().trim());
+                        SharedPreferencesUtils.saveStringToSharedPreferences(this, Constants.EMAIL, etEmail.getText().toString().trim());
                         Snackbar.make(cardView, getString(R.string.welcome_back) + " " + user.getFirstName(), Snackbar.LENGTH_LONG).show();
                         tvMessage.setText(getString(R.string.login_success));
                         tvMessage.setTextColor(ContextCompat.getColor(this, R.color.teal_background));

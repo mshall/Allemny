@@ -47,5 +47,5 @@ dependencies {
     //this library: textviewplus is for taking font from xml directly
     compile 'phelat.textview:textviewplus:1.2.1'
     compile 'com.github.BlackBoxVision:datetimepicker-edittext:v0.3.0'
-
+    compile 'com.github.ekimual:croperino:1.0.2'
 }

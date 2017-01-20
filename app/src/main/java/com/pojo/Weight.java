@@ -7,16 +7,18 @@ package com.pojo;
 public class Weight {
 
     private byte[] userImage;
-    private String date;
+    private String date, email;
     private double weight;
+
 
     public Weight() {
     }
 
-    public Weight(byte[] userImage, String date, double weight) {
+    public Weight(byte[] userImage, String date, double weight, String email) {
         this.userImage = userImage;
         this.date = date;
         this.weight = weight;
+        this.email = email;
     }
 
     public byte[] getUserImage() {
@@ -41,5 +43,13 @@ public class Weight {
 
     public void setWeight(double weight) {
         this.weight = weight;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

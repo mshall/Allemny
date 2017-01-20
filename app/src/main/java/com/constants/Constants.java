@@ -26,6 +26,13 @@ public class Constants {
     //    ---------------------------------------------------
     public final static String DATABASE_NAME = "NutritionGenerator";
     public final static int DATABASE_VERSION = 1;
+    //-------------------------------------------------------
+    public static final String WEIGHT_TABLE = "weight";
+    public static final String WEIGHT_ID = "weightId";
+    public static final String WEIGHT = "weight";
+    public static final String DATE="date";
+    public static final String USER_IMAGE="userImage";
+
 
     //    ---------------------------------------------------
     public final static int FOOD_CARB = 1;
