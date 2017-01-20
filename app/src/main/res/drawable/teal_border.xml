@@ -6,5 +6,5 @@
     <solid android:color="#ffffff" />
     <stroke
         android:width="2dip"
-        android:color="@color/card_white" />
+        android:color="@color/teal_background" />
 </shape>

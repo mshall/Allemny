@@ -31,10 +31,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Constants.FOOD_CALORIES + " Int" + ")");
         //-------------- Create Weight table ---------------------------------------
         db.execSQL("Create table " + Constants.WEIGHT_TABLE + "(" + Constants.WEIGHT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
-                Constants.WEIGHT + " Double, " +
+                Constants.WEIGHT + " Doublef, " +
                 Constants.DATE + " varchar(250)," +
                 Constants.USER_IMAGE + " BLOB," +
-                Constants.EMAIL+ "varchar(250)" + ")");
+                Constants.EMAIL+ " varchar(250)" + ")");
 
     }
 

@@ -43,10 +43,11 @@
                         android:id="@+id/ivFragmentUpdateMyWeightEditUserImage"
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="23dp"
+                        android:src="@drawable/edit"
                         android:layout_alignTop="@+id/ivFragmentUpdateMyWeightUserImage"
-                        android:layout_marginTop="16dp"
-                        android:src="@drawable/edit" />
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="14dp" />
                 </RelativeLayout>
 
             </TableRow>

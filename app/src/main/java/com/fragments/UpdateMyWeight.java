@@ -28,6 +28,7 @@ import com.database.dao.WeightDAO;
 import com.pojo.Weight;
 import com.spark.submitbutton.SubmitButton;
 import com.util.DialogUtils;
+import com.util.FragmentUtils;
 import com.util.ImageLoader;
 import com.util.ImageUtils;
 import com.util.IntentUtils;
@@ -120,6 +121,9 @@ public class UpdateMyWeight extends Fragment implements View.OnClickListener {
                     tvErrorMessage.setText(getString(R.string.all_fields_required));
                 }
                 if (!etDatePicker.getText().toString().isEmpty() && !etMyWeight.getText().toString().isEmpty() && isImageChanged) {
+                    etDatePicker.setBackgroundResource(R.drawable.normal_border);
+                    etMyWeight.setBackgroundResource(R.drawable.normal_border);
+                    tvErrorMessage.setVisibility(View.GONE);
                     Weight weight = new Weight();
                     String date = etDatePicker.getText().toString();
                     String email = SharedPreferencesUtils.getStringFromSharedPreferences(getContext(), Constants.EMAIL);
@@ -133,7 +137,7 @@ public class UpdateMyWeight extends Fragment implements View.OnClickListener {
                     dao.addUserWeight(weight);
                     if (dao.isUserWeightExist(email, date)) {
                         Snackbar.make(etMyWeight, getString(R.string.weight_update_added), Snackbar.LENGTH_LONG).show();
-
+                        new FragmentUtils(getActivity()).navigateToFragment(new MainFragment(), "MainFragment");
                     }
                 }
                 break;
