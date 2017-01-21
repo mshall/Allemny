@@ -76,6 +76,7 @@ public class WeightDAO {
             weight.setDate(c.getString(c.getColumnIndex(Constants.DATE)));
             weight.setUserImage(c.getBlob(c.getColumnIndex(Constants.USER_IMAGE)));
             weight.setEmail(c.getString(c.getColumnIndex(Constants.EMAIL)));
+            weights.add(weight);
         }
         return weights;
     }

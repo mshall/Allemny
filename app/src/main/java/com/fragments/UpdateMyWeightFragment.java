@@ -42,7 +42,7 @@ import io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class UpdateMyWeight extends Fragment implements View.OnClickListener {
+public class UpdateMyWeightFragment extends Fragment implements View.OnClickListener {
     @BindView(R.id.etFragmentUpdateMyWeightDatePicker)
     DatePickerEditText etDatePicker;
     @BindView(R.id.etFragmentUpdateMyWeight)
@@ -63,7 +63,7 @@ public class UpdateMyWeight extends Fragment implements View.OnClickListener {
     final int REQUEST_GALLERY_CAPTURE = 1;
     boolean isImageChanged;
 
-    public UpdateMyWeight() {
+    public UpdateMyWeightFragment() {
         // Required empty public constructor
     }
 
@@ -137,7 +137,7 @@ public class UpdateMyWeight extends Fragment implements View.OnClickListener {
                     dao.addUserWeight(weight);
                     if (dao.isUserWeightExist(email, date)) {
                         Snackbar.make(etMyWeight, getString(R.string.weight_update_added), Snackbar.LENGTH_LONG).show();
-                        new FragmentUtils(getActivity()).navigateToFragment(new MainFragment(), "MainFragment");
+                        new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home,new MainFragment(), "MainFragment");
                     }
                 }
                 break;
@@ -166,7 +166,7 @@ public class UpdateMyWeight extends Fragment implements View.OnClickListener {
                     if (result) {
                         //Prepare Camera
                         try {
-                            IntentUtils.launchCameraIntentForFragment(UpdateMyWeight.this, REQUEST_CAMERA_CAPTURE);
+                            IntentUtils.launchCameraIntentForFragment(UpdateMyWeightFragment.this, REQUEST_CAMERA_CAPTURE);
                         } catch (Exception e) {
                             e.printStackTrace();
                         }
@@ -175,7 +175,7 @@ public class UpdateMyWeight extends Fragment implements View.OnClickListener {
                     userChoosenTask = getString(R.string.choose_from_library);
                     if (result)
                         //Prepare Gallery
-                        IntentUtils.launchGalleryIntentForFragment(UpdateMyWeight.this, getString(R.string.select_file), REQUEST_GALLERY_CAPTURE);
+                        IntentUtils.launchGalleryIntentForFragment(UpdateMyWeightFragment.this, getString(R.string.select_file), REQUEST_GALLERY_CAPTURE);
                 } else if (items[item].equals(getString(R.string.cancel))) {
                     dialog.dismiss();
                 }

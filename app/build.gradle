@@ -48,4 +48,5 @@ dependencies {
     compile 'com.github.ekimual:croperino:1.0.2'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.3.0'
+    compile 'com.github.GauravChaddha1996:CDSRecyclerView:1.0'
 }

@@ -21,6 +21,7 @@ import com.util.Validator;
 import java.util.ArrayList;
 
 import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class LoginActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.cv)
@@ -42,8 +43,7 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
 //        getWindow().setWindowAnimations(Animation.ZORDER_NORMAL);
         setContentView(R.layout.activity_login);
-
-
+        ButterKnife.bind(this);
         overridePendingTransition(R.anim.fadein, R.anim.fadeout);
         tvDontHaveAccount.setOnClickListener(this);
         bLogin.setOnClickListener(this);

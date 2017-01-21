@@ -85,6 +85,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
                             tvMessage.setText(getString(R.string.sucess_adding_user));
                             tvMessage.setTextColor(ContextCompat.getColor(this, R.color.teal_background));
                             Snackbar.make(cardView, getString(R.string.sucess_adding_user), Snackbar.LENGTH_LONG).show();
+                            startActivity(new Intent(this, LoginActivity.class));
                         } else {//Couldn't add user to the database
                             tvMessage.setText(getString(R.string.error_adding_user));
                             tvMessage.setTextColor(ContextCompat.getColor(this, R.color.red_background));

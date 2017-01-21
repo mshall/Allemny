@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.allemny.R;
+import com.util.FragmentUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -68,13 +69,12 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 Snackbar.make(view, "You want to show my plans", Snackbar.LENGTH_LONG).show();
                 break;
             case R.id.cvFragmentMainUpdateMyWeight:
-                mFragmentManager = getActivity().getSupportFragmentManager();
-                mFragmentTransaction = mFragmentManager.beginTransaction();
-                mFragmentTransaction.replace(R.id.content_home, new UpdateMyWeight()).commit();
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), "UpdateMyWeightFragment");
+//                mFragmentTransaction.replace(R.id.content_home, new UpdateMyWeightFragment()).commit();
 
                 break;
             case R.id.cvFragmentMainMyWeightProgress:
-
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), "MyWeightProgressFragment");
                 break;
         }
     }
