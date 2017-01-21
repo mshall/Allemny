@@ -43,6 +43,7 @@ import io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText;
  * A simple {@link Fragment} subclass.
  */
 public class UpdateMyWeightFragment extends Fragment implements View.OnClickListener {
+    public static String tag = "UpdateMyWeightFragment";
     @BindView(R.id.etFragmentUpdateMyWeightDatePicker)
     DatePickerEditText etDatePicker;
     @BindView(R.id.etFragmentUpdateMyWeight)
@@ -137,7 +138,7 @@ public class UpdateMyWeightFragment extends Fragment implements View.OnClickList
                     dao.addUserWeight(weight);
                     if (dao.isUserWeightExist(email, date)) {
                         Snackbar.make(etMyWeight, getString(R.string.weight_update_added), Snackbar.LENGTH_LONG).show();
-                        new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home,new MainFragment(), "MainFragment");
+                        new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MainFragment(), "MainFragment");
                     }
                 }
                 break;

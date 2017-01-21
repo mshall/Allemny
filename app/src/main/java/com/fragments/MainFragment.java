@@ -13,6 +13,7 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.allemny.R;
+import com.tomer.fadingtextview.FadingTextView;
 import com.util.FragmentUtils;
 
 import butterknife.BindView;
@@ -23,7 +24,7 @@ import butterknife.OnClick;
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment implements View.OnClickListener {
-
+    public static String tag = "MainFragment";
     @BindView(R.id.cvFragmentMainAddNewPlan)
     CardView cvAddNewPlan;
     @BindView(R.id.cvFragmentMainMyPlans)
@@ -32,6 +33,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     CardView cvUpdateMyWeight;
     @BindView(R.id.cvFragmentMainMyWeightProgress)
     CardView cvMyWeightProgress;
+    @BindView(R.id.fadingTextView)
+    FadingTextView fadingTextView;
     View view;
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
@@ -48,6 +51,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         view = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.bind(this, view);
         initializeViews();
+        /*String[] texts = getResources().getStringArray(R.array.welcome_words);
+        fadingTextView.setTexts(texts);*/
+
         return view;
     }
 
@@ -62,19 +68,20 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.cvFragmentMainAddNewPlan:
-                Snackbar.make(view, "You want to add a new plan", Snackbar.LENGTH_LONG).show();
+//                startActivity(new Intent(getActivity(), PlanStepper.class));
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new AddPlanSelectGenderFragment(), AddPlanSelectGenderFragment.tag);
                 break;
 
             case R.id.cvFragmentMainMyPlans:
                 Snackbar.make(view, "You want to show my plans", Snackbar.LENGTH_LONG).show();
                 break;
             case R.id.cvFragmentMainUpdateMyWeight:
-                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), "UpdateMyWeightFragment");
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), UpdateMyWeightFragment.tag);
 //                mFragmentTransaction.replace(R.id.content_home, new UpdateMyWeightFragment()).commit();
 
                 break;
             case R.id.cvFragmentMainMyWeightProgress:
-                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), "MyWeightProgressFragment");
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), MyWeightProgressFragment.tag);
                 break;
         }
     }

@@ -25,22 +25,25 @@
         <activity
             android:name="com.activities.WelcomeActivity"
             android:theme="@style/WelcomeScreenTheme" />
-        <activity android:name="com.activities.LoginActivity">
-            <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
+        <activity
+            android:name="com.activities.LoginActivity"
+            android:windowSoftInputMode="adjustResize">
 
-            <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name="com.activities.RegisterActivity" />
+        <activity
+            android:name="com.activities.RegisterActivity"
+            android:windowSoftInputMode="adjustResize" />
         <activity
             android:name="com.activities.HomeActivity"
-
             android:label="@string/title_activity_home"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/AppTheme.NoActionBar"
+            android:windowSoftInputMode="adjustResize">
 
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

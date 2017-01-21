@@ -46,7 +46,10 @@ dependencies {
     compile 'phelat.textview:textviewplus:1.2.1'
     compile 'com.github.BlackBoxVision:datetimepicker-edittext:v0.3.0'
     compile 'com.github.ekimual:croperino:1.0.2'
+    compile 'com.github.GauravChaddha1996:CDSRecyclerView:1.0'
+    compile 'com.anton46:stepsview:0.0.2'
+    compile 'com.tomer:fadingtextview:1.2'
+    compile 'net.soulwolf.widget:materialRadio:1.0.1'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.3.0'
-    compile 'com.github.GauravChaddha1996:CDSRecyclerView:1.0'
 }

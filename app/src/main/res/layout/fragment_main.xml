@@ -6,6 +6,31 @@
     tools:context="com.fragments.MainFragment">
 
     <!-- TODO: Update blank fragment layout -->
+    <RelativeLayout
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/white" />
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_below="@+id/separator"
+        android:background="@color/colorPrimary">
+
+
+        <com.tomer.fadingtextview.FadingTextView
+            android:id="@+id/fadingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            app:texts="@array/welcome_words"
+            app:timeout="2500" />
+    </RelativeLayout>
+
     <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -151,7 +176,14 @@
                         android:layout_height="50dp"
                         android:src="@drawable/ic_pageview_blue_grey_400_24dp" />
 
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="50dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
+
                     <phelat.TextView.Plus
+                        android:id="@+id/plus"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_centerHorizontal="true"
@@ -160,12 +192,6 @@
                         android:text="@string/my_weight_progress"
                         android:textSize="20sp"
                         app:font="streatwear.otf" />
-
-                    <ImageView
-                        android:layout_width="50dp"
-                        android:layout_height="50dp"
-                        android:layout_alignParentEnd="true"
-                        android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
                 </RelativeLayout>
 
 

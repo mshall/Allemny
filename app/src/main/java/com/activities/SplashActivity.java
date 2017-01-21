@@ -14,7 +14,8 @@ import butterknife.ButterKnife;
 
 public class SplashActivity extends AwesomeSplash {
 
-    @BindString(R.string.app_slogan)String appSlogan;
+    @BindString(R.string.app_slogan)
+    String appSlogan;
 
     @Override
     public void initSplash(ConfigSplash configSplash) {
@@ -29,7 +30,7 @@ public class SplashActivity extends AwesomeSplash {
         //Choose LOGO OR PATH; if you don't provide String value for path it's logo by default
 
         //Customize Logo
-        configSplash.setLogoSplash(R.drawable.logo); //or any other drawable
+        configSplash.setLogoSplash(R.mipmap.ic_launcher); //or any other drawable
         configSplash.setAnimLogoSplashDuration(2000); //int ms
         configSplash.setAnimLogoSplashTechnique(Techniques.Landing); //choose one form Techniques (ref: https://github.com/daimajia/AndroidViewAnimations)
 
@@ -59,6 +60,6 @@ public class SplashActivity extends AwesomeSplash {
         //transit to another activity here
         //or do whatever you want
         finish();
-        startActivity(new Intent(this,HomeActivity.class));
+        startActivity(new Intent(this, LoginActivity.class));
     }
 }

@@ -1,0 +1,94 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.fragments.AddPlanSelectGenderFragment">
+
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rlNavigation"
+        android:layout_marginTop="0dp">
+
+        <TableRow android:layout_marginTop="0dp">
+
+            <com.anton46.stepsview.StepsView xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/stepsView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1" />
+        </TableRow>
+
+        <TableRow>
+
+            <phelat.TextView.Plus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                app:font="fonts/streatwear.otf"
+                android:text="@string/select_gender"
+                android:textSize="30sp" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <ImageView
+                    android:id="@+id/ivFragmentAddPlanSelectGenderFemale"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:layout_weight=".5"
+                    android:src="@drawable/add_image" />
+
+                <ImageView
+                    android:id="@+id/ivFragmentAddPlanSelectGenderMale"
+                    android:layout_width="match_parent"
+                    android:layout_height="280dp"
+                    android:layout_weight=".5"
+                    android:src="@drawable/add_image" />
+            </LinearLayout>
+        </TableRow>
+    </TableLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/llNavigationNext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/next"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
+        </LinearLayout>
+
+
+    </RelativeLayout>
+</RelativeLayout>

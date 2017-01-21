@@ -23,6 +23,8 @@
     <color name="purple_background">#7B1FA2</color>s
 
 
-    <!--______________ Login & Register Screens ___________-->
+    <!--______________ Radio button ___________-->
+    <color name="mc_title_bar">#FF16C2DD</color>
+    <color name="mc_state_pressed">#FF1088DD</color>
 
 </resources>

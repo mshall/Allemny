@@ -6,12 +6,13 @@ package com.constants;
 public class Constants {
 
     public static final String FONT_MOTIOIN_PICTURE = "fonts/MotionPicture.ttf";
+    public static final String TEST = "testField";
     public static String SHRED_PREFS_KEY = "com.myNutritionGeneratorPal.sharedprefs";
     public static String IS_FIRST_TIME_RUN = "isFirstTimeRun";
     //----------------------------------------------------------------------------
     public static final String USER = "User";
     public final static String USERS_TABLE = "Users";
-    public final static String USER_ID="userId";
+    public final static String USER_ID = "userId";
     public final static String FIRST_NAME = "firstName";
     public final static String LAST_NAME = "lastName";
     public final static String EMAIL = "email";
@@ -30,10 +31,13 @@ public class Constants {
     public static final String WEIGHT_TABLE = "weight";
     public static final String WEIGHT_ID = "weightId";
     public static final String WEIGHT = "weight";
-    public static final String DATE="date";
-    public static final String USER_IMAGE="userImage";
+    public static final String DATE = "date";
+    public static final String USER_IMAGE = "userImage";
 
-
+    //--------------------------------------
+    public static final String GENDER = "gender";
+    public static final String TARGET = "target";
+    public static final String BODY = "body";
     //    ---------------------------------------------------
     public final static int FOOD_CARB = 1;
     public final static int FOOD_PROTEIN = 2;

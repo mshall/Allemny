@@ -5,8 +5,6 @@ import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 
-import com.allemny.R;
-
 /**
  * Created by elsaidel on 1/20/2017.
  */
@@ -14,8 +12,10 @@ import com.allemny.R;
 public class FragmentUtils {
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
+    FragmentActivity activity;
 
     public FragmentUtils(FragmentActivity activity) {
+        this.activity = activity;
         mFragmentManager = activity.getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
     }
@@ -27,7 +27,15 @@ public class FragmentUtils {
 //        if (addToBackStack) {
 //            mFragmentTransaction.addToBackStack(fragmentTag).add(R.id.content_home, fragment).commit();
 //        } else {
-        mFragmentTransaction.replace(R.id.content_home, fragment, fragmentTag).addToBackStack(fragmentTag).commit();
+        mFragmentTransaction.replace(container, fragment, fragmentTag).addToBackStack(fragmentTag).commit();
 //        }
+    }
+
+    //--------------------------------------------------------
+    // Remove the current fragment from the backstack
+    //--------------------------------------------------------
+    public void popFragmentFromBackStack(String tag) {
+        FragmentManager fm = activity.getSupportFragmentManager();
+        fm.popBackStack(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
 }

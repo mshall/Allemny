@@ -28,6 +28,7 @@ import butterknife.ButterKnife;
  * A simple {@link Fragment} subclass.
  */
 public class MyWeightProgressFragment extends Fragment implements IWeightHistoryCommunicator {
+    public static String tag = "MyWeightProgressFragment";
     ArrayList<Weight> weights;
     @BindView(R.id.rvFragmentMyWeightProgress)
     CdsRecyclerView rvWeightHistory;

@@ -13,7 +13,7 @@
     <string name="forgot_your_password">Forgot your password ?</string>
     <string name="go">GO</string>
     <string name="repeat_password">Repeat Password</string>
-    <string name="next">NEXT</string>
+    <string name="next">Next</string>
     <string name="register">REGISTER</string>
     <string name="email">Email</string>
     <string name="dont_have_Account">Dont have account? Register</string>
@@ -50,4 +50,12 @@
     <string name="error">Error</string>
     <string name="missing_image">Please, make sure to add user image</string>
     <string name="weight_update_added">Successfully added weight update</string>
+    <string name="select_gender">Select your gender</string>
+    <string name="back">Back</string>
+    <string name="bulk">Bulk</string>
+    <string name="maintain">Maintain</string>
+    <string name="cut">Cut</string>
+    <string name="select_your_target">Select your target</string>
+    <!--__________________ Arrays ______________________________________-->
+
 </resources>

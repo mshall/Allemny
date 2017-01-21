@@ -1,4 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="difficult">First Item</string-array>
+    <string-array name="welcome_words">
+        <item>Welcome to FAT LAB</item>
+        <item>Your way to excel</item>
+        <item>Customized nutrition plans</item>
+        <item>Meeting your needs</item>
+    </string-array>
+    <string-array name="steps">
+        <item>Step 1</item>
+        <item>Step 2</item>
+        <item>Step 3</item>
+        <item>Step 4</item>
+        <item>Step 5</item>
+    </string-array>
 </resources>

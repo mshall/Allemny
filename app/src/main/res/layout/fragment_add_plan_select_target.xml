@@ -1,0 +1,136 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fragments.AddPlanSelectTargetFragment">
+
+    <com.anton46.stepsview.StepsView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/stepsView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/rlNavigation"
+        android:gravity="center">
+
+        <TableRow android:layout_marginTop="10dp">
+
+            <phelat.TextView.Plus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/select_your_target"
+                android:textSize="20sp"
+                app:font="streatwear.otf" />
+        </TableRow>
+
+        <TableRow android:layout_marginTop="10dp">
+
+            <net.soulwolf.widget.materialradio.MaterialRadioGroup xmlns:soulwolf="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/mrgTarget"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:layout_weight=".07"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <net.soulwolf.widget.materialradio.MaterialRadioButton
+                    android:id="@+id/rbCut"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginEnd="20dp"
+                    soulwolf:mcAnimator="true"
+                    soulwolf:mcButton="@drawable/radio_button_muscle_orange_selector"
+                    soulwolf:mcChecked="true"
+                    soulwolf:mcPadding="5dp"
+                    soulwolf:mcText="@string/cut"
+                    soulwolf:mcTextColor="@drawable/radio_button_text_selector"
+                    soulwolf:mcTextSize="13sp" />
+
+                <net.soulwolf.widget.materialradio.MaterialRadioButton
+                    android:id="@+id/rbMaintain"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    soulwolf:mcAnimator="true"
+                    soulwolf:mcButton="@drawable/radio_button_muscle_piege_selector"
+                    soulwolf:mcPadding="5dp"
+                    soulwolf:mcText="@string/maintain"
+                    soulwolf:mcTextColor="@drawable/radio_button_text_selector"
+                    soulwolf:mcTextSize="13sp" />
+
+                <net.soulwolf.widget.materialradio.MaterialRadioButton
+                    android:id="@+id/rbBulk"
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="20dp"
+                    soulwolf:mcAnimator="true"
+                    soulwolf:mcButton="@drawable/radio_button_muscle_orange_selector"
+                    soulwolf:mcPadding="5dp"
+                    soulwolf:mcText="@string/bulk"
+                    soulwolf:mcTextColor="@drawable/radio_button_text_selector"
+                    soulwolf:mcTextSize="13sp" />
+
+            </net.soulwolf.widget.materialradio.MaterialRadioGroup>
+        </TableRow>
+    </TableLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/llNavigationNext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/next"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llNavigationBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_keyboard_arrow_left_teal_24dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/back"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
