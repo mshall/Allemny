@@ -28,14 +28,28 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.execSQL("Create table " + Constants.FOOD_TABLE + "(" + Constants.FOOD_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                 Constants.FOOD_NAME + " varchar(250), " +
                 Constants.FOOD_TYPE + " Int," +
-                Constants.FOOD_CALORIES + " Int" + ")");
+                Constants.FOOD_CALORIES + " Double" + ")");
         //-------------- Create Weight table ---------------------------------------
         db.execSQL("Create table " + Constants.WEIGHT_TABLE + "(" + Constants.WEIGHT_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
                 Constants.WEIGHT + " Doublef, " +
                 Constants.DATE + " varchar(250)," +
                 Constants.USER_IMAGE + " BLOB," +
-                Constants.EMAIL+ " varchar(250)" + ")");
+                Constants.EMAIL + " varchar(250)" + ")");
 
+        //-------------- Create Meal table ---------------------------------------
+        db.execSQL("Create table " + Constants.MEALS_TABLE + "(" + Constants.MEAL_ID + " INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, " +
+                Constants.EMAIL + " varchar(250), " +
+                Constants.PROTEIN_FOOD_NAME + " varchar(250), " +
+                Constants.CARB_FOOD_NAME + " varchar(250), " +
+                Constants.FAT_FOOD_NAME + " varchar(250), " +
+                Constants.FIBER_FOOD_NAME + " varchar(250), " +
+                Constants.PROTEIN_GRAMS + " Double," +
+                Constants.CARB_GRAMS + " Double," +
+                Constants.FAT_GRAMS + " Double," +
+                Constants.PLAN_NUMBER + " Int" + ")");
+        //-------------- Create Plans table ---------------------------------------
+        db.execSQL("Create table " + Constants.PLANS_TABLE + "(" + Constants.PLAN_NUMBER + " INTEGER PRIMARY KEY NOT NULL, " +
+                Constants.EMAIL + " varchar(250)" + ")");
     }
 
     @Override

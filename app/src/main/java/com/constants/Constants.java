@@ -43,6 +43,7 @@ public class Constants {
     public final static int FOOD_CARB = 1;
     public final static int FOOD_PROTEIN = 2;
     public final static int FOOD_FAT = 3;
+    public final static int FOOD_FIBER = 4;
 
     //    ---------------------------------------------------
     public final static int BODY_ECTOMERPH = 1;
@@ -57,6 +58,20 @@ public class Constants {
     //    ---------------------------------------------------
     public final static int GENDER_FEMALE = 1;
     public final static int GENDER_MALE = 2;
+    //    ---------------------------------------------------
+    public final static String MEALS_TABLE = "Meals";
+    public final static String MEAL_ID = "mealId";
+    public final static String PROTEIN_FOOD_NAME = "proteinFoodName";
+    public final static String CARB_FOOD_NAME = "carbFoodName";
+    public final static String FAT_FOOD_NAME = "fatFoodName";
+    public final static String FIBER_FOOD_NAME = "fiberFoodName";
+    public final static String PROTEIN_GRAMS = "proteinGrams";
+    public final static String CARB_GRAMS = "carbGrams";
+    public final static String FAT_GRAMS = "fatGrams";
+    public final static String PLAN_NUMBER = "planNumber";
+
+    //    ---------------------------------------------------
+    public final static String PLANS_TABLE = "Plans";
 
 }
 

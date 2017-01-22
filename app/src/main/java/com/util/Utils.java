@@ -12,6 +12,7 @@ import android.view.inputmethod.InputMethodManager;
 import com.activities.SplashActivity;
 
 import java.util.Locale;
+import java.util.Random;
 
 /**
  * Created by Shall on 29/6/2016.
@@ -45,5 +46,11 @@ public class Utils {
             return;
 
         inputManager.hideSoftInputFromWindow(v.getWindowToken(), 0);
+    }
+
+
+    public static int getRandomNumber(int minimumValue, int maximumValue) {
+        Random r = new Random();
+        return r.nextInt(maximumValue - minimumValue) + minimumValue;
     }
 }

@@ -1,20 +1,27 @@
 package com.pojo;
 
+import java.util.ArrayList;
+
 /**
  * Created by elsaidel on 1/12/2017.
  */
 
 public class Food {
-
+    public static ArrayList<Food> proteinFoods = new ArrayList<>();
+    public static ArrayList<Food> carbFoods = new ArrayList<>();
+    public static ArrayList<Food> fatFoods = new ArrayList<>();
+    public static ArrayList<Food> fiberFoods = new ArrayList<>();
     String foodName;
-    int foodType,foodCalories;
+    int foodType;
+    double foodCalories, foodValue;
 
     public Food() {
     }
 
-    public Food(String foodName, int foodType, int foodCalories) {
+    public Food(String foodName, int foodType, double foodValue, double foodCalories) {
         this.foodName = foodName;
         this.foodType = foodType;
+        this.foodValue = foodValue;
         this.foodCalories = foodCalories;
     }
 
@@ -34,11 +41,31 @@ public class Food {
         this.foodType = foodType;
     }
 
-    public int getFoodCalories() {
+    public double getFoodCalories() {
         return foodCalories;
     }
 
-    public void setFoodCalories(int foodCalories) {
+    public void setFoodCalories(double foodCalories) {
         this.foodCalories = foodCalories;
+    }
+
+    public double getFoodValue() {
+        return foodValue;
+    }
+
+    public void setFoodValue(double foodValue) {
+        this.foodValue = foodValue;
+    }
+
+    public void fillProteinFoods() {
+
+    }
+
+    public void fillCarbFoods() {
+
+    }
+
+    public void fillFatFoods() {
+
     }
 }

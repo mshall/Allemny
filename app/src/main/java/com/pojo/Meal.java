@@ -1,28 +1,98 @@
 package com.pojo;
 
-import java.util.ArrayList;
-
 /**
  * Created by elsaidel on 1/14/2017.
  */
 
 public class Meal {
-
-    ArrayList<Food> mealFoods;
-
-    public Meal(ArrayList<Food> mealFoods) {
-        this.mealFoods = mealFoods;
-    }
+    double proteinGrams, carbGrams, fatGrams;
+    int planNumber;
+    String email, proteinFoodName, carbFoodName, fatFoodName, fiberFoodName;
 
     public Meal() {
-        mealFoods = new ArrayList<>();
     }
 
-    public ArrayList<Food> getMealFoods() {
-        return mealFoods;
+    public Meal(double proteinGrams, double carbGrams, double fatGrams, int planNumber, String email, String proteinFoodName, String carbFoodName, String fatFoodName, String fiberFoodName) {
+        this.proteinGrams = proteinGrams;
+        this.carbGrams = carbGrams;
+        this.fatGrams = fatGrams;
+        this.planNumber = planNumber;
+        this.email = email;
+        this.proteinFoodName = proteinFoodName;
+        this.carbFoodName = carbFoodName;
+        this.fatFoodName = fatFoodName;
+        this.fiberFoodName = fiberFoodName;
     }
 
-    public void setMealFoods(ArrayList<Food> mealFoods) {
-        this.mealFoods = mealFoods;
+    public double getProteinGrams() {
+        return proteinGrams;
+    }
+
+    public void setProteinGrams(double proteinGrams) {
+        this.proteinGrams = proteinGrams;
+    }
+
+    public double getCarbGrams() {
+        return carbGrams;
+    }
+
+    public void setCarbGrams(double carbGrams) {
+        this.carbGrams = carbGrams;
+    }
+
+    public double getFatGrams() {
+        return fatGrams;
+    }
+
+    public void setFatGrams(double fatGrams) {
+        this.fatGrams = fatGrams;
+    }
+
+    public int getPlanNumber() {
+        return planNumber;
+    }
+
+    public void setPlanNumber(int planNumber) {
+        this.planNumber = planNumber;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getProteinFoodName() {
+        return proteinFoodName;
+    }
+
+    public void setProteinFoodName(String proteinFoodName) {
+        this.proteinFoodName = proteinFoodName;
+    }
+
+    public String getCarbFoodName() {
+        return carbFoodName;
+    }
+
+    public void setCarbFoodName(String carbFoodName) {
+        this.carbFoodName = carbFoodName;
+    }
+
+    public String getFatFoodName() {
+        return fatFoodName;
+    }
+
+    public void setFatFoodName(String fatFoodName) {
+        this.fatFoodName = fatFoodName;
+    }
+
+    public String getFiberFoodName() {
+        return fiberFoodName;
+    }
+
+    public void setFiberFoodName(String fiberFoodName) {
+        this.fiberFoodName = fiberFoodName;
     }
 }

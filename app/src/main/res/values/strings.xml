@@ -59,6 +59,52 @@
     <string name="enter_number_of_meals">Enter number of meals</string>
     <string name="number_of_meals">Number of meals</string>
     <string name="select_number_of_meals">Select number of meals</string>
-    <!--__________________ Arrays ______________________________________-->
+    <!--__________________ Foods names ______________________________________-->
+    <!--Protein foods-->
+    <string name="tuna_in_water">Tuna in water</string>
+    <string name="grilled_chicken_breast">Grilled chicken breast</string>
+    <string name="grilled_turkey_beast">Grilled turkey breast</string>
+    <string name="lean_ground_beef">Lean ground beef</string>
+    <string name="grilled_lean_steak">Grilled lean steak</string>
+    <string name="eggs">Eggs</string>
+    <string name="egg_white">Egg white</string>
+    <string name="cottage_cheese">Cottage cheese</string>
+    <string name="fish_fillet">Fish fillet</string>
+    <string name="whey_protein_low_carb">Whey protein (low carb)</string>
+    <string name="salmon">Salmon</string>
+    <string name="turkey_sausage_low_fat">Turkey sausage (low fat)</string>
+    <string name="greek_yogurt_low_fat">Greek yogurt (low fat)</string>
+    <!--Carb foods-->
+    <string name="oats">Oats</string>
+    <string name="sweet_potato">Sweet potato</string>
+    <string name="rice">Rice</string>
+    <string name="whole_wheat_bread">Whole wheat bread</string>
+    <string name="whole_grain_cereals">Whole grain cereals</string>
+    <string name="baked_potatoes">Baked potatoes</string>
+    <string name="red_kidney_beans">Red kidney beans</string>
+    <string name="whole_wheat_pasta">Whole wheat pasta</string>
+    <string name="apple">Apple</string>
+    <string name="banana">Banana</string>
+    <string name="orange">Orange</string>
+    <string name="quinoa">Quinoa</string>
+    <string name="whole_bulgur">Whole bulgur</string>
+    <!--Fat foods-->
+    <string name="olive_oil">Olive oil</string>
+    <string name="almonds">Almonds</string>
+    <string name="peanut_butter">Peanut butter</string>
+    <string name="flaxseed_oil">Flaxseed oil</string>
+    <string name="peanuts">Peanuts</string>
+    <string name="avocado">Avocado</string>
+    <!--Fiber foods-->
+    <string name="green_beans">Green beans</string>
+    <string name="green_peas">Green peas</string>
+    <string name="broccoli">Broccoli</string>
+    <string name="cauliflower">Cauliflower</string>
+    <string name="cucumber">Cucumber</string>
+    <string name="zucchini">Zucchini</string>
+    <string name="spinach">Spinach</string>
+    <string name="green_salad">Green salad</string>
+    <string name="eggplant">Eggplant</string>
+
 
 </resources>

@@ -13,6 +13,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.allemny.R;
+import com.database.dao.FoodDAO;
 import com.fragments.MainFragment;
 
 import butterknife.BindView;
@@ -46,6 +47,10 @@ public class HomeActivity extends AppCompatActivity
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mFragmentTransaction.replace(R.id.content_home, new MainFragment()).commit();
+
+
+        //------------------- Initaite the foods to be loaded -------------------------
+        new FoodDAO(this).initializeAllFoods();
 
     }
 
