@@ -38,6 +38,7 @@ public class Constants {
     public static final String GENDER = "gender";
     public static final String TARGET = "target";
     public static final String BODY = "body";
+    public static final String NUMBER_OF_MEALS = "numberOfMeals";
     //    ---------------------------------------------------
     public final static int FOOD_CARB = 1;
     public final static int FOOD_PROTEIN = 2;

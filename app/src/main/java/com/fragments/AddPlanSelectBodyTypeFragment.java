@@ -37,7 +37,8 @@ public class AddPlanSelectBodyTypeFragment extends Fragment implements View.OnCl
     ImageView ivMesoBodyType;
     View view;
     int selectedBodyType;
-    int gender, target, bodyType;
+    int gender, target;
+    int bodyType = Constants.BODY_ENDOMERPH;
     double weight;
 
     public AddPlanSelectBodyTypeFragment() {
@@ -89,16 +90,17 @@ public class AddPlanSelectBodyTypeFragment extends Fragment implements View.OnCl
                 bundle.putDouble(Constants.WEIGHT, weight);
                 bundle.putInt(Constants.TARGET, target);
                 bundle.putInt(Constants.BODY, bodyType);
+                fragment.setArguments(bundle);
                 new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, fragment, AddPlanSelectNumberOfMealsFragment.tag);
                 break;
             case R.id.ivFragmentAddPlanSelectBodyTypeMesoBody:
-
+                bodyType = Constants.BODY_MESOMERPH;
                 break;
             case R.id.ivFragmentAddPlanSelectBodyTypeEndoBody:
-
+                bodyType = Constants.BODY_ENDOMERPH;
                 break;
             case R.id.ivFragmentAddPlanSelectBodyTypeEctoBody:
-
+                bodyType = Constants.BODY_ECTOMERPH;
                 break;
         }
     }
