@@ -46,6 +46,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Constants.PROTEIN_GRAMS + " Double," +
                 Constants.CARB_GRAMS + " Double," +
                 Constants.FAT_GRAMS + " Double," +
+                Constants.FIBER_GRAMS + " Double," +
                 Constants.PLAN_NUMBER + " Int" + ")");
         //-------------- Create Plans table ---------------------------------------
         db.execSQL("Create table " + Constants.PLANS_TABLE + "(" + Constants.PLAN_NUMBER + " INTEGER PRIMARY KEY NOT NULL, " +

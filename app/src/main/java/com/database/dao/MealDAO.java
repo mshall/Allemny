@@ -40,6 +40,7 @@ public class MealDAO {
         contentValues.put(Constants.PROTEIN_GRAMS, meal.getProteinGrams());
         contentValues.put(Constants.CARB_GRAMS, meal.getCarbGrams());
         contentValues.put(Constants.FAT_GRAMS, meal.getFatGrams());
+        contentValues.put(Constants.FIBER_GRAMS, meal.getFiberGrams());
         contentValues.put(Constants.PLAN_NUMBER, meal.getPlanNumber());
         database.insert(Constants.MEALS_TABLE, null, contentValues);
     }
@@ -48,7 +49,7 @@ public class MealDAO {
     //----------------------------------------------------------------
     //  Create new plan given array list of meals
     //----------------------------------------------------------------
-    public void addMeal(ArrayList<Meal> meals) {
+    public void addMeals(ArrayList<Meal> meals) {
         for (Meal meal : meals) {
             ContentValues contentValues = new ContentValues();
             contentValues.put(Constants.EMAIL, meal.getEmail());

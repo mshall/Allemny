@@ -5,17 +5,18 @@ package com.pojo;
  */
 
 public class Meal {
-    double proteinGrams, carbGrams, fatGrams;
+    double proteinGrams, carbGrams, fatGrams, fiberGrams;
     int planNumber;
     String email, proteinFoodName, carbFoodName, fatFoodName, fiberFoodName;
 
     public Meal() {
     }
 
-    public Meal(double proteinGrams, double carbGrams, double fatGrams, int planNumber, String email, String proteinFoodName, String carbFoodName, String fatFoodName, String fiberFoodName) {
+    public Meal(double proteinGrams, double carbGrams, double fatGrams, int fiberGrams, int planNumber, String email, String proteinFoodName, String carbFoodName, String fatFoodName, String fiberFoodName) {
         this.proteinGrams = proteinGrams;
         this.carbGrams = carbGrams;
         this.fatGrams = fatGrams;
+        this.fiberGrams = fiberGrams;
         this.planNumber = planNumber;
         this.email = email;
         this.proteinFoodName = proteinFoodName;
@@ -70,6 +71,14 @@ public class Meal {
 
     public void setProteinFoodName(String proteinFoodName) {
         this.proteinFoodName = proteinFoodName;
+    }
+
+    public double getFiberGrams() {
+        return fiberGrams;
+    }
+
+    public void setFiberGrams(double fiberGrams) {
+        this.fiberGrams = fiberGrams;
     }
 
     public String getCarbFoodName() {
