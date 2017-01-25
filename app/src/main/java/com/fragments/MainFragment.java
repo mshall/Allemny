@@ -2,7 +2,6 @@ package com.fragments;
 
 
 import android.os.Bundle;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
@@ -73,7 +72,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 break;
 
             case R.id.cvFragmentMainMyPlans:
-                Snackbar.make(view, "You want to show my plans", Snackbar.LENGTH_LONG).show();
+                //startActivity(new Intent(getActivity(), AndroidDatabaseManager.class));
                 break;
             case R.id.cvFragmentMainUpdateMyWeight:
                 new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), UpdateMyWeightFragment.tag);

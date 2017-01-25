@@ -38,20 +38,22 @@ public class MealUtils {
                 int fatRandomIndex = Utils.getRandomNumber(0, Food.fatFoods.size());
 
                 Food proteinFood = proteinFoods.get(proteinRandomIndex);
-
-                Food fatFood = Food.fatFoods.get(fatRandomIndex);
-
+                //Protein: 2 Eggs + white eggs or smoked turkey slices must be added
+                String proteinFoodName = proteinFood.getFoodName();
+                while (!proteinFoodName.equalsIgnoreCase(context.getString(R.string.egg_white)) && !proteinFoodName.equalsIgnoreCase(context.getString(R.string.turkey_sausage_low_fat))) {
+                    proteinRandomIndex = Utils.getRandomNumber(0, proteinFoods.size());
+                    proteinFood = proteinFoods.get(proteinRandomIndex);
+                    proteinFoodName = proteinFood.getFoodName();
+                }
                 //Oats or toast must be in the carb food
-                Food carbFood = new Food();
-                String carbFoodName = Food.carbFoods.get(carbRandomIndex).getFoodName();
+                Food carbFood = Food.carbFoods.get(carbRandomIndex);
+                String carbFoodName = carbFood.getFoodName();
                 while (!carbFoodName.equalsIgnoreCase(context.getString(R.string.oats)) && !carbFoodName.equalsIgnoreCase(context.getString(R.string.whole_wheat_bread))) {
                     carbRandomIndex = Utils.getRandomNumber(0, Food.carbFoods.size());
-                    carbFoodName = Food.carbFoods.get(carbRandomIndex).getFoodName();
-                    if (carbFoodName.equalsIgnoreCase(context.getString(R.string.oats)) || carbFoodName.equalsIgnoreCase(context.getString(R.string.whole_wheat_bread))) {
-                        carbFood = Food.carbFoods.get(carbRandomIndex);
-                        break;
-                    }
+                    carbFood = Food.carbFoods.get(carbRandomIndex);
+                    carbFoodName = carbFood.getFoodName();
                 }
+                Food fatFood = Food.fatFoods.get(fatRandomIndex);
                 double foodProteinGrams = proteinGramsPerMeal / proteinFood.getFoodValue();
                 double foodCarbGrams = carbGramsPerMeal / carbFood.getFoodValue();
                 double foodFatGrams = fatGramsPerMeal / fatFood.getFoodValue();
@@ -59,10 +61,12 @@ public class MealUtils {
                 meal.setProteinFoodName(proteinFood.getFoodName());
                 meal.setCarbFoodName(carbFood.getFoodName());
                 meal.setFatFoodName(fatFood.getFoodName());
+                meal.setFiberFoodName("-");
 
                 meal.setProteinGrams(foodProteinGrams);
                 meal.setCarbGrams(foodCarbGrams);
                 meal.setFatGrams(foodFatGrams);
+                meal.setFiberGrams(0);
 
                 mealDAO.addMeal(meal);
 
@@ -80,11 +84,8 @@ public class MealUtils {
                 // To make sure the tuna or cottage cheese are listed in the last meal
                 while (!proteinFoodName.equalsIgnoreCase(context.getString(R.string.tuna_in_water)) && !proteinFoodName.equalsIgnoreCase(context.getString(R.string.cottage_cheese))) {
                     proteinRandomIndex = Utils.getRandomNumber(0, proteinFoods.size());
-                    proteinFoodName = Food.proteinFoods.get(proteinRandomIndex).getFoodName();
-                    if (proteinFoodName.equalsIgnoreCase(context.getString(R.string.tuna_in_water)) || proteinFoodName.equalsIgnoreCase(context.getString(R.string.cottage_cheese))) {
-                        proteinFood = Food.proteinFoods.get(proteinRandomIndex);
-                        break;
-                    }
+                    proteinFood = Food.proteinFoods.get(proteinRandomIndex);
+                    proteinFoodName = proteinFood.getFoodName();
                 }
 
                 Food fatFood = Food.fatFoods.get(fatRandomIndex);
@@ -95,10 +96,12 @@ public class MealUtils {
                 double foodFiberGrams = 100;
 
                 meal.setProteinFoodName(proteinFood.getFoodName());
+                meal.setCarbFoodName("-");
                 meal.setFatFoodName(fatFood.getFoodName());
                 meal.setFiberFoodName(fiberFood.getFoodName());
 
                 meal.setProteinGrams(foodProteinGrams);
+                meal.setCarbGrams(0);
                 meal.setFatGrams(foodFatGrams);
                 meal.setFiberGrams(foodFiberGrams);
 

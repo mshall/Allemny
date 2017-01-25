@@ -63,17 +63,21 @@ public class PlanDAO {
     //----------------------------------------------------------------
     public int getLastPlanNumber() {
         int planNumber = 0;
-        Cursor c;
-        String query = "Select MAX(" + Constants.PLAN_NUMBER + ")" +
-                " from " + Constants.PLANS_TABLE + "";
-
-        c = database.rawQuery(query, null);
-        if (c != null) {
-            if (c.moveToFirst()) {
-                planNumber = c.getInt(c.getColumnIndex(Constants.PLAN_NUMBER));
-            }
+        if (isPlanTableEmpty()) {
+            return planNumber;
         } else {
-            planNumber = 0;
+            Cursor c;
+            String query = "SELECT MAX(planNumber)" +
+                    " from " + Constants.PLANS_TABLE + "";
+
+            c = database.rawQuery(query, null);
+            if (c != null) {
+                if (c.moveToFirst()) {
+                    planNumber = c.getInt(0);
+                }
+            } else {
+                planNumber = 0;
+            }
         }
         return planNumber;
     }
@@ -83,5 +87,19 @@ public class PlanDAO {
     //----------------------------------------------------------------
     public boolean deleteAllPlans() {
         return database.delete(Constants.PLANS_TABLE, null, null) > 0;
+    }
+
+    //----------------------------------------------------------------
+    //  Check if plans table is empty
+    //----------------------------------------------------------------
+    public boolean isPlanTableEmpty() {
+        boolean empty = true;
+        Cursor cur = database.rawQuery("SELECT COUNT(*) FROM '" + Constants.PLANS_TABLE + "'", null);
+        if (cur != null && cur.moveToFirst()) {
+            empty = (cur.getInt(0) == 0);
+        }
+        cur.close();
+
+        return empty;
     }
 }

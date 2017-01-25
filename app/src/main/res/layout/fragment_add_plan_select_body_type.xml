@@ -21,7 +21,7 @@
         android:layout_marginTop="50dp"
         android:layout_weight="1"
         android:gravity="center"
-        android:text="@string/select_number_of_meals"
+        android:text="@string/select_body_type"
         android:textSize="20sp"
         app:font="streatwear.otf" />
 

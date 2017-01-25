@@ -1,5 +1,6 @@
 package com.activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -13,8 +14,12 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.allemny.R;
+import com.database.AndroidDatabaseManager;
 import com.database.dao.FoodDAO;
 import com.fragments.MainFragment;
+import com.fragments.MyWeightProgressFragment;
+import com.fragments.UpdateMyWeightFragment;
+import com.util.FragmentUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -100,11 +105,13 @@ public class HomeActivity extends AppCompatActivity
             FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
             //xfragmentTransaction.replace(R.id.content_home, tabFragment).commit();
         } else if (id == R.id.nav_view_my_nutrition_plans) {
+            startActivity(new Intent(this, AndroidDatabaseManager.class));
 
         } else if (id == R.id.nav_update_my_weight) {
+            new FragmentUtils(this).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), UpdateMyWeightFragment.tag);
 
         } else if (id == R.id.nav_my_weight_progress) {
-
+            new FragmentUtils(this).navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), MyWeightProgressFragment.tag);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

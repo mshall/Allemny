@@ -105,6 +105,7 @@
     <string name="spinach">Spinach</string>
     <string name="green_salad">Green salad</string>
     <string name="eggplant">Eggplant</string>
+    <string name="select_body_type">Select your body type</string>
 
 
 </resources>
