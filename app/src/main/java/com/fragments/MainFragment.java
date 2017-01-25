@@ -73,6 +73,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
             case R.id.cvFragmentMainMyPlans:
                 //startActivity(new Intent(getActivity(), AndroidDatabaseManager.class));
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
                 break;
             case R.id.cvFragmentMainUpdateMyWeight:
                 new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), UpdateMyWeightFragment.tag);

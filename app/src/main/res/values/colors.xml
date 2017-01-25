@@ -27,4 +27,10 @@
     <color name="mc_title_bar">#FF16C2DD</color>
     <color name="mc_state_pressed">#FF1088DD</color>
 
+
+    <color name="item_selected_background_color">#C7C7CC</color>
+    <color name="image_placeholder_background_color">#C7C7CC</color>
+    <color name="divider_color">#C7C7CC</color>
+    <color name="app_background_color">#FAFAFA</color>
+
 </resources>

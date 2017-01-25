@@ -51,6 +51,7 @@ dependencies {
     compile 'com.tomer:fadingtextview:1.2'
     compile 'net.soulwolf.widget:materialRadio:1.0.1'
     compile 'org.adw.library:discrete-seekbar:1.0.1'
+    compile 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:1.0.4'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.3.0'
 }
