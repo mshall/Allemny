@@ -54,7 +54,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/ic_add_box_blue_grey_400_24dp" />
+                        android:src="@drawable/new_plan" />
 
                     <phelat.TextView.Plus
                         android:layout_width="wrap_content"
@@ -64,7 +64,7 @@
                         android:gravity="center"
                         android:text="@string/add_new_plan"
                         android:textSize="20sp"
-                        app:font="streatwear.otf" />
+                        app:font="fonts/AgencyFBBold.ttf" />
 
                     <ImageView
                         android:layout_width="50dp"
@@ -94,7 +94,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/ic_view_module_blue_grey_400_24dp" />
+                        android:src="@drawable/my_plans" />
 
                     <phelat.TextView.Plus
                         android:layout_width="wrap_content"
@@ -104,7 +104,7 @@
                         android:gravity="center"
                         android:text="@string/view_my_plans"
                         android:textSize="20sp"
-                        app:font="streatwear.otf" />
+                        app:font="fonts/AgencyFBBold.ttf" />
 
                     <ImageView
                         android:layout_width="50dp"
@@ -134,7 +134,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/ic_border_color_blue_grey_400_24dp" />
+                        android:src="@drawable/goal_update" />
 
                     <phelat.TextView.Plus
                         android:layout_width="wrap_content"
@@ -144,7 +144,7 @@
                         android:gravity="center"
                         android:text="@string/update_my_weight"
                         android:textSize="20sp"
-                        app:font="streatwear.otf" />
+                        app:font="fonts/AgencyFBBold.ttf" />
 
                     <ImageView
                         android:layout_width="50dp"
@@ -174,7 +174,7 @@
                     <ImageView
                         android:layout_width="50dp"
                         android:layout_height="50dp"
-                        android:src="@drawable/ic_pageview_blue_grey_400_24dp" />
+                        android:src="@drawable/goal_progress" />
 
                     <ImageView
                         android:layout_width="50dp"
@@ -191,7 +191,7 @@
                         android:gravity="center"
                         android:text="@string/my_weight_progress"
                         android:textSize="20sp"
-                        app:font="streatwear.otf" />
+                        app:font="fonts/AgencyFBBold.ttf" />
                 </RelativeLayout>
 
 

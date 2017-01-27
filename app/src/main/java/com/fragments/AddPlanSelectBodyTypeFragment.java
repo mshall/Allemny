@@ -1,6 +1,7 @@
 package com.fragments;
 
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +14,8 @@ import com.allemny.R;
 import com.anton46.stepsview.StepsView;
 import com.constants.Constants;
 import com.util.FragmentUtils;
+import com.util.ImageLoader;
+import com.util.ImageUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -95,13 +98,79 @@ public class AddPlanSelectBodyTypeFragment extends Fragment implements View.OnCl
                 break;
             case R.id.ivFragmentAddPlanSelectBodyTypeMesoBody:
                 bodyType = Constants.BODY_MESOMERPH;
+                //Call the image clicks handler method
+                handleBodyTypesClick(gender, bodyType);
                 break;
             case R.id.ivFragmentAddPlanSelectBodyTypeEndoBody:
                 bodyType = Constants.BODY_ENDOMERPH;
+                //Call the image clicks handler method
+                handleBodyTypesClick(gender, bodyType);
                 break;
             case R.id.ivFragmentAddPlanSelectBodyTypeEctoBody:
                 bodyType = Constants.BODY_ECTOMERPH;
+                //Call the image clicks handler method
+                handleBodyTypesClick(gender, bodyType);
                 break;
         }
+    }
+
+    public void handleBodyTypesClick(int gender, int bodyType) {
+        switch (bodyType) {
+            case Constants.BODY_MESOMERPH:
+                if (gender == Constants.GENDER_MALE) {//This is a male
+                    //Reset the other body types images first
+                    ImageLoader.setImageDrawable(getContext(), ivEctoBodyType, R.drawable.male_ectomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivEndoBodyType, R.drawable.male_endomorph);
+                    //Now set the mesomerpth glowed image
+                    Bitmap glowedMaleBitmap = ImageUtils.addImageGlow(getContext(), R.drawable.male_mesomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivMesoBodyType, glowedMaleBitmap);
+                    //---------------------------
+                } else {//This is a female
+                    //Reset the other body types images first
+                    ImageLoader.setImageDrawable(getContext(), ivEctoBodyType, R.drawable.female_ectomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivEndoBodyType, R.drawable.female_endomorph);
+                    //Now set the mesomerpth glowed image
+                    Bitmap glowedFemaleBitmap = ImageUtils.addImageGlow(getContext(), R.drawable.female_mesomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivMesoBodyType, glowedFemaleBitmap);
+                }
+                break;
+            case Constants.BODY_ECTOMERPH:
+                if (gender == Constants.GENDER_MALE) {//This is a male
+                    //Reset the other body types images first
+                    ImageLoader.setImageDrawable(getContext(), ivMesoBodyType, R.drawable.male_mesomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivEndoBodyType, R.drawable.male_endomorph);
+                    //Now set the ectomerpth glowed image
+                    Bitmap glowedMaleBitmap = ImageUtils.addImageGlow(getContext(), R.drawable.male_ectomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivEctoBodyType, glowedMaleBitmap);
+                    //---------------------------
+                } else {//This is a female
+                    //Reset the other body types images first
+                    ImageLoader.setImageDrawable(getContext(), ivMesoBodyType, R.drawable.female_mesomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivEndoBodyType, R.drawable.female_endomorph);
+                    //Now set the ectomerpth glowed image
+                    Bitmap glowedFemaleBitmap = ImageUtils.addImageGlow(getContext(), R.drawable.female_ectomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivEctoBodyType, glowedFemaleBitmap);
+                }
+                break;
+            case Constants.BODY_ENDOMERPH:
+                if (gender == Constants.GENDER_MALE) {//This is a male
+                    //Reset the other body types images first
+                    ImageLoader.setImageDrawable(getContext(), ivMesoBodyType, R.drawable.male_mesomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivEctoBodyType, R.drawable.male_ectomorph);
+                    //Now set the ectomerpth glowed image
+                    Bitmap glowedMaleBitmap = ImageUtils.addImageGlow(getContext(), R.drawable.male_endomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivEndoBodyType, glowedMaleBitmap);
+                    //---------------------------
+                } else {//This is a female
+                    //Reset the other body types images first
+                    ImageLoader.setImageDrawable(getContext(), ivMesoBodyType, R.drawable.female_mesomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivEctoBodyType, R.drawable.female_ectomorph);
+                    //Now set the endomerpth glowed image
+                    Bitmap glowedMaleBitmap = ImageUtils.addImageGlow(getContext(), R.drawable.female_endomorph);
+                    ImageLoader.setImageDrawable(getContext(), ivEndoBodyType, glowedMaleBitmap);
+                }
+                break;
+        }
+
     }
 }

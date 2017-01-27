@@ -6,6 +6,10 @@ package com.constants;
 public class Constants {
 
     public static final String FONT_MOTIOIN_PICTURE = "fonts/MotionPicture.ttf";
+    public static final String FONT_AgencyFB_BOLD = "fonts/AgencyFBBold.TTF";
+    public static final String FONT_AgencyFB = "fonts/AgencyFB.ttf";
+    public static final String FONT_GERMANIA_ONE = "fonts/germania_one.ttf";
+    public static final String FONT_SLIM_JIM = "fonts/slimjim.ttf";
     public static final String TEST = "testField";
     public static String SHRED_PREFS_KEY = "com.myNutritionGeneratorPal.sharedprefs";
     public static String IS_FIRST_TIME_RUN = "isFirstTimeRun";

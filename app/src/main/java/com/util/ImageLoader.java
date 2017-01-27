@@ -4,11 +4,13 @@ import android.content.ActivityNotFoundException;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 import android.os.Environment;
 import android.provider.MediaStore;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
@@ -201,5 +203,20 @@ public class ImageLoader {
         ImageLoader.loadImageFromURL(context, uri.toString(), ivUserImage, placeHolderImage);
     }
 
+    //-----------------------------------------------------------
+    // This methods responsible for Setting image
+    //-----------------------------------------------------------
+    public static void setImageDrawable(Context context, ImageView imageView, int drawableResource) {
+        imageView.setImageDrawable(ContextCompat.getDrawable(context, drawableResource));
+    }
+
+
+    //-----------------------------------------------------------
+    // This methods responsible for Setting image
+    //-----------------------------------------------------------
+    public static void setImageDrawable(Context context, ImageView imageView, Bitmap bitmap) {
+        BitmapDrawable bitmapDrawable = new BitmapDrawable(context.getResources(), bitmap);
+        imageView.setImageDrawable(bitmapDrawable);
+    }
 
 }

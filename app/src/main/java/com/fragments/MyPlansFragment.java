@@ -117,7 +117,7 @@ public class MyPlansFragment extends Fragment {
             final ItemViewHolder itemHolder = (ItemViewHolder) holder;
             Meal meal = list.get(position);
 
-            itemHolder.tvMealNumber.setText(position+"");
+            itemHolder.tvMealNumber.setText(position + "");
             itemHolder.tvProtein.setText(meal.getProteinFoodName());
             itemHolder.tvCarb.setText(meal.getCarbFoodName());
             itemHolder.tvFats.setText(meal.getFatFoodName());
@@ -126,7 +126,7 @@ public class MyPlansFragment extends Fragment {
             itemHolder.tvProteinGrams.setText(meal.getProteinGrams() + "");
             itemHolder.tvCarbGrams.setText(meal.getCarbGrams() + "");
             itemHolder.tvFatsGrams.setText(meal.getFatGrams() + "");
-            itemHolder.tvFibersGrams.setText(meal.getFiberFoodName());
+            itemHolder.tvFibersGrams.setText(meal.getFiberGrams()+"");
             //-----
             itemHolder.rootView.setOnClickListener(new View.OnClickListener() {
                 @Override

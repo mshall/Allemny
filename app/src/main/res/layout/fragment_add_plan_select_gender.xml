@@ -23,7 +23,8 @@
             android:layout_centerVertical="true"
             android:orientation="horizontal">
 
-            <TextView
+            <phelat.TextView.Plus
+                app:font="fonts/AgencyFBBold.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -62,7 +63,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                app:font="streatwear.otf"
+                app:font="fonts/AgencyFBBold.ttf"
                 android:text="@string/select_gender"
                 android:textSize="30sp" />
         </TableRow>
@@ -80,14 +81,14 @@
                     android:layout_width="match_parent"
                     android:layout_height="280dp"
                     android:layout_weight=".5"
-                    android:src="@drawable/add_image" />
+                    android:src="@drawable/female" />
 
                 <ImageView
                     android:id="@+id/ivFragmentAddPlanSelectGenderMale"
                     android:layout_width="match_parent"
                     android:layout_height="280dp"
                     android:layout_weight=".5"
-                    android:src="@drawable/add_image" />
+                    android:src="@drawable/male" />
             </LinearLayout>
         </TableRow>
     </TableLayout>

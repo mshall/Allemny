@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.allemny.R;
 import com.anton46.stepsview.StepsView;
@@ -101,15 +100,12 @@ public class AddPlanSelectTargetFragment extends Fragment implements View.OnClic
         int selectedId = materialRadioGroup.getCheckedRadioButtonId();
         switch (selectedId) {
             case R.id.rbBulk:
-                Toast.makeText(getContext(), "you choosed bulk", Toast.LENGTH_SHORT).show();
                 target = Constants.NUTRITION_BULK;
                 break;
             case R.id.rbCut:
-                Toast.makeText(getContext(), "you choosed cut", Toast.LENGTH_SHORT).show();
                 target = Constants.NUTRITION_CUT;
                 break;
             case R.id.rbMaintain:
-                Toast.makeText(getContext(), "you choosed maintain", Toast.LENGTH_SHORT).show();
                 target = Constants.NUTRITION_MAINTAIN;
                 break;
         }

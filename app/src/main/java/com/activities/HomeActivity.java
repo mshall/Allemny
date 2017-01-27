@@ -1,6 +1,5 @@
 package com.activities;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentManager;
@@ -10,13 +9,13 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.view.Menu;
 import android.view.MenuItem;
 
 import com.allemny.R;
-import com.database.AndroidDatabaseManager;
 import com.database.dao.FoodDAO;
+import com.fragments.AddPlanSelectGenderFragment;
 import com.fragments.MainFragment;
+import com.fragments.MyPlansFragment;
 import com.fragments.MyWeightProgressFragment;
 import com.fragments.UpdateMyWeightFragment;
 import com.util.FragmentUtils;
@@ -69,7 +68,7 @@ public class HomeActivity extends AppCompatActivity
         }
     }
 
-    @Override
+    /*@Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.home, menu);
@@ -89,29 +88,24 @@ public class HomeActivity extends AppCompatActivity
         }
 
         return super.onOptionsItemSelected(item);
-    }
+    }*/
 
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
         // Handle navigation view item clicks here.
         int id = item.getItemId();
-
         Bundle bundle = new Bundle();
-
         if (id == R.id.nav_add_nutrition_plan) {
-            bundle.putInt("tabNumber", 1);
-            //tabFragment.setArguments(bundle);
-            FragmentTransaction xfragmentTransaction = mFragmentManager.beginTransaction();
-            //xfragmentTransaction.replace(R.id.content_home, tabFragment).commit();
+            new FragmentUtils(this).navigateToFragment(R.id.content_home, new AddPlanSelectGenderFragment(), AddPlanSelectGenderFragment.TAG);
         } else if (id == R.id.nav_view_my_nutrition_plans) {
-            startActivity(new Intent(this, AndroidDatabaseManager.class));
+            new FragmentUtils(this).navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
 
         } else if (id == R.id.nav_update_my_weight) {
-            new FragmentUtils(this).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), UpdateMyWeightFragment.tag);
+            new FragmentUtils(this).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), UpdateMyWeightFragment.TAG);
 
         } else if (id == R.id.nav_my_weight_progress) {
-            new FragmentUtils(this).navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), MyWeightProgressFragment.tag);
+            new FragmentUtils(this).navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), MyWeightProgressFragment.TAG);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

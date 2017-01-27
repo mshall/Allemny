@@ -7,11 +7,11 @@
 
             <item
                 android:id="@+id/nav_add_nutrition_plan"
-                android:icon="@drawable/ic_add_box_blue_grey_400_24dp"
+                android:icon="@drawable/new_plan"
                 android:title="@string/add_new_plan" />
             <item
                 android:id="@+id/nav_view_my_nutrition_plans"
-                android:icon="@drawable/ic_view_module_blue_grey_400_24dp"
+                android:icon="@drawable/my_plans"
                 android:title="@string/view_my_plans" />
         </group>
 
@@ -21,11 +21,11 @@
 
             <item
                 android:id="@+id/nav_update_my_weight"
-                android:icon="@drawable/ic_border_color_blue_grey_400_24dp"
+                android:icon="@drawable/goal_update"
                 android:title="@string/update_my_weight" />
             <item
                 android:id="@+id/nav_my_weight_progress"
-                android:icon="@drawable/ic_pageview_blue_grey_400_24dp"
+                android:icon="@drawable/goal_progress"
                 android:title="@string/my_weight_progress" />
         </group>
     </group>

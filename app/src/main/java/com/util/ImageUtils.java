@@ -4,6 +4,10 @@ import android.content.Context;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.BlurMaskFilter;
+import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.Paint;
 import android.graphics.drawable.BitmapDrawable;
 import android.net.Uri;
 import android.provider.MediaStore;
@@ -63,5 +67,45 @@ public class ImageUtils {
         BitmapDrawable drawable = (BitmapDrawable) imageView.getDrawable();
         Bitmap bitmap = drawable.getBitmap();
         return bitmap;
+    }
+
+    //-----------------------------------------------------------
+    // Add glow to an image
+    //-----------------------------------------------------------
+    public static Bitmap addImageGlow(Context context, int drawableSource) {
+        // An added margin to the initial image
+        int margin = 24;
+        int halfMargin = margin / 2;
+
+        // the glow radius
+        int glowRadius = 20;
+
+        // the glow color
+        int glowColor = Color.rgb(0, 192, 255);
+
+        // The original image to use
+        Bitmap src = BitmapFactory.decodeResource(context.getResources(), drawableSource);
+
+        // extract the alpha from the source image
+        Bitmap alpha = src.extractAlpha();
+
+        // The output bitmap (with the icon + glow)
+        Bitmap bmp = Bitmap.createBitmap(src.getWidth() + margin,
+                src.getHeight() + margin, Bitmap.Config.ARGB_8888);
+
+        // The canvas to paint on the image
+        Canvas canvas = new Canvas(bmp);
+
+        Paint paint = new Paint();
+        paint.setColor(glowColor);
+
+        // outer glow
+        paint.setMaskFilter(new BlurMaskFilter(glowRadius, BlurMaskFilter.Blur.OUTER));
+        canvas.drawBitmap(alpha, halfMargin, halfMargin, paint);
+
+        // original icon
+        canvas.drawBitmap(src, halfMargin, halfMargin, null);
+
+        return bmp;
     }
 }

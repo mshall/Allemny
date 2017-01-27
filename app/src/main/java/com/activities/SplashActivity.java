@@ -16,6 +16,8 @@ public class SplashActivity extends AwesomeSplash {
 
     @BindString(R.string.app_slogan)
     String appSlogan;
+    @BindString(R.string.app_name)
+    String appName;
 
     @Override
     public void initSplash(ConfigSplash configSplash) {
@@ -30,7 +32,7 @@ public class SplashActivity extends AwesomeSplash {
         //Choose LOGO OR PATH; if you don't provide String value for path it's logo by default
 
         //Customize Logo
-        configSplash.setLogoSplash(R.mipmap.ic_launcher); //or any other drawable
+        configSplash.setLogoSplash(R.drawable.logo); //or any other drawable
         configSplash.setAnimLogoSplashDuration(2000); //int ms
         configSplash.setAnimLogoSplashTechnique(Techniques.Landing); //choose one form Techniques (ref: https://github.com/daimajia/AndroidViewAnimations)
 
@@ -47,12 +49,12 @@ public class SplashActivity extends AwesomeSplash {
 
 
         //Customize Title
-        configSplash.setTitleSplash(appSlogan);
+        configSplash.setTitleSplash(appName);
         configSplash.setTitleTextColor(R.color.white);
         configSplash.setTitleTextSize(40f); //float value
         configSplash.setAnimTitleDuration(2000);
         configSplash.setAnimTitleTechnique(Techniques.FlipInX);
-        configSplash.setTitleFont(Constants.FONT_MOTIOIN_PICTURE); //provide string to your font located in assets/fonts/
+        configSplash.setTitleFont(Constants.FONT_AgencyFB_BOLD); //provide string to your font located in assets/fonts/
     }
 
     @Override

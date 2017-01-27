@@ -20,20 +20,19 @@
         android:gravity="center">
 
 
-
         <TableRow android:layout_marginTop="15dp">
 
 
             <phelat.TextView.Plus
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="40dp"
                 android:layout_marginTop="10dp"
-                android:layout_marginBottom="50dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/select_number_of_meals"
-                android:textSize="20sp"
-                app:font="streatwear.otf" />
+                android:textSize="30sp"
+                app:font="fonts/AgencyFBBold.ttf" />
         </TableRow>
 
         <TableRow android:layout_marginTop="30dp">
@@ -74,12 +73,13 @@
             android:layout_centerVertical="true"
             android:orientation="horizontal">
 
-            <TextView
+            <phelat.TextView.Plus
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/next"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:font="fonts/AgencyFBBold.ttf" />
 
             <ImageView
                 android:layout_width="40dp"
@@ -101,12 +101,13 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_keyboard_arrow_left_teal_24dp" />
 
-            <TextView
+            <phelat.TextView.Plus
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/back"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:font="fonts/AgencyFBBold.ttf" />
         </LinearLayout>
 
     </RelativeLayout>

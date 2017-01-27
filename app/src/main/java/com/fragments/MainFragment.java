@@ -68,7 +68,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         switch (v.getId()) {
             case R.id.cvFragmentMainAddNewPlan:
 //                startActivity(new Intent(getActivity(), PlanStepper.class));
-                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new AddPlanSelectGenderFragment(), AddPlanSelectGenderFragment.tag);
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new AddPlanSelectGenderFragment(), AddPlanSelectGenderFragment.TAG);
                 break;
 
             case R.id.cvFragmentMainMyPlans:
@@ -76,12 +76,12 @@ public class MainFragment extends Fragment implements View.OnClickListener {
                 new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
                 break;
             case R.id.cvFragmentMainUpdateMyWeight:
-                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), UpdateMyWeightFragment.tag);
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), UpdateMyWeightFragment.TAG);
 //                mFragmentTransaction.replace(R.id.content_home, new UpdateMyWeightFragment()).commit();
 
                 break;
             case R.id.cvFragmentMainMyWeightProgress:
-                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), MyWeightProgressFragment.tag);
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), MyWeightProgressFragment.TAG);
                 break;
         }
     }

@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">FAT LAB</string>
+    <string name="app_name">Fat Lab</string>
     <string name="app_slogan">Your way to excel</string>
     <string name="title_activity_home_tabbed">HomeTabbedActivity</string>
     <string name="action_settings">Settings</string>
@@ -108,12 +108,13 @@
     <string name="select_body_type">Select your body type</string>
     <string name="meal_number">Meal #</string>
     <string name="protein">Protein</string>
-    <string name="carb">Carbohydrates</string>
+    <string name="carb">Carb</string>
     <string name="fats">Fats</string>
     <string name="fibers">Fibers</string>
     <string name="hash">#</string>
     <string name="my_plans">My plans</string>
     <string name="nutrition_plan">Nutrition Plan</string>
+    <string name="plan_generated">Your plan has been generated</string>
 
 
 </resources>

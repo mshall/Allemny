@@ -18,12 +18,12 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/stepsView"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="20dp"
         android:layout_weight="1"
         android:gravity="center"
         android:text="@string/select_body_type"
-        android:textSize="20sp"
-        app:font="streatwear.otf" />
+        android:textSize="30sp"
+        app:font="fonts/AgencyFBBold.ttf" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -40,21 +40,21 @@
             android:layout_width="150dp"
             android:layout_height="200dp"
             android:layout_weight=".33"
-            android:src="@drawable/add_image" />
+            android:src="@drawable/male_ectomorph" />
 
         <ImageView
             android:id="@+id/ivFragmentAddPlanSelectBodyTypeMesoBody"
             android:layout_width="150dp"
             android:layout_height="200dp"
             android:layout_weight=".33"
-            android:src="@drawable/add_image" />
+            android:src="@drawable/male_mesomorph" />
 
         <ImageView
             android:id="@+id/ivFragmentAddPlanSelectBodyTypeEndoBody"
             android:layout_width="150dp"
             android:layout_height="200dp"
             android:layout_weight=".33"
-            android:src="@drawable/add_image" />
+            android:src="@drawable/male_endomorph" />
     </LinearLayout>
 
     <RelativeLayout
@@ -74,7 +74,8 @@
             android:layout_centerVertical="true"
             android:orientation="horizontal">
 
-            <TextView
+            <phelat.TextView.Plus
+                app:font="fonts/AgencyFBBold.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
@@ -101,7 +102,8 @@
                 android:layout_height="match_parent"
                 android:src="@drawable/ic_keyboard_arrow_left_teal_24dp" />
 
-            <TextView
+            <phelat.TextView.Plus
+                app:font="fonts/AgencyFBBold.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"

@@ -1,6 +1,7 @@
 package com.fragments;
 
 
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -13,6 +14,8 @@ import com.allemny.R;
 import com.anton46.stepsview.StepsView;
 import com.constants.Constants;
 import com.util.FragmentUtils;
+import com.util.ImageLoader;
+import com.util.ImageUtils;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -21,7 +24,7 @@ import butterknife.ButterKnife;
  * A simple {@link Fragment} subclass.
  */
 public class AddPlanSelectGenderFragment extends Fragment implements View.OnClickListener {
-    public static String tag = "AddPlanSelectGenderFragment";
+    public static String TAG = "AddPlanSelectGenderFragment";
     @BindView(R.id.ivFragmentAddPlanSelectGenderFemale)
     ImageView ivFemale;
     @BindView(R.id.ivFragmentAddPlanSelectGenderMale)
@@ -66,9 +69,20 @@ public class AddPlanSelectGenderFragment extends Fragment implements View.OnClic
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.ivFragmentAddPlanSelectGenderFemale:
+                //Reset the male image first
+                ImageLoader.setImageDrawable(getContext(), ivMale, R.drawable.male);
+                //Now set the female glowed image
+                Bitmap glowedFemaleBitmap = ImageUtils.addImageGlow(getContext(), R.drawable.female);
+                ImageLoader.setImageDrawable(getContext(), ivFemale, glowedFemaleBitmap);
+                //---------------------------
                 isGenderMaleSelected = false;
                 break;
             case R.id.ivFragmentAddPlanSelectGenderMale:
+                ImageLoader.setImageDrawable(getContext(), ivFemale, R.drawable.female);
+                //Now set the male glowed image
+                Bitmap glowedMaleBitmap = ImageUtils.addImageGlow(getContext(), R.drawable.male);
+                ImageLoader.setImageDrawable(getContext(), ivMale, glowedMaleBitmap);
+                //---------------------------
                 isGenderMaleSelected = true;
                 break;
             case R.id.llNavigationNext:

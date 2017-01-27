@@ -43,7 +43,7 @@ import io.blackbox_vision.datetimepickeredittext.view.DatePickerEditText;
  * A simple {@link Fragment} subclass.
  */
 public class UpdateMyWeightFragment extends Fragment implements View.OnClickListener {
-    public static String tag = "UpdateMyWeightFragment";
+    public static String TAG = "UpdateMyWeightFragment";
     @BindView(R.id.etFragmentUpdateMyWeightDatePicker)
     DatePickerEditText etDatePicker;
     @BindView(R.id.etFragmentUpdateMyWeight)
