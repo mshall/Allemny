@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rootView"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/selector_item"
+    android:clickable="true">
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cvFragmentMainAddNewPlan"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:layout_marginStart="2dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.23"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/hash"
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+                <!--android:ellipsize="end"
+                android:maxEms="15"
+                android:maxLines="1"-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.18"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/protein"
+
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.19"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/carb"
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.21"
+                    android:ellipsize="end"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/fats"
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+                <!--android:maxEms="15"
+                android:maxLines="1"-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:ellipsize="end"
+
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/fibers"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/ivSeparator"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@id/linearLayout"
+                android:background="@color/teal_background" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:layout_below="@id/ivSeparator"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tvMealNumber"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.23"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/hash"
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+                <!--android:ellipsize="end"
+                android:maxEms="15"
+                android:maxLines="1"-->
+                <TextView
+                    android:id="@+id/tvProtein"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.18"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/protein"
+
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+
+                <TextView
+                    android:id="@+id/tvCarb"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.19"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/carb"
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+
+                <TextView
+                    android:id="@+id/tvFats"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.21"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/fats"
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+
+                <TextView
+                    android:id="@+id/tvFibers"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/fibers"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/linearLayout2"
+                android:background="@color/white"
+                android:orientation="horizontal">
+
+                <TextView
+
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.23"
+                    android:ellipsize="end"
+                    android:fontFamily="sans-serif"
+                    android:maxEms="15"
+                    android:maxLines="1"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+                <!--android:ellipsize="end"
+                android:maxEms="15"
+                android:maxLines="1"-->
+                <TextView
+                    android:id="@+id/tvProteinGrams"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.18"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/protein"
+
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+
+                <TextView
+                    android:id="@+id/tvCarbGrams"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.19"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/carb"
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+
+                <TextView
+                    android:id="@+id/tvFatsGrams"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.21"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/fats"
+                    android:textAlignment="center" />
+
+                <ImageView
+
+                    android:layout_width="1dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@color/divider_color" />
+
+                <TextView
+                    android:id="@+id/tvFibersGrams"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.2"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingTop="10dp"
+                    android:text="@string/fibers"
+                    android:textAlignment="center" />
+
+            </LinearLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+</RelativeLayout>

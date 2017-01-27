@@ -1,0 +1,115 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fragments.AddPlanSelectBodyTypeFragment">
+
+    <com.anton46.stepsview.StepsView xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/stepsView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1" />
+
+
+    <phelat.TextView.Plus
+        android:id="@+id/tvFragmentSelectBodyTypeTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/stepsView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="@string/select_body_type"
+        android:textSize="30sp"
+        app:font="fonts/AgencyFBBold.ttf" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@id/rlNavigation"
+        android:layout_below="@id/tvFragmentSelectBodyTypeTitle"
+        android:layout_centerVertical="true"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:id="@+id/ivFragmentAddPlanSelectBodyTypeEctoBody"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_weight=".33"
+            android:src="@drawable/male_ectomorph" />
+
+        <ImageView
+            android:id="@+id/ivFragmentAddPlanSelectBodyTypeMesoBody"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_weight=".33"
+            android:src="@drawable/male_mesomorph" />
+
+        <ImageView
+            android:id="@+id/ivFragmentAddPlanSelectBodyTypeEndoBody"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
+            android:layout_weight=".33"
+            android:src="@drawable/male_endomorph" />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:id="@+id/rlNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/llNavigationNext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <phelat.TextView.Plus
+                app:font="fonts/AgencyFBBold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/next"
+                android:textSize="20sp" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llNavigationBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_keyboard_arrow_left_teal_24dp" />
+
+            <phelat.TextView.Plus
+                app:font="fonts/AgencyFBBold.ttf"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/back"
+                android:textSize="20sp" />
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>

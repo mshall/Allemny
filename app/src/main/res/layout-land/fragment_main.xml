@@ -1,0 +1,199 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.fragments.MainFragment">
+
+    <!--<RelativeLayout
+        android:id="@+id/separator"
+        android:layout_width="match_parent"
+        android:layout_height="3dp"
+        android:background="@color/white" />-->
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"
+        android:background="@color/colorPrimary">
+
+
+        <com.tomer.fadingtextview.FadingTextView
+            android:id="@+id/fadingTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textColor="@color/white"
+            app:texts="@array/welcome_words"
+            app:timeout="2500" />
+    </RelativeLayout>
+
+    <TableLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true">
+
+        <TableRow>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvFragmentMainAddNewPlan"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/new_plan" />
+
+                    <phelat.TextView.Plus
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="@string/add_new_plan"
+                        android:textSize="20sp"
+                        app:font="fonts/AgencyFBBold.ttf" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+        </TableRow>
+
+        <TableRow>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvFragmentMainMyPlans"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/my_plans" />
+
+                    <phelat.TextView.Plus
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="@string/view_my_plans"
+                        android:textSize="20sp"
+                        app:font="fonts/AgencyFBBold.ttf" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+        </TableRow>
+
+        <TableRow>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvFragmentMainUpdateMyWeight"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/goal_update" />
+
+                    <phelat.TextView.Plus
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="@string/update_my_weight"
+                        android:textSize="20sp"
+                        app:font="fonts/AgencyFBBold.ttf" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+        </TableRow>
+
+        <TableRow>
+
+            <android.support.v7.widget.CardView
+                android:id="@+id/cvFragmentMainMyWeightProgress"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="6dp"
+                app:cardElevation="3dp"
+                app:cardUseCompatPadding="true">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:src="@drawable/goal_progress" />
+
+                    <ImageView
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_alignParentEnd="true"
+                        android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
+
+                    <phelat.TextView.Plus
+                        android:id="@+id/plus"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:gravity="center"
+                        android:text="@string/my_weight_progress"
+                        android:textSize="20sp"
+                        app:font="fonts/AgencyFBBold.ttf" />
+                </RelativeLayout>
+
+
+            </android.support.v7.widget.CardView>
+        </TableRow>
+    </TableLayout>
+</RelativeLayout>
