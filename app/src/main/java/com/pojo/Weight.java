@@ -5,7 +5,7 @@ package com.pojo;
  */
 
 public class Weight {
-
+    int weightId;
     private byte[] userImage;
     private String date, email;
     private double weight;
@@ -51,5 +51,13 @@ public class Weight {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getWeightId() {
+        return weightId;
+    }
+
+    public void setWeightId(int weightId) {
+        this.weightId = weightId;
     }
 }

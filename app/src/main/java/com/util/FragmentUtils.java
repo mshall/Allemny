@@ -32,6 +32,17 @@ public class FragmentUtils {
     }
 
     //--------------------------------------------------------
+    // Navigate from the current fragment to another one
+    //--------------------------------------------------------
+    public void replaceFragment(int container, Fragment fragment, String fragmentTag) {
+//        if (addToBackStack) {
+//            mFragmentTransaction.addToBackStack(fragmentTag).add(R.id.content_home, fragment).commit();
+//        } else {
+        mFragmentTransaction.replace(container, fragment, fragmentTag).commit();
+//        }
+    }
+
+    //--------------------------------------------------------
     // Remove the current fragment from the backstack
     //--------------------------------------------------------
     public void popFragmentFromBackStack(String tag) {

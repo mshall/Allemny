@@ -191,7 +191,7 @@ public class MyPlansFragment extends Fragment {
                 public boolean onLongClick(View v) {
 
                     new AlertDialog.Builder(getContext())
-                            .setTitle(getString(R.string.error))
+                            .setTitle(getString(R.string.warning))
                             .setMessage(getString(R.string.delete_this_record))
                             .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                                 public void onClick(DialogInterface dialog, int which) {

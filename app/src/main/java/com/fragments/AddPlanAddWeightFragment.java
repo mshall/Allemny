@@ -4,14 +4,11 @@ package com.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.allemny.R;
 import com.anton46.stepsview.StepsView;
@@ -69,7 +66,7 @@ public class AddPlanAddWeightFragment extends Fragment implements View.OnClickLi
                 .setLabelColorIndicator(getContext().getResources().getColor(R.color.teal_background))
                 .setCompletedPosition(1)
                 .drawView();
-        TextWatcher weightTextWatcher = new TextWatcher() {
+        /*TextWatcher weightTextWatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -94,7 +91,7 @@ public class AddPlanAddWeightFragment extends Fragment implements View.OnClickLi
 
             }
         };
-        etWeight.addTextChangedListener(weightTextWatcher);
+        etWeight.addTextChangedListener(weightTextWatcher);*/
     }
 
     @Override

@@ -12,8 +12,6 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -102,7 +100,7 @@ public class UpdateMyWeightFragment extends Fragment implements View.OnClickList
         ivUserImage.setOnClickListener(this);
         ivEditImage.setOnClickListener(this);
         bUpdateMyWeight.setOnClickListener(this);
-        TextWatcher weightTextWatcher = new TextWatcher() {
+        /*TextWatcher weightTextWatcher = new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
@@ -127,7 +125,7 @@ public class UpdateMyWeightFragment extends Fragment implements View.OnClickList
 
             }
         };
-        etMyWeight.addTextChangedListener(weightTextWatcher);
+        etMyWeight.addTextChangedListener(weightTextWatcher);*/
 
     }
 

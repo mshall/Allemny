@@ -71,7 +71,7 @@ public class WeightDAO {
         c = database.rawQuery(query, null);
         while (c.moveToNext()) {
             Weight weight = new Weight();
-
+            weight.setWeightId(c.getInt(c.getColumnIndex(Constants.WEIGHT_ID)));
             weight.setWeight(c.getDouble(c.getColumnIndex(Constants.WEIGHT)));
             weight.setDate(c.getString(c.getColumnIndex(Constants.DATE)));
             weight.setUserImage(c.getBlob(c.getColumnIndex(Constants.USER_IMAGE)));
@@ -86,6 +86,13 @@ public class WeightDAO {
     //----------------------------------------------------------------
     public void clearUserWeightsHistory() {
         database.delete(Constants.WEIGHT_TABLE, null, null);
+    }
+
+    //----------------------------------------------------------------
+    //  Delete specific history
+    //----------------------------------------------------------------
+    public boolean deleteSpecificWeight(int weightId) {
+        return database.delete(Constants.WEIGHT_TABLE, Constants.WEIGHT_ID + "=" + weightId, null) > 0;
     }
 
 }
