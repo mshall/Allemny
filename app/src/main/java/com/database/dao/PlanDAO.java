@@ -82,6 +82,14 @@ public class PlanDAO {
         return planNumber;
     }
 
+
+    //----------------------------------------------------------------
+    //  Delete specific plan
+    //----------------------------------------------------------------
+    public boolean deletePlan(int planNumber) {
+        return database.delete(Constants.PLANS_TABLE, Constants.PLAN_NUMBER + "=" + planNumber, null) > 0;
+    }
+
     //----------------------------------------------------------------
     //  Delete all plans
     //----------------------------------------------------------------

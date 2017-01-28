@@ -1,8 +1,10 @@
 package com.fragments;
 
+import android.content.DialogInterface;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -19,6 +21,7 @@ import com.database.dao.MealDAO;
 import com.database.dao.PlanDAO;
 import com.pojo.Meal;
 import com.pojo.Plan;
+import com.util.FragmentUtils;
 import com.util.SharedPreferencesUtils;
 
 import java.util.ArrayList;
@@ -95,12 +98,14 @@ public class MyPlansFragment extends Fragment {
         String title;
         List<Meal> list;
         boolean expanded = false;
+        int planNumber;
 
         public ExpandablePlansSection(String title, List<Meal> list) {
             super(R.layout.section_header, R.layout.section_item);
 
             this.title = title;
             this.list = list;
+            this.planNumber = list.get(0).getPlanNumber();
         }
 
         @Override
@@ -118,7 +123,7 @@ public class MyPlansFragment extends Fragment {
             final ItemViewHolder itemHolder = (ItemViewHolder) holder;
             final Meal meal = list.get(position);
 
-            itemHolder.tvMealNumber.setText((position+1) + "");
+            itemHolder.tvMealNumber.setText((position + 1) + "");
             itemHolder.tvProtein.setText(meal.getProteinFoodName());
             itemHolder.tvCarb.setText(meal.getCarbFoodName());
             itemHolder.tvFats.setText(meal.getFatFoodName());
@@ -127,13 +132,35 @@ public class MyPlansFragment extends Fragment {
             itemHolder.tvProteinGrams.setText(meal.getProteinGrams() + " g");
             itemHolder.tvCarbGrams.setText(meal.getCarbGrams() + " g");
             itemHolder.tvFatsGrams.setText(meal.getFatGrams() + " g");
-            itemHolder.tvFibersGrams.setText(meal.getFiberGrams()+" g");
+            itemHolder.tvFibersGrams.setText(meal.getFiberGrams() + " g");
             //-----
             itemHolder.rootView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     ///Toast.makeText(getContext(), String.format("Clicked on position #%s of Section %s", sectionAdapter.getSectionPosition(itemHolder.getAdapterPosition()), title), Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getContext(), "Protein: "+meal.getProteinFoodName()+" | "+meal.getProteinGrams()+" g", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Protein: " + meal.getProteinFoodName() + " | " + meal.getProteinGrams() + " g", Toast.LENGTH_SHORT).show();
+                }
+            });
+            itemHolder.rootView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.error))
+                            .setMessage(getString(R.string.delete_this_record))
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // continue with delete
+                                    planDAO.deletePlan(meal.getPlanNumber());
+                                    mealDAO.deleteSpecificMeals(meal.getPlanNumber());
+                                    new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
+                                }
+                            })
+                            .setNegativeButton(R.string.cancel, null)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+
+                    return false;
                 }
             });
         }
@@ -148,7 +175,7 @@ public class MyPlansFragment extends Fragment {
             final HeaderViewHolder headerHolder = (HeaderViewHolder) holder;
 
             headerHolder.tvTitle.setText(title);
-
+            headerHolder.tvSectionHeaderPlanNumber.setText(planNumber + "");
             headerHolder.rootView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -159,6 +186,29 @@ public class MyPlansFragment extends Fragment {
                     sectionAdapter.notifyDataSetChanged();
                 }
             });
+            headerHolder.rootView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+
+                    new AlertDialog.Builder(getContext())
+                            .setTitle(getString(R.string.error))
+                            .setMessage(getString(R.string.delete_this_record))
+                            .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
+                                public void onClick(DialogInterface dialog, int which) {
+                                    // continue with delete
+//                                    Toast.makeText(getContext(),"Plan number: "+planNumber,Toast.LENGTH_LONG ).show();
+                                    planDAO.deletePlan(planNumber);
+                                    mealDAO.deleteSpecificMeals(planNumber);
+                                    new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
+                                }
+                            })
+                            .setNegativeButton(R.string.cancel, null)
+                            .setIcon(android.R.drawable.ic_dialog_alert)
+                            .show();
+
+                    return false;
+                }
+            });
         }
     }
 
@@ -167,6 +217,8 @@ public class MyPlansFragment extends Fragment {
         final View rootView;
         @BindView(R.id.tvTitle)
         TextView tvTitle;
+        @BindView(R.id.tvSectionHeaderPlanNumber)
+        TextView tvSectionHeaderPlanNumber;
         @BindView(R.id.imgArrow)
         ImageView imgArrow;
 

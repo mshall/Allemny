@@ -18,6 +18,14 @@
         android:textStyle="bold"
         tools:text="Title test text" />
 
+    <TextView
+        android:id="@+id/tvSectionHeaderPlanNumber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="0"
+        android:visibility="gone"/>
+
     <ImageView
         android:id="@+id/imgArrow"
         android:layout_width="15dp"

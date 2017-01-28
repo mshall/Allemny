@@ -92,6 +92,13 @@ public class MealDAO {
         return meals;
     }
 
+    //----------------------------------------------------------------
+    //  Delete specific meal
+    //----------------------------------------------------------------
+    public boolean deleteSpecificMeals(int planNumber) {
+        return database.delete(Constants.MEALS_TABLE, Constants.PLAN_NUMBER + "=" + planNumber, null) > 0;
+    }
+
 
     //----------------------------------------------------------------
     //  Delete all meals
