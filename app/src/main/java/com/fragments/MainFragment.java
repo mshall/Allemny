@@ -23,7 +23,7 @@ import butterknife.OnClick;
  * A simple {@link Fragment} subclass.
  */
 public class MainFragment extends Fragment implements View.OnClickListener {
-    public static String tag = "MainFragment";
+    public static String TAG = "MainFragment";
     @BindView(R.id.cvFragmentMainAddNewPlan)
     CardView cvAddNewPlan;
     @BindView(R.id.cvFragmentMainMyPlans)

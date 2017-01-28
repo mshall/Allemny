@@ -4,11 +4,14 @@ package com.fragments;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.allemny.R;
 import com.anton46.stepsview.StepsView;
@@ -66,6 +69,32 @@ public class AddPlanAddWeightFragment extends Fragment implements View.OnClickLi
                 .setLabelColorIndicator(getContext().getResources().getColor(R.color.teal_background))
                 .setCompletedPosition(1)
                 .drawView();
+        TextWatcher weightTextWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (etWeight.getText().length() > 0) {
+                    double num = Double.parseDouble(etWeight.getText().toString());
+                    if (num >= 30 && num <= 400) {
+                        //save the number
+
+                    } else {
+                        Toast.makeText(getContext(), getString(R.string.enter_valid_weight), Toast.LENGTH_LONG).show();
+                        etWeight.setText("");
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        };
+        etWeight.addTextChangedListener(weightTextWatcher);
     }
 
     @Override

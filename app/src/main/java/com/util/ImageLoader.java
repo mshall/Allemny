@@ -62,6 +62,10 @@ public class ImageLoader {
         Picasso.with(context).load(url).fit().transform(new CircleTransform()).error(place_holder_image).into(target);
     }
 
+    public static void loadImageFromURLWithNoTransformation(Context context, String url, final ImageView target, final int place_holder_image) {
+        Picasso.with(context).load(url).fit().error(place_holder_image).into(target);
+    }
+
     public static void loadImageFromURL(String url, Picasso p, final ImageView target) {
 
         p.load((url))
@@ -171,7 +175,7 @@ public class ImageLoader {
         }
         Uri uri = ImageUtils.getImageUri(context, bm);
         Log.e("TEST IMG URI", "-> " + uri.toString());
-        ImageLoader.loadImageFromURL(context, uri.toString(), ivUserImage, placeHolderImage);
+        ImageLoader.loadImageFromURLWithNoTransformation(context, uri.toString(), ivUserImage, placeHolderImage);
     }
 
     //-----------------------------------------------------------
@@ -200,7 +204,7 @@ public class ImageLoader {
 
         Uri uri = ImageUtils.getImageUri(context, thumbnail);
         Log.e("TEST IMG URI", "-> " + uri.toString());
-        ImageLoader.loadImageFromURL(context, uri.toString(), ivUserImage, placeHolderImage);
+        ImageLoader.loadImageFromURLWithNoTransformation(context, uri.toString(), ivUserImage, placeHolderImage);
     }
 
     //-----------------------------------------------------------

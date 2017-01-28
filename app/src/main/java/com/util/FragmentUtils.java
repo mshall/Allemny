@@ -38,4 +38,15 @@ public class FragmentUtils {
         FragmentManager fm = activity.getSupportFragmentManager();
         fm.popBackStack(tag, FragmentManager.POP_BACK_STACK_INCLUSIVE);
     }
+
+    //--------------------------------------------------------
+    // Get fragment back from the backstack
+    //--------------------------------------------------------
+    public Fragment getFragmentFromBackStack(String tag) {
+        FragmentManager fm = activity.getSupportFragmentManager();
+        Fragment fragment = fm.findFragmentByTag(tag);
+        return fragment;
+    }
+
+
 }

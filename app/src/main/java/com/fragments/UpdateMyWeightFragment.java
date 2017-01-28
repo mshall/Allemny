@@ -12,6 +12,8 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AlertDialog;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -100,6 +102,32 @@ public class UpdateMyWeightFragment extends Fragment implements View.OnClickList
         ivUserImage.setOnClickListener(this);
         ivEditImage.setOnClickListener(this);
         bUpdateMyWeight.setOnClickListener(this);
+        TextWatcher weightTextWatcher = new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                if (etMyWeight.getText().length() > 0) {
+                    double num = Double.parseDouble(etMyWeight.getText().toString());
+                    if (num >= 30 && num <= 400) {
+                        //save the number
+
+                    } else {
+                        Toast.makeText(getContext(), getString(R.string.enter_valid_weight), Toast.LENGTH_LONG).show();
+                        etMyWeight.setText("");
+                    }
+                }
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+
+            }
+        };
+        etMyWeight.addTextChangedListener(weightTextWatcher);
 
     }
 

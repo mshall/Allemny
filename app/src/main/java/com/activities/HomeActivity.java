@@ -2,6 +2,7 @@ package com.activities;
 
 import android.os.Bundle;
 import android.support.design.widget.NavigationView;
+import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.GravityCompat;
@@ -96,16 +97,27 @@ public class HomeActivity extends AppCompatActivity
         // Handle navigation view item clicks here.
         int id = item.getItemId();
         Bundle bundle = new Bundle();
-        if (id == R.id.nav_add_nutrition_plan) {
-            new FragmentUtils(this).navigateToFragment(R.id.content_home, new AddPlanSelectGenderFragment(), AddPlanSelectGenderFragment.TAG);
+        FragmentUtils fragmentUtils = new FragmentUtils(this);
+        if (id == R.id.nav_home) {
+            Fragment fragment = fragmentUtils.getFragmentFromBackStack(MainFragment.TAG);
+            if (fragment == null) {
+                fragmentUtils.navigateToFragment(R.id.content_home, new MainFragment(), MainFragment.TAG);
+            } else {
+                if (fragment instanceof MainFragment) {
+                    fragmentUtils.navigateToFragment(R.id.content_home, (MainFragment) fragment, MainFragment.TAG);
+                }
+            }
+
+        } else if (id == R.id.nav_add_nutrition_plan) {
+            fragmentUtils.navigateToFragment(R.id.content_home, new AddPlanSelectGenderFragment(), AddPlanSelectGenderFragment.TAG);
         } else if (id == R.id.nav_view_my_nutrition_plans) {
-            new FragmentUtils(this).navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
+            fragmentUtils.navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
 
         } else if (id == R.id.nav_update_my_weight) {
-            new FragmentUtils(this).navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), UpdateMyWeightFragment.TAG);
+            fragmentUtils.navigateToFragment(R.id.content_home, new UpdateMyWeightFragment(), UpdateMyWeightFragment.TAG);
 
         } else if (id == R.id.nav_my_weight_progress) {
-            new FragmentUtils(this).navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), MyWeightProgressFragment.TAG);
+            fragmentUtils.navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), MyWeightProgressFragment.TAG);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

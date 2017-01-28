@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,11 @@ import android.widget.LinearLayout;
 
 import com.allemny.R;
 import com.anton46.stepsview.StepsView;
+import com.anton46.stepsview.StepsViewIndicator;
 import com.constants.Constants;
+import com.crystal.crystalrangeseekbar.interfaces.OnSeekbarChangeListener;
+import com.crystal.crystalrangeseekbar.interfaces.OnSeekbarFinalValueListener;
+import com.crystal.crystalrangeseekbar.widgets.BubbleThumbSeekbar;
 import com.database.dao.MealDAO;
 import com.database.dao.PlanDAO;
 import com.util.FragmentUtils;
@@ -20,10 +25,10 @@ import com.util.MealUtils;
 import com.util.SharedPreferencesUtils;
 import com.util.Utils;
 
-import org.adw.library.widgets.discreteseekbar.DiscreteSeekBar;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static com.allemny.R.array.steps;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -38,14 +43,18 @@ public class AddPlanSelectNumberOfMealsFragment extends Fragment implements View
     LinearLayout llNavigationNext;
     @BindView(R.id.llNavigationBack)
     LinearLayout llNavigationBack;
-    @BindView(R.id.sbNumberOfMeals)
-    DiscreteSeekBar sbNumberOfMeals;
+    @BindView(R.id.btsbNumberOfMeals)
+    BubbleThumbSeekbar btsbNumberOfMeals;
+
+    @BindView(R.id.tvFragmentAddPlanSelectNumberOfMeals)
+    phelat.TextView.Plus tvNumberOfMeals;
     View view;
     int gender, target, numberOfMeals = 3;
     int bodyType;
     PlanDAO planDAO;
     MealDAO mealDAO;
     double weight, caloriesNumber, carbGrams, proteinGrams, fatGrams, carbGramsPerMeal, proteinGramsPerMeal, fatGramsPerMeal;
+    private StepsViewIndicator mStepsViewIndicator;
 
     public AddPlanSelectNumberOfMealsFragment() {
         // Required empty public constructor
@@ -73,12 +82,27 @@ public class AddPlanSelectNumberOfMealsFragment extends Fragment implements View
     private void initializeViews() {
         llNavigationBack.setOnClickListener(this);
         llNavigationNext.setOnClickListener(this);
-        stepsView.setLabels(getResources().getStringArray(R.array.steps))
+        stepsView.setLabels(getResources().getStringArray(steps))
                 .setBarColorIndicator(getContext().getResources().getColor(R.color.material_blue_grey_800))
                 .setProgressColorIndicator(getContext().getResources().getColor(R.color.primary))
                 .setLabelColorIndicator(getContext().getResources().getColor(R.color.teal_background))
                 .setCompletedPosition(4)
                 .drawView();
+        btsbNumberOfMeals.setOnSeekbarChangeListener(new OnSeekbarChangeListener() {
+            @Override
+            public void valueChanged(Number value) {
+                tvNumberOfMeals.setText(value + "");
+                numberOfMeals = value.intValue();
+            }
+        });
+
+        btsbNumberOfMeals.setOnSeekbarFinalValueListener(new OnSeekbarFinalValueListener() {
+            @Override
+            public void finalValue(Number value) {
+                Log.d("CRS=>", String.valueOf(value));
+                numberOfMeals = value.intValue();
+            }
+        });
     }
 
     private void processBundleData(Bundle bundle) {
@@ -92,7 +116,6 @@ public class AddPlanSelectNumberOfMealsFragment extends Fragment implements View
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.llNavigationNext:
-                numberOfMeals = sbNumberOfMeals.getProgress();
                 generateNutritionPlan();
                 MyPlansFragment fragment = new MyPlansFragment();
                 //fragment.setArguments(fillBundleWithData());

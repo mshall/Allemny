@@ -86,7 +86,7 @@
                 <ImageView
                     android:id="@+id/ivFragmentAddPlanSelectGenderMale"
                     android:layout_width="match_parent"
-                    android:layout_height="280dp"
+                    android:layout_height="285dp"
                     android:layout_weight=".5"
                     android:src="@drawable/male" />
             </LinearLayout>

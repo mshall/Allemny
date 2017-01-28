@@ -44,12 +44,18 @@
                 android:orientation="horizontal"
                 android:padding="5dp">
 
-                <org.adw.library.widgets.discreteseekbar.DiscreteSeekBar
-                    android:id="@+id/sbNumberOfMeals"
+                <com.crystal.crystalrangeseekbar.widgets.BubbleThumbSeekbar
+                    android:id="@+id/btsbNumberOfMeals"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    app:dsb_max="6"
-                    app:dsb_min="3" />
+                    app:bar_color="@color/colorAccent"
+                    app:bar_highlight_color="@color/colorPrimaryDark"
+                    app:corner_radius="10"
+                    app:data_type="_integer"
+                    app:left_thumb_color="@color/colorPrimary"
+                    app:left_thumb_color_pressed="@color/teal_background"
+                    app:max_value="6"
+                    app:min_value="3" />
             </LinearLayout>
         </TableRow>
 

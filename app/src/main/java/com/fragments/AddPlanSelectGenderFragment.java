@@ -35,7 +35,7 @@ public class AddPlanSelectGenderFragment extends Fragment implements View.OnClic
     StepsView stepsView;
     View view;
 
-    boolean isGenderMaleSelected;
+    boolean isGenderMaleSelected = false;
 
     public AddPlanSelectGenderFragment() {
         // Required empty public constructor
@@ -56,6 +56,9 @@ public class AddPlanSelectGenderFragment extends Fragment implements View.OnClic
     private void initializeViews() {
         ivFemale.setOnClickListener(this);
         ivMale.setOnClickListener(this);
+        Bitmap glowedFemaleBitmap = ImageUtils.addImageGlow(getContext(), R.drawable.female);
+        ImageLoader.setImageDrawable(getContext(), ivFemale, glowedFemaleBitmap);
+
         llNavigationNext.setOnClickListener(this);
         stepsView.setLabels(getResources().getStringArray(R.array.steps))
                 .setBarColorIndicator(getContext().getResources().getColor(R.color.material_blue_grey_800))

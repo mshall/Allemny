@@ -69,6 +69,7 @@ public class MyPlansFragment extends Fragment {
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.rvFragmentMyPlans);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
         recyclerView.setAdapter(sectionAdapter);
+
     }
 
 
@@ -93,7 +94,7 @@ public class MyPlansFragment extends Fragment {
 
         String title;
         List<Meal> list;
-        boolean expanded = true;
+        boolean expanded = false;
 
         public ExpandablePlansSection(String title, List<Meal> list) {
             super(R.layout.section_header, R.layout.section_item);
@@ -115,23 +116,24 @@ public class MyPlansFragment extends Fragment {
         @Override
         public void onBindItemViewHolder(RecyclerView.ViewHolder holder, int position) {
             final ItemViewHolder itemHolder = (ItemViewHolder) holder;
-            Meal meal = list.get(position);
+            final Meal meal = list.get(position);
 
-            itemHolder.tvMealNumber.setText(position + "");
+            itemHolder.tvMealNumber.setText((position+1) + "");
             itemHolder.tvProtein.setText(meal.getProteinFoodName());
             itemHolder.tvCarb.setText(meal.getCarbFoodName());
             itemHolder.tvFats.setText(meal.getFatFoodName());
             itemHolder.tvFibers.setText(meal.getFiberFoodName());
             //-----
-            itemHolder.tvProteinGrams.setText(meal.getProteinGrams() + "");
-            itemHolder.tvCarbGrams.setText(meal.getCarbGrams() + "");
-            itemHolder.tvFatsGrams.setText(meal.getFatGrams() + "");
-            itemHolder.tvFibersGrams.setText(meal.getFiberGrams()+"");
+            itemHolder.tvProteinGrams.setText(meal.getProteinGrams() + " g");
+            itemHolder.tvCarbGrams.setText(meal.getCarbGrams() + " g");
+            itemHolder.tvFatsGrams.setText(meal.getFatGrams() + " g");
+            itemHolder.tvFibersGrams.setText(meal.getFiberGrams()+" g");
             //-----
             itemHolder.rootView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(getContext(), String.format("Clicked on position #%s of Section %s", sectionAdapter.getSectionPosition(itemHolder.getAdapterPosition()), title), Toast.LENGTH_SHORT).show();
+                    ///Toast.makeText(getContext(), String.format("Clicked on position #%s of Section %s", sectionAdapter.getSectionPosition(itemHolder.getAdapterPosition()), title), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getContext(), "Protein: "+meal.getProteinFoodName()+" | "+meal.getProteinGrams()+" g", Toast.LENGTH_SHORT).show();
                 }
             });
         }

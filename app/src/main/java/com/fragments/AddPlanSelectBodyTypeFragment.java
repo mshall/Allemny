@@ -72,6 +72,15 @@ public class AddPlanSelectBodyTypeFragment extends Fragment implements View.OnCl
                 .setLabelColorIndicator(getContext().getResources().getColor(R.color.teal_background))
                 .setCompletedPosition(3)
                 .drawView();
+
+        if (gender == Constants.GENDER_FEMALE) {
+            Bitmap femaleEctomerph = ImageUtils.addImageGlow(getContext(), R.drawable.female_ectomorph);
+            Bitmap femaleMesomerph = ImageUtils.addImageGlow(getContext(), R.drawable.female_mesomorph);
+            Bitmap femaleEndomerph = ImageUtils.addImageGlow(getContext(), R.drawable.female_endomorph);
+            ImageLoader.setImageDrawable(getContext(), ivEctoBodyType, femaleEctomerph);
+            ImageLoader.setImageDrawable(getContext(), ivEndoBodyType, femaleEndomerph);
+            ImageLoader.setImageDrawable(getContext(), ivMesoBodyType, femaleMesomerph);
+        }
     }
 
     private void processBundleData(Bundle bundle) {
