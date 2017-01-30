@@ -41,6 +41,9 @@ public class MealDAO {
         contentValues.put(Constants.CARB_GRAMS, meal.getCarbGrams());
         contentValues.put(Constants.FAT_GRAMS, meal.getFatGrams());
         contentValues.put(Constants.FIBER_GRAMS, meal.getFiberGrams());
+        contentValues.put(Constants.ACTUAL_PROTEIN_GRAMS, meal.getActualProteinGrams());
+        contentValues.put(Constants.ACTUAL_CARBS_GRAMS, meal.getActualCarbsGrams());
+        contentValues.put(Constants.ACTUAL_FATS_GRAMS, meal.getActualFatsGrams());
         contentValues.put(Constants.PLAN_NUMBER, meal.getPlanNumber());
         database.insert(Constants.MEALS_TABLE, null, contentValues);
     }
@@ -60,6 +63,10 @@ public class MealDAO {
             contentValues.put(Constants.PROTEIN_GRAMS, meal.getProteinGrams());
             contentValues.put(Constants.CARB_GRAMS, meal.getCarbGrams());
             contentValues.put(Constants.FAT_GRAMS, meal.getFatGrams());
+            contentValues.put(Constants.FIBER_GRAMS, meal.getFiberGrams());
+            contentValues.put(Constants.ACTUAL_PROTEIN_GRAMS, meal.getActualProteinGrams());
+            contentValues.put(Constants.ACTUAL_CARBS_GRAMS, meal.getActualCarbsGrams());
+            contentValues.put(Constants.ACTUAL_FATS_GRAMS, meal.getActualFatsGrams());
             contentValues.put(Constants.PLAN_NUMBER, meal.getPlanNumber());
             database.insert(Constants.MEALS_TABLE, null, contentValues);
         }
@@ -78,18 +85,45 @@ public class MealDAO {
         c = database.rawQuery(query, null);
         while (c.moveToNext()) {
             Meal meal = new Meal();
+            meal.setMealId(c.getInt(c.getColumnIndex(Constants.MEAL_ID)));
             meal.setEmail(c.getString(c.getColumnIndex(Constants.EMAIL)));
             meal.setPlanNumber(c.getInt(c.getColumnIndex(Constants.PLAN_NUMBER)));
             meal.setProteinFoodName(c.getString(c.getColumnIndex(Constants.PROTEIN_FOOD_NAME)));
             meal.setCarbFoodName(c.getString(c.getColumnIndex(Constants.CARB_FOOD_NAME)));
             meal.setFatFoodName(c.getString(c.getColumnIndex(Constants.FAT_FOOD_NAME)));
             meal.setFiberFoodName(c.getString(c.getColumnIndex(Constants.FIBER_FOOD_NAME)));
-            meal.setProteinGrams(c.getInt(c.getColumnIndex(Constants.PROTEIN_GRAMS)));
-            meal.setCarbGrams(c.getInt(c.getColumnIndex(Constants.CARB_GRAMS)));
-            meal.setFatGrams(c.getInt(c.getColumnIndex(Constants.FAT_GRAMS)));
+            meal.setProteinGrams(c.getDouble(c.getColumnIndex(Constants.PROTEIN_GRAMS)));
+            meal.setCarbGrams(c.getDouble(c.getColumnIndex(Constants.CARB_GRAMS)));
+            meal.setFatGrams(c.getDouble(c.getColumnIndex(Constants.FAT_GRAMS)));
+            meal.setFiberGrams(c.getDouble(c.getColumnIndex(Constants.FIBER_GRAMS)));
+            meal.setActualProteinGrams(c.getDouble(c.getColumnIndex(Constants.ACTUAL_PROTEIN_GRAMS)));
+            meal.setActualCarbsGrams(c.getDouble(c.getColumnIndex(Constants.ACTUAL_CARBS_GRAMS)));
+            meal.setActualFatsGrams(c.getDouble(c.getColumnIndex(Constants.ACTUAL_FATS_GRAMS)));
             meals.add(meal);
         }
         return meals;
+    }
+
+
+    //----------------------------------------------------------------
+    //  Create new plan
+    //----------------------------------------------------------------
+    public void updateMeal(Meal meal) {
+        ContentValues contentValues = new ContentValues();
+        contentValues.put(Constants.EMAIL, meal.getEmail());
+        contentValues.put(Constants.PROTEIN_FOOD_NAME, meal.getProteinFoodName());
+        contentValues.put(Constants.CARB_FOOD_NAME, meal.getCarbFoodName());
+        contentValues.put(Constants.FAT_FOOD_NAME, meal.getFatFoodName());
+        contentValues.put(Constants.FIBER_FOOD_NAME, meal.getFiberFoodName());
+        contentValues.put(Constants.PROTEIN_GRAMS, meal.getProteinGrams());
+        contentValues.put(Constants.CARB_GRAMS, meal.getCarbGrams());
+        contentValues.put(Constants.FAT_GRAMS, meal.getFatGrams());
+        contentValues.put(Constants.FIBER_GRAMS, meal.getFiberGrams());
+        contentValues.put(Constants.ACTUAL_PROTEIN_GRAMS, meal.getActualProteinGrams());
+        contentValues.put(Constants.ACTUAL_CARBS_GRAMS, meal.getActualCarbsGrams());
+        contentValues.put(Constants.ACTUAL_FATS_GRAMS, meal.getActualFatsGrams());
+        contentValues.put(Constants.PLAN_NUMBER, meal.getPlanNumber());
+        database.update(Constants.MEALS_TABLE, contentValues, Constants.MEAL_ID + "=" + meal.getMealId(), null);
     }
 
     //----------------------------------------------------------------

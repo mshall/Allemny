@@ -68,6 +68,10 @@ public class MealUtils {
                 meal.setFatGrams(foodFatGrams);
                 meal.setFiberGrams(0);
 
+                meal.setActualProteinGrams(proteinGramsPerMeal);
+                meal.setActualCarbsGrams(carbGramsPerMeal);
+                meal.setActualFatsGrams(fatGramsPerMeal);
+
                 mealDAO.addMeal(meal);
 
             } else if (i == numberOfMeals - 1) {//Don't add carbs to this last meal
@@ -105,6 +109,11 @@ public class MealUtils {
                 meal.setFatGrams(foodFatGrams);
                 meal.setFiberGrams(foodFiberGrams);
 
+
+                meal.setActualProteinGrams(proteinGramsPerMeal);
+                meal.setActualCarbsGrams(0);//As this is the last meal
+                meal.setActualFatsGrams(fatGramsPerMeal);
+
                 mealDAO.addMeal(meal);
 
             } else {//2nd : pre-last meal
@@ -137,6 +146,11 @@ public class MealUtils {
                 meal.setCarbGrams(foodCarbGrams);
                 meal.setFatGrams(foodFatGrams);
                 meal.setFiberGrams(foodFiberGrams);
+
+
+                meal.setActualProteinGrams(proteinGramsPerMeal);
+                meal.setActualCarbsGrams(carbGramsPerMeal);
+                meal.setActualFatsGrams(fatGramsPerMeal);
 
                 mealDAO.addMeal(meal);
             }

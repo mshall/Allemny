@@ -5,8 +5,8 @@ package com.pojo;
  */
 
 public class Meal {
-    double proteinGrams, carbGrams, fatGrams, fiberGrams;
-    int planNumber;
+    double proteinGrams, carbGrams, fatGrams, fiberGrams, actualProteinGrams, actualCarbsGrams, actualFatsGrams;
+    int planNumber, mealId;
     String email, proteinFoodName, carbFoodName, fatFoodName, fiberFoodName;
 
     public Meal() {
@@ -103,5 +103,37 @@ public class Meal {
 
     public void setFiberFoodName(String fiberFoodName) {
         this.fiberFoodName = fiberFoodName;
+    }
+
+    public double getActualProteinGrams() {
+        return actualProteinGrams;
+    }
+
+    public void setActualProteinGrams(double actualProteinGrams) {
+        this.actualProteinGrams = actualProteinGrams;
+    }
+
+    public double getActualCarbsGrams() {
+        return actualCarbsGrams;
+    }
+
+    public void setActualCarbsGrams(double actualCarbsGrams) {
+        this.actualCarbsGrams = actualCarbsGrams;
+    }
+
+    public double getActualFatsGrams() {
+        return actualFatsGrams;
+    }
+
+    public void setActualFatsGrams(double actualFatsGrams) {
+        this.actualFatsGrams = actualFatsGrams;
+    }
+
+    public int getMealId() {
+        return mealId;
+    }
+
+    public void setMealId(int mealId) {
+        this.mealId = mealId;
     }
 }

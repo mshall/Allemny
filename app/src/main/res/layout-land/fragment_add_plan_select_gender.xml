@@ -1,8 +1,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context="com.fragments.AddPlanSelectGenderFragment">
 
 
@@ -24,12 +24,12 @@
             android:orientation="horizontal">
 
             <phelat.TextView.Plus
-                app:font="fonts/AgencyFBBold.ttf"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:gravity="center"
                 android:text="@string/next"
-                android:textSize="20sp" />
+                android:textSize="20sp"
+                app:font="fonts/slimjim.ttf" />
 
             <ImageView
                 android:layout_width="40dp"
@@ -43,8 +43,9 @@
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true">
+        android:layout_above="@+id/rlNavigation"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true">
 
         <TableRow android:layout_marginTop="0dp">
 
@@ -52,6 +53,7 @@
                 android:id="@+id/stepsView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="-30dp"
                 android:layout_weight="1" />
         </TableRow>
 
@@ -60,12 +62,12 @@
             <phelat.TextView.Plus
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="-4dp"
                 android:layout_weight="1"
                 android:gravity="center"
-                app:font="fonts/AgencyFBBold.ttf"
                 android:text="@string/select_gender"
-                android:textSize="30sp" />
+                android:textSize="30sp"
+                app:font="fonts/slimjim.ttf" />
         </TableRow>
 
         <TableRow android:layout_marginTop="20dp">
@@ -79,14 +81,14 @@
                 <ImageView
                     android:id="@+id/ivFragmentAddPlanSelectGenderFemale"
                     android:layout_width="match_parent"
-                    android:layout_height="280dp"
+                    android:layout_height="150dp"
                     android:layout_weight=".5"
                     android:src="@drawable/female" />
 
                 <ImageView
                     android:id="@+id/ivFragmentAddPlanSelectGenderMale"
                     android:layout_width="match_parent"
-                    android:layout_height="280dp"
+                    android:layout_height="150dp"
                     android:layout_weight=".5"
                     android:src="@drawable/male" />
             </LinearLayout>

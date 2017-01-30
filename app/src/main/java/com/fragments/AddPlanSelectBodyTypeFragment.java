@@ -74,12 +74,14 @@ public class AddPlanSelectBodyTypeFragment extends Fragment implements View.OnCl
                 .drawView();
 
         if (gender == Constants.GENDER_FEMALE) {
-            Bitmap femaleEctomerph = ImageUtils.addImageGlow(getContext(), R.drawable.female_ectomorph);
-            Bitmap femaleMesomerph = ImageUtils.addImageGlow(getContext(), R.drawable.female_mesomorph);
+//            Bitmap femaleEctomerph = ImageUtils.addImageGlow(getContext(), R.drawable.female_ectomorph);
+//            Bitmap femaleMesomerph = ImageUtils.addImageGlow(getContext(), R.drawable.female_mesomorph);
+//            ImageLoader.setImageDrawable(getContext(), ivEctoBodyType, femaleEctomerph);
+//            ImageLoader.setImageDrawable(getContext(), ivMesoBodyType, femaleMesomerph);
+            ivEctoBodyType.setImageResource(R.drawable.female_ectomorph);
+            ivMesoBodyType.setImageResource(R.drawable.female_mesomorph);
             Bitmap femaleEndomerph = ImageUtils.addImageGlow(getContext(), R.drawable.female_endomorph);
-            ImageLoader.setImageDrawable(getContext(), ivEctoBodyType, femaleEctomerph);
             ImageLoader.setImageDrawable(getContext(), ivEndoBodyType, femaleEndomerph);
-            ImageLoader.setImageDrawable(getContext(), ivMesoBodyType, femaleMesomerph);
         }
     }
 

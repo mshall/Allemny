@@ -13,17 +13,20 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.allemny.R;
 import com.constants.Constants;
 import com.database.dao.MealDAO;
 import com.database.dao.PlanDAO;
+import com.dialogs.FlickableUpdateMealDialog;
 import com.pojo.Meal;
 import com.pojo.Plan;
+import com.tkurimura.flickabledialog.FlickableDialog;
 import com.util.FragmentUtils;
 import com.util.SharedPreferencesUtils;
 
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -75,6 +78,10 @@ public class MyPlansFragment extends Fragment {
 
     }
 
+
+    public void refreshFragment() {
+        new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
+    }
 
     @Override
     public void onResume() {
@@ -129,16 +136,41 @@ public class MyPlansFragment extends Fragment {
             itemHolder.tvFats.setText(meal.getFatFoodName());
             itemHolder.tvFibers.setText(meal.getFiberFoodName());
             //-----
-            itemHolder.tvProteinGrams.setText(meal.getProteinGrams() + " g");
-            itemHolder.tvCarbGrams.setText(meal.getCarbGrams() + " g");
-            itemHolder.tvFatsGrams.setText(meal.getFatGrams() + " g");
-            itemHolder.tvFibersGrams.setText(meal.getFiberGrams() + " g");
+            itemHolder.tvProteinGrams.setText((int) meal.getProteinGrams() + " gr");
+            itemHolder.tvCarbGrams.setText((int) meal.getCarbGrams() + " gr");
+            itemHolder.tvFatsGrams.setText((int) meal.getFatGrams() + " gr");
+            itemHolder.tvFibersGrams.setText((int) meal.getFiberGrams() + " gr");
             //-----
+            NumberFormat currencyFormattter = new DecimalFormat("#0.00");
+            /*String modifiedProteinGrams = currencyFormattter.format(meal.getActualProteinGrams()) + " gr";
+            String modifiedCarbsGrams = currencyFormattter.format(meal.getActualCarbsGrams()) + " gr";
+            String modifiedFatsGrams = currencyFormattter.format(meal.getActualFatsGrams()) + " gr";*/
+            String modifiedProteinGrams = (int) meal.getActualProteinGrams() + " gr";
+            String modifiedCarbsGrams = (int) meal.getActualCarbsGrams() + " gr";
+            String modifiedFatsGrams = (int) meal.getActualFatsGrams() + " gr";
+            itemHolder.tvActualProteinGrams.setText(modifiedProteinGrams);
+            itemHolder.tvActualFatsGrams.setText(modifiedFatsGrams);
+
+
+            if (position == 0) {//This is the first meal
+                itemHolder.tvActualFibersGrams.setText("0 gr");
+            } else {
+                itemHolder.tvActualFibersGrams.setText("100 gr");
+            }
+
+            if (position == list.size() - 1) {//This is the last meal
+                itemHolder.tvActualCarbsGrams.setText("0 gr");
+            } else {
+                itemHolder.tvActualCarbsGrams.setText((int) meal.getActualCarbsGrams() + " gr");
+            }
+            //-----
+
             itemHolder.rootView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     ///Toast.makeText(getContext(), String.format("Clicked on position #%s of Section %s", sectionAdapter.getSectionPosition(itemHolder.getAdapterPosition()), title), Toast.LENGTH_SHORT).show();
-                    Toast.makeText(getContext(), "Protein: " + meal.getProteinFoodName() + " | " + meal.getProteinGrams() + " g", Toast.LENGTH_SHORT).show();
+                    FlickableUpdateMealDialog updateMealDialog = FlickableUpdateMealDialog.newInstance(MyPlansFragment.this, meal);
+                    updateMealDialog.show(getChildFragmentManager(), FlickableDialog.class.getSimpleName());
                 }
             });
             itemHolder.rootView.setOnLongClickListener(new View.OnLongClickListener() {
@@ -255,6 +287,16 @@ public class MyPlansFragment extends Fragment {
         TextView tvFatsGrams;
         @BindView(R.id.tvFibersGrams)
         TextView tvFibersGrams;
+        //
+        @BindView(R.id.tvSectionItemActualCarbsGrams)
+        TextView tvActualCarbsGrams;
+        @BindView(R.id.tvSectionItemActualProteinGrams)
+        TextView tvActualProteinGrams;
+        @BindView(R.id.tvSectionItemActualFatsGrams)
+        TextView tvActualFatsGrams;
+        @BindView(R.id.tvSectionItemActualFibersGrams)
+        TextView tvActualFibersGrams;
+
 
         public ItemViewHolder(View view) {
             super(view);

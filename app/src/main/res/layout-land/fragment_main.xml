@@ -62,7 +62,7 @@
                         android:gravity="center"
                         android:text="@string/add_new_plan"
                         android:textSize="20sp"
-                        app:font="fonts/AgencyFBBold.ttf" />
+                        app:font="fonts/slimjim.ttf" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -102,7 +102,7 @@
                         android:gravity="center"
                         android:text="@string/view_my_plans"
                         android:textSize="20sp"
-                        app:font="fonts/AgencyFBBold.ttf" />
+                        app:font="fonts/slimjim.ttf" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -142,7 +142,7 @@
                         android:gravity="center"
                         android:text="@string/update_my_weight"
                         android:textSize="20sp"
-                        app:font="fonts/AgencyFBBold.ttf" />
+                        app:font="fonts/slimjim.ttf" />
 
                     <ImageView
                         android:layout_width="40dp"
@@ -189,7 +189,7 @@
                         android:gravity="center"
                         android:text="@string/my_weight_progress"
                         android:textSize="20sp"
-                        app:font="fonts/AgencyFBBold.ttf" />
+                        app:font="fonts/slimjim.ttf" />
                 </RelativeLayout>
 
 

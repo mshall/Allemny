@@ -53,6 +53,9 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 Constants.CARB_GRAMS + " Double," +
                 Constants.FAT_GRAMS + " Double," +
                 Constants.FIBER_GRAMS + " Double," +
+                Constants.ACTUAL_PROTEIN_GRAMS + " Double," +
+                Constants.ACTUAL_CARBS_GRAMS + " Double," +
+                Constants.ACTUAL_FATS_GRAMS + " Double," +
                 Constants.PLAN_NUMBER + " Int" + ")");
         //-------------- Create Plans table ---------------------------------------
         db.execSQL("Create table " + Constants.PLANS_TABLE + "(" + Constants.PLAN_NUMBER + " INTEGER PRIMARY KEY NOT NULL, " +
@@ -68,50 +71,50 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     //-------------------------------------------------------
     //This is a helper method for database browsing
     //-------------------------------------------------------
-    public ArrayList<Cursor> getData(String Query){
+    public ArrayList<Cursor> getData(String Query) {
         //get writable database
         SQLiteDatabase sqlDB = this.getWritableDatabase();
-        String[] columns = new String[] { "mesage" };
+        String[] columns = new String[]{"mesage"};
         //an array list of cursor to save two cursors one has results from the query
         //other cursor stores error message if any errors are triggered
         ArrayList<Cursor> alc = new ArrayList<Cursor>(2);
-        MatrixCursor Cursor2= new MatrixCursor(columns);
+        MatrixCursor Cursor2 = new MatrixCursor(columns);
         alc.add(null);
         alc.add(null);
 
 
-        try{
-            String maxQuery = Query ;
+        try {
+            String maxQuery = Query;
             //execute the query results will be save in Cursor c
             Cursor c = sqlDB.rawQuery(maxQuery, null);
 
 
             //add value to cursor2
-            Cursor2.addRow(new Object[] { "Success" });
+            Cursor2.addRow(new Object[]{"Success"});
 
-            alc.set(1,Cursor2);
+            alc.set(1, Cursor2);
             if (null != c && c.getCount() > 0) {
 
 
-                alc.set(0,c);
+                alc.set(0, c);
                 c.moveToFirst();
 
-                return alc ;
+                return alc;
             }
             return alc;
-        } catch(SQLException sqlEx){
+        } catch (SQLException sqlEx) {
             Log.d("printing exception", sqlEx.getMessage());
             //if any exceptions are triggered save the error message to cursor an return the arraylist
-            Cursor2.addRow(new Object[] { ""+sqlEx.getMessage() });
-            alc.set(1,Cursor2);
+            Cursor2.addRow(new Object[]{"" + sqlEx.getMessage()});
+            alc.set(1, Cursor2);
             return alc;
-        } catch(Exception ex){
+        } catch (Exception ex) {
 
             Log.d("printing exception", ex.getMessage());
 
             //if any exceptions are triggered save the error message to cursor an return the arraylist
-            Cursor2.addRow(new Object[] { ""+ex.getMessage() });
-            alc.set(1,Cursor2);
+            Cursor2.addRow(new Object[]{"" + ex.getMessage()});
+            alc.set(1, Cursor2);
             return alc;
         }
 

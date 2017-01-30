@@ -109,7 +109,7 @@
     <string name="select_body_type">Select your body type</string>
     <string name="meal_number">Meal #</string>
     <string name="protein">Protein</string>
-    <string name="carb">Carb</string>
+    <string name="carbs">Carbs</string>
     <string name="fats">Fats</string>
     <string name="fibers">Fibers</string>
     <string name="hash">#</string>
@@ -122,6 +122,9 @@
     <string name="view">View</string>
     <string name="warning">Warning</string>
     <string name="select_option">Select option</string>
+    <string name="update_meal">Update meal</string>
+    <string name="select_food_you_want_to_edit">Select food you want to edit</string>
+    <string name="record_has_been_updated">Record has been updated</string>
 
 
 </resources>

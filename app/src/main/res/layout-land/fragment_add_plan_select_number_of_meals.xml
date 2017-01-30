@@ -7,6 +7,7 @@
 
     <com.anton46.stepsview.StepsView xmlns:app="http://schemas.android.com/apk/res-auto"
         android:id="@+id/stepsView"
+        android:layout_marginTop="-30dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1" />
@@ -24,15 +25,16 @@
 
 
             <phelat.TextView.Plus
+
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="40dp"
-                android:layout_marginTop="10dp"
+                android:layout_marginTop="0dp"
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="@string/select_number_of_meals"
                 android:textSize="30sp"
-                app:font="fonts/AgencyFBBold.ttf" />
+                app:font="fonts/slimjim.ttf" />
         </TableRow>
 
         <TableRow android:layout_marginTop="30dp">
@@ -85,7 +87,7 @@
                 android:gravity="center"
                 android:text="@string/next"
                 android:textSize="20sp"
-                app:font="fonts/AgencyFBBold.ttf" />
+                app:font="fonts/slimjim.ttf" />
 
             <ImageView
                 android:layout_width="40dp"
@@ -113,7 +115,7 @@
                 android:gravity="center"
                 android:text="@string/back"
                 android:textSize="20sp"
-                app:font="fonts/AgencyFBBold.ttf" />
+                app:font="fonts/slimjim.ttf" />
         </LinearLayout>
 
     </RelativeLayout>

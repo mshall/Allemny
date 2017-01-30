@@ -9,12 +9,71 @@
         android:id="@+id/stepsView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="-30dp"
         android:layout_weight="1" />
+
+    <RelativeLayout
+        android:id="@+id/rlNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_weight="1"
+        android:background="@color/white">
+
+        <LinearLayout
+            android:id="@+id/llNavigationNext"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+            <phelat.TextView.Plus
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/next"
+                android:textSize="20sp"
+                app:font="fonts/slimjim.ttf" />
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llNavigationBack"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:orientation="horizontal">
+
+
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/ic_keyboard_arrow_left_teal_24dp" />
+
+            <phelat.TextView.Plus
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:text="@string/back"
+                android:textSize="20sp"
+                app:font="fonts/slimjim.ttf" />
+        </LinearLayout>
+
+    </RelativeLayout>
 
     <TableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/rlNavigation"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
         android:gravity="center">
 
         <TableRow android:layout_marginTop="10dp">
@@ -27,7 +86,7 @@
                 android:gravity="center"
                 android:text="@string/select_your_target"
                 android:textSize="30sp"
-                app:font="fonts/AgencyFBBold.ttf" />
+                app:font="fonts/slimjim.ttf" />
         </TableRow>
 
         <TableRow android:layout_marginTop="25dp">
@@ -79,60 +138,4 @@
             </net.soulwolf.widget.materialradio.MaterialRadioGroup>
         </TableRow>
     </TableLayout>
-
-    <RelativeLayout
-        android:id="@+id/rlNavigation"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentStart="true"
-        android:layout_weight="1"
-        android:background="@color/white">
-
-        <LinearLayout
-            android:id="@+id/llNavigationNext"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentEnd="true"
-            android:layout_centerVertical="true"
-            android:orientation="horizontal">
-
-            <phelat.TextView.Plus
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/next"
-                android:textSize="20sp"
-                app:font="fonts/AgencyFBBold.ttf" />
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_keyboard_arrow_right_teal_24dp" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:id="@+id/llNavigationBack"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
-            android:layout_centerVertical="true"
-            android:orientation="horizontal">
-
-
-            <ImageView
-                android:layout_width="40dp"
-                android:layout_height="match_parent"
-                android:src="@drawable/ic_keyboard_arrow_left_teal_24dp" />
-
-            <phelat.TextView.Plus
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:text="@string/back"
-                android:textSize="20sp"
-                app:font="fonts/AgencyFBBold.ttf" />
-        </LinearLayout>
-
-    </RelativeLayout>
 </RelativeLayout>

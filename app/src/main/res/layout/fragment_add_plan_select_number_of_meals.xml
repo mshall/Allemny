@@ -32,7 +32,7 @@
                 android:gravity="center"
                 android:text="@string/select_number_of_meals"
                 android:textSize="30sp"
-                app:font="fonts/AgencyFBBold.ttf" />
+                app:font="fonts/slimjim.ttf" />
         </TableRow>
 
         <TableRow android:layout_marginTop="5dp">
@@ -48,7 +48,7 @@
                 android:gravity="center"
                 android:text="3"
                 android:textSize="30sp"
-                app:font="fonts/AgencyFBBold.ttf" />
+                app:font="fonts/slimjim.ttf" />
         </TableRow>
 
         <TableRow android:layout_marginTop="10dp">
@@ -103,7 +103,7 @@
                 android:gravity="center"
                 android:text="@string/next"
                 android:textSize="20sp"
-                app:font="fonts/AgencyFBBold.ttf" />
+                app:font="fonts/slimjim.ttf" />
 
             <ImageView
                 android:layout_width="40dp"
@@ -131,7 +131,7 @@
                 android:gravity="center"
                 android:text="@string/back"
                 android:textSize="20sp"
-                app:font="fonts/AgencyFBBold.ttf" />
+                app:font="fonts/slimjim.ttf" />
         </LinearLayout>
 
     </RelativeLayout>

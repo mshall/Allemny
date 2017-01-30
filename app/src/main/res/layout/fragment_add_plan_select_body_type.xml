@@ -23,7 +23,7 @@
         android:gravity="center"
         android:text="@string/select_body_type"
         android:textSize="30sp"
-        app:font="fonts/AgencyFBBold.ttf" />
+        app:font="fonts/slimjim.ttf" />
 
     <LinearLayout
         android:layout_width="match_parent"

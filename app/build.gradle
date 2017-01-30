@@ -56,4 +56,5 @@ dependencies {
     compile 'com.github.t-kurimura:flickabledialog:3bc3b82ef1'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.3.0'
+    compile 'net.kianoni:fontloader:0.3.0'
 }

@@ -74,7 +74,9 @@ public class Constants {
     public final static String FAT_GRAMS = "fatGrams";
     public final static String FIBER_GRAMS = "fiberGrams";
     public final static String PLAN_NUMBER = "planNumber";
-
+    public final static String ACTUAL_PROTEIN_GRAMS = "actualProteinGrams";
+    public final static String ACTUAL_CARBS_GRAMS = "actualCarbsGrams";
+    public final static String ACTUAL_FATS_GRAMS = "actualFatsGrams";
     //    ---------------------------------------------------
     public final static String PLANS_TABLE = "Plans";
 
