@@ -230,7 +230,7 @@ public class ImageLoader {
     //-----------------------------------------------------------
     public static void loadImageWithFit(Context context, String uri, ImageView imageView, int placeHolderIMage) {
 //        BitmapDrawable bitmapDrawable = new BitmapDrawable(context.getResources(), bitmap);
-        Picasso.with(context).load(uri).fit().into(imageView);
+        Picasso.with(context).load(uri).fit().centerInside().into(imageView);
 //        imageView.setImageDrawable(bitmapDrawable);
     }
 
