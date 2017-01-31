@@ -175,7 +175,8 @@ public class ImageLoader {
         }
         Uri uri = ImageUtils.getImageUri(context, bm);
         Log.e("TEST IMG URI", "-> " + uri.toString());
-        ImageLoader.loadImageFromURLWithNoTransformation(context, uri.toString(), ivUserImage, placeHolderImage);
+//        ImageLoader.loadImageFromURLWithNoTransformation(context, uri.toString(), ivUserImage, placeHolderImage);
+        ImageLoader.loadImageWithFit(context, uri.toString(), ivUserImage, placeHolderImage);
     }
 
     //-----------------------------------------------------------
@@ -204,7 +205,8 @@ public class ImageLoader {
 
         Uri uri = ImageUtils.getImageUri(context, thumbnail);
         Log.e("TEST IMG URI", "-> " + uri.toString());
-        ImageLoader.loadImageFromURLWithNoTransformation(context, uri.toString(), ivUserImage, placeHolderImage);
+//        ImageLoader.loadImageFromURLWithNoTransformation(context, uri.toString(), ivUserImage, placeHolderImage);
+        ImageLoader.loadImageWithFit(context, uri.toString(), ivUserImage, placeHolderImage);
     }
 
     //-----------------------------------------------------------
@@ -221,6 +223,15 @@ public class ImageLoader {
     public static void setImageDrawable(Context context, ImageView imageView, Bitmap bitmap) {
         BitmapDrawable bitmapDrawable = new BitmapDrawable(context.getResources(), bitmap);
         imageView.setImageDrawable(bitmapDrawable);
+    }
+
+    //-----------------------------------------------------------
+    // This methods responsible for Setting image with fitting
+    //-----------------------------------------------------------
+    public static void loadImageWithFit(Context context, String uri, ImageView imageView, int placeHolderIMage) {
+//        BitmapDrawable bitmapDrawable = new BitmapDrawable(context.getResources(), bitmap);
+        Picasso.with(context).load(uri).fit().into(imageView);
+//        imageView.setImageDrawable(bitmapDrawable);
     }
 
 }

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import com.allemny.R;
 import com.tkurimura.flickabledialog.FlickableDialog;
 import com.util.ImageLoader;
+import com.util.ImageUtils;
 
 /**
  * Created by elsaidel on 1/27/2017.
@@ -35,7 +36,8 @@ public class FlickableWeightProgressDetailsDialog extends FlickableDialog {
     public Dialog onCreateDialog(Bundle savedInstanceState) {
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         ImageView ivUserImage = (ImageView) dialog.findViewById(R.id.ivDialogMyWeightProgressDetails);
-        ImageLoader.setImageDrawable(getContext(), ivUserImage, bitmap);
+//        ImageLoader.setImageDrawable(getContext(), ivUserImage, bitmap);
+        ImageLoader.loadImageWithFit(getContext(), ImageUtils.getImageUri(getContext(), bitmap).toString(), ivUserImage, R.drawable.logo);
         ImageView ivClose = (ImageView) dialog.findViewById(R.id.ivDialogMyWeightProgressDetailsClose);
         ivClose.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -46,4 +48,11 @@ public class FlickableWeightProgressDetailsDialog extends FlickableDialog {
 
         return dialog;
     }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        dismiss();
+    }
+
 }

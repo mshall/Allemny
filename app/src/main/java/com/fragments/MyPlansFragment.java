@@ -19,6 +19,10 @@ import com.constants.Constants;
 import com.database.dao.MealDAO;
 import com.database.dao.PlanDAO;
 import com.dialogs.FlickableUpdateMealDialog;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+import com.google.android.gms.ads.InterstitialAd;
 import com.pojo.Meal;
 import com.pojo.Plan;
 import com.tkurimura.flickabledialog.FlickableDialog;
@@ -41,8 +45,10 @@ public class MyPlansFragment extends Fragment {
     View view;
     @BindView(R.id.rvFragmentMyPlans)
     RecyclerView rvMyPlans;
+    private AdView mAdView;
     PlanDAO planDAO;
     MealDAO mealDAO;
+    InterstitialAd mInterstitialAd;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -56,6 +62,8 @@ public class MyPlansFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.fragment_my_plans, container, false);
         ButterKnife.bind(this, view);
+        mInterstitialAd = new InterstitialAd(getActivity());
+        mAdView = (AdView) view.findViewById(R.id.ad_view);
         sectionAdapter = new SectionedRecyclerViewAdapter();
 
         initializeViews();
@@ -64,6 +72,22 @@ public class MyPlansFragment extends Fragment {
     }
 
     private void initializeViews() {
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+        // set the ad unit ID
+        mInterstitialAd.setAdUnitId(getString(R.string.big_banner_Ad));
+
+        AdRequest interstatialAdRequest = new AdRequest.Builder().build();
+
+        // Load ads into Interstitial Ads
+        mInterstitialAd.loadAd(interstatialAdRequest);
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+        });
+        //-------------------------------------
         List<Plan> plans = planDAO.getUserPlans(SharedPreferencesUtils.getStringFromSharedPreferences(getContext(), Constants.EMAIL));
         for (Plan plan : plans) {
             List<Meal> meals = getPlanMeals(plan.getPlanNumber());
@@ -78,20 +102,14 @@ public class MyPlansFragment extends Fragment {
 
     }
 
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
+    }
 
     public void refreshFragment() {
         new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
-    }
-
-    @Override
-    public void onResume() {
-        super.onResume();
-
-        if (getActivity() instanceof AppCompatActivity) {
-            AppCompatActivity activity = ((AppCompatActivity) getActivity());
-            if (activity.getSupportActionBar() != null)
-                activity.getSupportActionBar().setTitle(R.string.my_plans);
-        }
     }
 
     private List<Meal> getPlanMeals(int planNumber) {
@@ -304,4 +322,34 @@ public class MyPlansFragment extends Fragment {
             rootView = view;
         }
     }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (getActivity() instanceof AppCompatActivity) {
+            AppCompatActivity activity = ((AppCompatActivity) getActivity());
+            if (activity.getSupportActionBar() != null)
+                activity.getSupportActionBar().setTitle(R.string.my_plans);
+        }
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
+    }
+
 }

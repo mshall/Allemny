@@ -12,6 +12,8 @@ import android.view.ViewGroup;
 import android.widget.Toast;
 
 import com.allemny.R;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.tomer.fadingtextview.FadingTextView;
 import com.util.FragmentUtils;
 
@@ -34,6 +36,8 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     CardView cvMyWeightProgress;
     @BindView(R.id.fadingTextView)
     FadingTextView fadingTextView;
+
+    private AdView mAdView;
     View view;
     FragmentManager mFragmentManager;
     FragmentTransaction mFragmentTransaction;
@@ -49,6 +53,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_main, container, false);
         ButterKnife.bind(this, view);
+        mAdView = (AdView) view.findViewById(R.id.ad_view);
         initializeViews();
         /*String[] texts = getResources().getStringArray(R.array.welcome_words);
         fadingTextView.setTexts(texts);*/
@@ -61,6 +66,9 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         cvMyPlans.setOnClickListener(this);
         cvUpdateMyWeight.setOnClickListener(this);
         cvMyWeightProgress.setOnClickListener(this);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
     }
 
     @Override
@@ -89,6 +97,30 @@ public class MainFragment extends Fragment implements View.OnClickListener {
     @OnClick(R.id.cvFragmentMainMyPlans)
     public void showmyPlan() {
         Toast.makeText(getActivity(), "show my plan", Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
     }
 }
 

@@ -19,6 +19,8 @@ import com.constants.Constants;
 import com.database.dao.WeightDAO;
 import com.dialogs.FlickableWeightProgressDetailsDialog;
 import com.gaurav.cdsrecyclerview.CdsRecyclerView;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.pojo.Weight;
 import com.tkurimura.flickabledialog.FlickableDialog;
 import com.util.FragmentUtils;
@@ -38,6 +40,8 @@ public class MyWeightProgressFragment extends Fragment implements IWeightHistory
     ArrayList<Weight> weights;
     @BindView(R.id.rvFragmentMyWeightProgress)
     CdsRecyclerView rvWeightHistory;
+    @BindView(R.id.ad_view)
+    AdView mAdView;
     WeightDAO weightDAO;
     WeightHistoryAdapter adapter;
     private RecyclerView.LayoutManager mLayoutManager;
@@ -68,6 +72,8 @@ public class MyWeightProgressFragment extends Fragment implements IWeightHistory
     private void initializeViews() {
         rvWeightHistory.setHasFixedSize(true);
         rvWeightHistory.setLayoutManager(new LinearLayoutManager(getActivity()));
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
     }
 
 
@@ -87,6 +93,25 @@ public class MyWeightProgressFragment extends Fragment implements IWeightHistory
     public void onResume() {
         super.onResume();
         showWeightProgress();
+        if (mAdView != null) {
+            mAdView.resume();
+        }
+    }
+
+    @Override
+    public void onPause() {
+        if (mAdView != null) {
+            mAdView.pause();
+        }
+        super.onPause();
+    }
+
+    @Override
+    public void onDestroy() {
+        if (mAdView != null) {
+            mAdView.destroy();
+        }
+        super.onDestroy();
     }
 
     @Override

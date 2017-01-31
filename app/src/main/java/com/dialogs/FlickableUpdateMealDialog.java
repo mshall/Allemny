@@ -11,6 +11,9 @@ import android.widget.Toast;
 import com.allemny.R;
 import com.database.dao.MealDAO;
 import com.fragments.MyPlansFragment;
+import com.google.android.gms.ads.AdListener;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.InterstitialAd;
 import com.pojo.Food;
 import com.pojo.Meal;
 import com.tkurimura.flickabledialog.FlickableDialog;
@@ -65,6 +68,7 @@ public class FlickableUpdateMealDialog extends FlickableDialog implements View.O
     String carbsName;
     String fatsName;
     static MyPlansFragment myPlansFragment;
+    InterstitialAd mInterstitialAd;
 
     public static FlickableUpdateMealDialog newInstance(Fragment fragment, Meal meal) {
         myPlansFragment = (MyPlansFragment) fragment;
@@ -99,6 +103,7 @@ public class FlickableUpdateMealDialog extends FlickableDialog implements View.O
         Dialog dialog = super.onCreateDialog(savedInstanceState);
         mealDAO = new MealDAO(getContext());
         ButterKnife.bind(this, dialog);
+        initializeAds();
         proteinName = meal.getProteinFoodName();
         carbsName = meal.getCarbFoodName();
         fatsName = meal.getFatFoodName();
@@ -122,6 +127,63 @@ public class FlickableUpdateMealDialog extends FlickableDialog implements View.O
 
 
         return dialog;
+    }
+
+    private void initializeAds() {
+        mInterstitialAd = new InterstitialAd(getContext());
+
+        // set the ad unit ID
+        mInterstitialAd.setAdUnitId(getString(R.string.big_banner_Ad));
+
+        AdRequest adRequest = new AdRequest.Builder().build();
+       /* AdRequest adRequest = new AdRequest.Builder()
+                .addTestDevice(AdRequest.DEVICE_ID_EMULATOR)
+                // Check the LogCat to get your test device ID
+                .addTestDevice("C04B1BFFB0774708339BC273F8A43708")
+                .build();*/
+        // Load ads into Interstitial Ads
+        mInterstitialAd.loadAd(adRequest);
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            public void onAdLoaded() {
+                showInterstitial();
+            }
+
+
+        });
+
+        mInterstitialAd.setAdListener(new AdListener() {
+            @Override
+            public void onAdLoaded() {
+                Toast.makeText(getContext(), "Ad is loaded!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdClosed() {
+                Toast.makeText(getContext(), "Ad is closed!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdFailedToLoad(int errorCode) {
+                Toast.makeText(getContext(), "Ad failed to load! error code: " + errorCode, Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdLeftApplication() {
+                Toast.makeText(getContext(), "Ad left application!", Toast.LENGTH_SHORT).show();
+            }
+
+            @Override
+            public void onAdOpened() {
+                Toast.makeText(getContext(), "Ad is opened!", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
+    private void showInterstitial() {
+        if (mInterstitialAd.isLoaded()) {
+            mInterstitialAd.show();
+        }
     }
 
     @Override
