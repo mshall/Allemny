@@ -6,20 +6,26 @@
     android:background="?android:attr/colorBackground"
     tools:context="com.fragments.MyWeightProgressFragment">
 
-    <com.gaurav.cdsrecyclerview.CdsRecyclerView
-        android:id="@+id/rvFragmentMyWeightProgress"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/ad_view">
+        android:background="@drawable/bgrepeat">
 
-    </com.gaurav.cdsrecyclerview.CdsRecyclerView>
+        <com.gaurav.cdsrecyclerview.CdsRecyclerView
+            android:id="@+id/rvFragmentMyWeightProgress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@id/ad_view">
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/ad_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/home_banner_footer" />
+        </com.gaurav.cdsrecyclerview.CdsRecyclerView>
+
+        <com.google.android.gms.ads.AdView
+            android:id="@+id/ad_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="@string/home_banner_footer" />
+    </RelativeLayout>
 </RelativeLayout>

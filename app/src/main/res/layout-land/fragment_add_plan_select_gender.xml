@@ -45,6 +45,7 @@
         android:layout_height="match_parent"
         android:layout_above="@+id/rlNavigation"
         android:layout_alignParentStart="true"
+        android:layout_marginBottom="10dp"
         android:layout_alignParentTop="true">
 
         <TableRow android:layout_marginTop="0dp">
@@ -81,14 +82,14 @@
                 <ImageView
                     android:id="@+id/ivFragmentAddPlanSelectGenderFemale"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="130dp"
                     android:layout_weight=".5"
                     android:src="@drawable/female" />
 
                 <ImageView
                     android:id="@+id/ivFragmentAddPlanSelectGenderMale"
                     android:layout_width="match_parent"
-                    android:layout_height="150dp"
+                    android:layout_height="130dp"
                     android:layout_weight=".5"
                     android:src="@drawable/male" />
             </LinearLayout>
