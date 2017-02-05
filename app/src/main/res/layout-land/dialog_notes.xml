@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv0"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:paddingEnd="5dp"
+            android:paddingStart="5dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivDialogClose"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:src="@drawable/ic_close_teal" />
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvTitle"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/nutrition_facts"
+                    android:textSize="35sp"
+                    app:font="fonts/slimjim.ttf" />
+
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvProtein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvTitle"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="@string/protein"
+                    android:textSize="25sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvProtein"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvProtein"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvProteinNote1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_protein_egg"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvProtein2"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvProtein"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvProteinNote2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_protein_egg_2"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvCarb"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvProtein2"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/carbs"
+                    android:textSize="25sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvCarb"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvCarb"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvCarbNote1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_carb_1"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvCarb2"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCarb"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvCarbNote2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_carb_2"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvCarb3"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCarb2"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvCarbNote3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_carb_3"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvCarb4"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCarb3"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvCarbNote4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_carb_4"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+                <phelat.TextView.Plus
+                    android:id="@+id/tvFats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvCarb4"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/fats"
+                    android:textSize="25sp"
+                    app:font="fonts/slimjim.ttf" />
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvFats"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/tvFats"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvFatsNote1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_Fats_1"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvFats2"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvFats"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvFatsNote2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_fats_2"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvFats3"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvFats2"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvFatsNote3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_fats_3"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvFats4"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvFats3"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvFatsNote4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_fats_4"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvFats5"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvFats4"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvFatsNote5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="20dp"
+                            android:gravity="center"
+                            android:text="@string/note_fats_5"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+    </RelativeLayout>
+</ScrollView>

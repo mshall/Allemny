@@ -11,6 +11,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -18,6 +19,7 @@ import com.allemny.R;
 import com.constants.Constants;
 import com.database.dao.MealDAO;
 import com.database.dao.PlanDAO;
+import com.dialogs.FlickableNotesDialog;
 import com.dialogs.FlickableUpdateMealDialog;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -49,6 +51,8 @@ public class MyPlansFragment extends Fragment {
     PlanDAO planDAO;
     MealDAO mealDAO;
     InterstitialAd mInterstitialAd;
+    @BindView(R.id.bFragmentMyPlansShowNotes)
+    Button bNotes;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
@@ -85,6 +89,14 @@ public class MyPlansFragment extends Fragment {
         mInterstitialAd.setAdListener(new AdListener() {
             public void onAdLoaded() {
                 showInterstitial();
+            }
+        });
+        //-------------------------------------
+        bNotes.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                FlickableNotesDialog notesDialog = FlickableNotesDialog.newInstance(MyPlansFragment.this);
+                notesDialog.show(getChildFragmentManager(), FlickableDialog.class.getSimpleName());
             }
         });
         //-------------------------------------

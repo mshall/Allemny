@@ -1,16 +1,15 @@
 package com.fragments;
 
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.CardView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Toast;
 
+import com.activities.HomeActivity;
 import com.allemny.R;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
@@ -39,13 +38,19 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     private AdView mAdView;
     View view;
-    FragmentManager mFragmentManager;
-    FragmentTransaction mFragmentTransaction;
+
+    HomeActivity homeActivity;
 
     public MainFragment() {
         // Required empty public constructor
     }
 
+
+    @Override
+    public void onAttach(Context context) {
+        super.onAttach(context);
+        homeActivity = (HomeActivity) context;
+    }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -66,6 +71,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         cvMyPlans.setOnClickListener(this);
         cvUpdateMyWeight.setOnClickListener(this);
         cvMyWeightProgress.setOnClickListener(this);
+        homeActivity.toolbar.setTitle("Fat Lab");
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
@@ -96,7 +102,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
 
     @OnClick(R.id.cvFragmentMainMyPlans)
     public void showmyPlan() {
-        Toast.makeText(getActivity(), "show my plan", Toast.LENGTH_SHORT).show();
+//        Toast.makeText(getActivity(), "show my plan", Toast.LENGTH_SHORT).show();
     }
 
     @Override
@@ -113,6 +119,7 @@ public class MainFragment extends Fragment implements View.OnClickListener {
         if (mAdView != null) {
             mAdView.resume();
         }
+        homeActivity.toolbar.setTitle("Fat Lab");
     }
 
     @Override

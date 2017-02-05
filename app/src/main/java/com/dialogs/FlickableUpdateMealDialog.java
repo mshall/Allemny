@@ -155,27 +155,27 @@ public class FlickableUpdateMealDialog extends FlickableDialog implements View.O
         mInterstitialAd.setAdListener(new AdListener() {
             @Override
             public void onAdLoaded() {
-                Toast.makeText(getContext(), "Ad is loaded!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "Ad is loaded!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAdClosed() {
-                Toast.makeText(getContext(), "Ad is closed!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "Ad is closed!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAdFailedToLoad(int errorCode) {
-                Toast.makeText(getContext(), "Ad failed to load! error code: " + errorCode, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "Ad failed to load! error code: " + errorCode, Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAdLeftApplication() {
-                Toast.makeText(getContext(), "Ad left application!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "Ad left application!", Toast.LENGTH_SHORT).show();
             }
 
             @Override
             public void onAdOpened() {
-                Toast.makeText(getContext(), "Ad is opened!", Toast.LENGTH_SHORT).show();
+//                Toast.makeText(getContext(), "Ad is opened!", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -238,7 +238,7 @@ public class FlickableUpdateMealDialog extends FlickableDialog implements View.O
                 tvCarbs.setText(carbsName);
                 break;
             case R.id.ivDialogUpdateMealCarbsDown:
-                int carbsIndexDown = proteins.indexOf(carbsName);
+                int carbsIndexDown = carbs.indexOf(carbsName);
                 if (carbsIndexDown + 1 >= carbs.size()) {
                     carbsIndexDown = 0;
                 } else {

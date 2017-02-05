@@ -128,6 +128,19 @@
     <!--Admob integration-->
     <string name="home_banner_footer">ca-app-pub-2600231704464005/6140036170</string>
     <string name="big_banner_Ad">ca-app-pub-2600231704464005/7616769373</string>
+    <string name="important_notes">Important notes</string>
+    <string name="nutrition_facts">Nutrition Facts</string>
+    <string name="note_protein_egg">  Egg (1 gr) = 0.13 gr protein (44 gr for 1 medium egg)</string>
+    <string name="note_protein_egg_2">  Egg white (1 gr)= 0.12 gr protein (28 gr for 1 medium egg white)</string>
+    <string name="note_carb_1"> Whole wheat bread (1 gr)= 0.52 gr carbs (46 gr for 1 slice)</string>
+    <string name="note_carb_2"> Apple  (1 gr)= 0.13 gr carbs (182 gr for 1 medium apple)</string>
+    <string name="note_carb_3">Banana (1 gr)= 0.22 gr carbs (118 gr for 1 medium banana)</string>
+    <string name="note_carb_4">Orange (1 gr)= 0.12 gr carbs (130 gr for 1 medium orange)</string>
+    <string name="note_fats_4">Flaxseed oil (1 gr)= 1.0 gr fats (5 gr for 1 small spoon)</string>
+    <string name="note_fats_3">Peanut butter (1 gr)= 0.5 gr fats (16 gr for 1 large spoon)</string>
+    <string name="note_fats_2">Almonds (1 gr)= 0.6 gr fats (1 gr for 1 almond kernel)</string>
+    <string name="note_Fats_1">Olive oil (1 gr)= 1.0 gr fats (5 gr for 1 small spoon)</string>
+    <string name="note_fats_5">Peanuts (1 gr)= 0.6 gr fats (1 gr for 1 peanut kernel)</string>
 
 
 </resources>

@@ -2,10 +2,11 @@
 <resources>
     <string-array name="difficult">First Item</string-array>
     <string-array name="welcome_words">
-        <item>Welcome to FAT LAB</item>
-        <item>Your way to excel</item>
-        <item>Customized nutrition plans</item>
-        <item>Meeting your needs</item>
+        <item>Welcome to Fat Lab</item>
+        <item>Customize Your Nutrition Plan</item>
+        <item>Lose Weight Easily</item>
+        <item>Gain Muscles With Few Steps</item>
+        <item>Eat Healthy, Live Healthy</item>
     </string-array>
     <string-array name="steps">
         <item> </item>

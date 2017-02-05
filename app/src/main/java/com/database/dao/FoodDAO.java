@@ -43,7 +43,6 @@ public class FoodDAO {
     }
 
 
-
     //----------------------------------------------------------------
     //  Get food details given foodId
     //----------------------------------------------------------------
@@ -78,7 +77,10 @@ public class FoodDAO {
     //  Initialize foods list
     //----------------------------------------------------------------
     public void initializeAllFoods() {
-        ArrayList<Food> foods = new ArrayList<>();
+        Food.proteinFoods.clear();
+        Food.carbFoods.clear();
+        Food.fatFoods.clear();
+        Food.fiberFoods.clear();
         //---------- Protein foods
         Food food = new Food(context.getString(R.string.tuna_in_water), Constants.FOOD_PROTEIN, .26, 1.16);
         Food food1 = new Food(context.getString(R.string.grilled_chicken_breast), Constants.FOOD_PROTEIN, .23, 1.1);
@@ -93,19 +95,21 @@ public class FoodDAO {
         Food food10 = new Food(context.getString(R.string.salmon), Constants.FOOD_PROTEIN, .22, 2.06);
         Food food11 = new Food(context.getString(R.string.turkey_sausage_low_fat), Constants.FOOD_PROTEIN, .24, 1.96);
         Food food12 = new Food(context.getString(R.string.greek_yogurt_low_fat), Constants.FOOD_PROTEIN, .11, .59);
-        Food.proteinFoods.add(food);
-        Food.proteinFoods.add(food1);
-        Food.proteinFoods.add(food2);
-        Food.proteinFoods.add(food3);
-        Food.proteinFoods.add(food4);
-        Food.proteinFoods.add(food5);
-        Food.proteinFoods.add(food6);
-        Food.proteinFoods.add(food7);
-        Food.proteinFoods.add(food8);
-        Food.proteinFoods.add(food9);
-        Food.proteinFoods.add(food10);
-        Food.proteinFoods.add(food11);
-        Food.proteinFoods.add(food12);
+        if (Food.proteinFoods.isEmpty()) {
+            Food.proteinFoods.add(food);
+            Food.proteinFoods.add(food1);
+            Food.proteinFoods.add(food2);
+            Food.proteinFoods.add(food3);
+            Food.proteinFoods.add(food4);
+            Food.proteinFoods.add(food5);
+            Food.proteinFoods.add(food6);
+            Food.proteinFoods.add(food7);
+            Food.proteinFoods.add(food8);
+            Food.proteinFoods.add(food9);
+            Food.proteinFoods.add(food10);
+            Food.proteinFoods.add(food11);
+            Food.proteinFoods.add(food12);
+        }
         //---------- Carb foods
         Food carbFood = new Food(context.getString(R.string.oats), Constants.FOOD_CARB, .66, 3.89);
         Food carbFood1 = new Food(context.getString(R.string.sweet_potato), Constants.FOOD_CARB, .21, .9);
@@ -120,19 +124,21 @@ public class FoodDAO {
         Food carbFood10 = new Food(context.getString(R.string.orange), Constants.FOOD_CARB, .178, .65);
         Food carbFood11 = new Food(context.getString(R.string.quinoa), Constants.FOOD_CARB, .21, 1.2);
         Food carbFood12 = new Food(context.getString(R.string.whole_bulgur), Constants.FOOD_CARB, .19, .83);
-        Food.carbFoods.add(carbFood);
-        Food.carbFoods.add(carbFood1);
-        Food.carbFoods.add(carbFood2);
-        Food.carbFoods.add(carbFood3);
-        Food.carbFoods.add(carbFood4);
-        Food.carbFoods.add(carbFood5);
-        Food.carbFoods.add(carbFood6);
-        Food.carbFoods.add(carbFood7);
-        Food.carbFoods.add(carbFood8);
-        Food.carbFoods.add(carbFood9);
-        Food.carbFoods.add(carbFood10);
-        Food.carbFoods.add(carbFood11);
-        Food.carbFoods.add(carbFood12);
+        if (Food.carbFoods.isEmpty()) {
+            Food.carbFoods.add(carbFood);
+            Food.carbFoods.add(carbFood1);
+            Food.carbFoods.add(carbFood2);
+            Food.carbFoods.add(carbFood3);
+            Food.carbFoods.add(carbFood4);
+            Food.carbFoods.add(carbFood5);
+            Food.carbFoods.add(carbFood6);
+            Food.carbFoods.add(carbFood7);
+            Food.carbFoods.add(carbFood8);
+            Food.carbFoods.add(carbFood9);
+            Food.carbFoods.add(carbFood10);
+            Food.carbFoods.add(carbFood11);
+            Food.carbFoods.add(carbFood12);
+        }
         //---------- Fat foods
         Food fatFood = new Food(context.getString(R.string.olive_oil), Constants.FOOD_FAT, 5, 40);
         Food fatFood1 = new Food(context.getString(R.string.almonds), Constants.FOOD_FAT, .6, 7.4);
@@ -140,12 +146,14 @@ public class FoodDAO {
         Food fatFood3 = new Food(context.getString(R.string.flaxseed_oil), Constants.FOOD_FAT, 5, 40);
         Food fatFood4 = new Food(context.getString(R.string.peanuts), Constants.FOOD_FAT, .6, 7.04);
         Food fatFood5 = new Food(context.getString(R.string.avocado), Constants.FOOD_FAT, .15, 1.6);
-        Food.fatFoods.add(fatFood);
-        Food.fatFoods.add(fatFood1);
-        Food.fatFoods.add(fatFood2);
-        Food.fatFoods.add(fatFood3);
-        Food.fatFoods.add(fatFood4);
-        Food.fatFoods.add(fatFood5);
+        if (Food.fatFoods.isEmpty()) {
+            Food.fatFoods.add(fatFood);
+            Food.fatFoods.add(fatFood1);
+            Food.fatFoods.add(fatFood2);
+            Food.fatFoods.add(fatFood3);
+            Food.fatFoods.add(fatFood4);
+            Food.fatFoods.add(fatFood5);
+        }
         //---------- Fiber foods
         Food fiberFood = new Food(context.getString(R.string.green_beans), Constants.FOOD_FIBER, 0, 0);
         Food fiberFood1 = new Food(context.getString(R.string.green_peas), Constants.FOOD_FIBER, 0, 0);
@@ -156,14 +164,16 @@ public class FoodDAO {
         Food fiberFood6 = new Food(context.getString(R.string.spinach), Constants.FOOD_FIBER, 0, 0);
         Food fiberFood7 = new Food(context.getString(R.string.green_salad), Constants.FOOD_FIBER, 0, 0);
         Food fiberFood8 = new Food(context.getString(R.string.eggplant), Constants.FOOD_FIBER, 0, 0);
-        Food.fiberFoods.add(fiberFood);
-        Food.fiberFoods.add(fiberFood1);
-        Food.fiberFoods.add(fiberFood2);
-        Food.fiberFoods.add(fiberFood3);
-        Food.fiberFoods.add(fiberFood4);
-        Food.fiberFoods.add(fiberFood5);
-        Food.fiberFoods.add(fiberFood6);
-        Food.fiberFoods.add(fiberFood7);
-        Food.fiberFoods.add(fiberFood8);
+        if (Food.fiberFoods.isEmpty()) {
+            Food.fiberFoods.add(fiberFood);
+            Food.fiberFoods.add(fiberFood1);
+            Food.fiberFoods.add(fiberFood2);
+            Food.fiberFoods.add(fiberFood3);
+            Food.fiberFoods.add(fiberFood4);
+            Food.fiberFoods.add(fiberFood5);
+            Food.fiberFoods.add(fiberFood6);
+            Food.fiberFoods.add(fiberFood7);
+            Food.fiberFoods.add(fiberFood8);
+        }
     }
 }
