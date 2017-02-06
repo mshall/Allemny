@@ -14,6 +14,7 @@ import android.view.MenuItem;
 
 import com.allemny.R;
 import com.database.dao.FoodDAO;
+import com.fragments.AboutFragment;
 import com.fragments.AddPlanSelectGenderFragment;
 import com.fragments.MainFragment;
 import com.fragments.MyPlansFragment;
@@ -119,6 +120,8 @@ public class HomeActivity extends AppCompatActivity
 
         } else if (id == R.id.nav_my_weight_progress) {
             fragmentUtils.navigateToFragment(R.id.content_home, new MyWeightProgressFragment(), MyWeightProgressFragment.TAG);
+        } else if (id == R.id.nav_about_app) {
+            fragmentUtils.navigateToFragment(R.id.content_home, new AboutFragment(), AboutFragment.TAG);
         }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);

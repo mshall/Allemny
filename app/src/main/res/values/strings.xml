@@ -141,6 +141,16 @@
     <string name="note_fats_2">Almonds (1 gr)= 0.6 gr fats (1 gr for 1 almond kernel)</string>
     <string name="note_Fats_1">Olive oil (1 gr)= 1.0 gr fats (5 gr for 1 small spoon)</string>
     <string name="note_fats_5">Peanuts (1 gr)= 0.6 gr fats (1 gr for 1 peanut kernel)</string>
+    <string name="version">Version</string>
+    <string name="version_number">1.0</string>
+    <string name="coach">Coach</string>
+    <string name="coach_name">Seif Mohamed</string>
+    <string name="coach_email_link">fatlabnutrition@gmail.com</string>
+    <string name="social">Facebook</string>
+    <string name="facebook">Facebook</string>
+    <string name="fat_lab_maker">Fat Lab Maker</string>
+    <string name="app_maker_name">Mohamed S. El-Shall</string>
+    <string name="about_app">About Fat Lab</string>
 
 
 </resources>

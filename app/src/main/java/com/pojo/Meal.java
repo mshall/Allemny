@@ -1,10 +1,12 @@
 package com.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by elsaidel on 1/14/2017.
  */
 
-public class Meal {
+public class Meal implements Serializable{
     double proteinGrams, carbGrams, fatGrams, fiberGrams, actualProteinGrams, actualCarbsGrams, actualFatsGrams;
     int planNumber, mealId;
     String email, proteinFoodName, carbFoodName, fatFoodName, fiberFoodName;

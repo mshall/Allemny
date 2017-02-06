@@ -4,7 +4,6 @@ import android.app.Dialog;
 import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.allemny.R;
@@ -36,13 +35,13 @@ public class FlickableNotesDialog extends FlickableDialog {
         ImageView ivUserImage = (ImageView) dialog.findViewById(R.id.ivDialogMyWeightProgressDetails);
 //        ImageLoader.setImageDrawable(getContext(), ivUserImage, bitmap);
 
-        ImageView ivClose = (ImageView) dialog.findViewById(R.id.ivDialogClose);
+        /*ImageView ivClose = (ImageView) dialog.findViewById(R.id.ivDialogClose);
         ivClose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 dismiss();
             }
-        });
+        });*/
 
         return dialog;
     }

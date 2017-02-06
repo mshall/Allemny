@@ -1,0 +1,251 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context="com.fragments.AboutFragment">
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/logo" />
+
+                <phelat.TextView.Plus
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_weight=".8"
+                    android:gravity="center"
+                    android:text="@string/about_app"
+                    android:textSize="40sp"
+                    app:font="fonts/slimjim.ttf" />
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/cv1"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/ivInfo"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@drawable/ic_info_outline_blue_grey_200_24dp" />
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvVersion"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="15dp"
+                    android:layout_toRightOf="@+id/ivInfo"
+                    android:layout_weight=".8"
+                    android:text="@string/version"
+                    android:textSize="20sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <phelat.TextView.Plus
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvVersion"
+                    android:layout_marginStart="15dp"
+                    android:layout_toRightOf="@+id/ivInfo"
+                    android:layout_weight=".8"
+                    android:text="@string/version_number"
+                    android:textSize="20sp"
+                    app:font="fonts/slimjim.ttf" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cv2"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvCoach"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/coach"
+                    android:textSize="20sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <ImageView
+                    android:id="@+id/ivCoach"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/tvCoach"
+                    android:src="@drawable/ic_mail_outline_blue_grey_200_24dp" />
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvCoachName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvCoach"
+                    android:layout_marginStart="15dp"
+                    android:layout_toRightOf="@+id/ivCoach"
+                    android:layout_weight=".8"
+                    android:text="@string/coach_name"
+                    android:textSize="20sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <phelat.TextView.Plus
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvCoachName"
+                    android:layout_marginStart="15dp"
+                    android:layout_toRightOf="@+id/ivCoach"
+                    android:layout_weight=".8"
+                    android:text="@string/coach_email_link" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cv3"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvFacebook"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/facebook"
+                    android:textSize="20sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvFacebookLikeText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvFacebook"
+                    android:layout_marginTop="10dp"
+                    android:text="@string/facebook_like"
+                    android:textSize="20sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <com.cr5315.socialbuttons.FacebookLikeButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    app:pageId="639105646174708"
+                    app:pageUrl="https://www.facebook.com/FatLabNutrition" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/cv5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/cv4"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="20dp"
+            app:cardCornerRadius="6dp"
+            app:cardElevation="3dp"
+            app:cardUseCompatPadding="true">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvAppMaker"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fat_lab_maker"
+                    android:textSize="20sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <ImageView
+                    android:id="@+id/ivAppMaker"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_below="@+id/tvAppMaker"
+                    android:src="@drawable/ic_sentiment_satisfied_blue_grey_200_24dp" />
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvAppMakerName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvAppMaker"
+                    android:layout_marginStart="15dp"
+                    android:layout_toRightOf="@+id/ivAppMaker"
+                    android:text="@string/app_maker_name"
+                    android:textSize="20sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvAppMakerContactFacebookDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvAppMakerName"
+                    android:layout_marginStart="15dp"
+                    android:layout_toRightOf="@+id/ivAppMaker"
+                    android:text="https://www.facebook.com/M.S.ElShall" />
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvAppMakerContactDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvAppMakerContactFacebookDetails"
+                    android:layout_marginStart="15dp"
+                    android:layout_toRightOf="@+id/ivAppMaker"
+                    android:text="mohamed.s.elshall2011@gmail.com" />
+            </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    </RelativeLayout>
+</ScrollView>

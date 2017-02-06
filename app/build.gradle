@@ -54,9 +54,10 @@ dependencies {
     compile 'io.github.luizgrp.sectionedrecyclerviewadapter:sectionedrecyclerviewadapter:1.0.4'
     compile 'com.taishi-y:flipprogressdialog:0.1.0'
     compile 'com.github.t-kurimura:flickabledialog:3bc3b82ef1'
+    compile 'net.kianoni:fontloader:0.3.0'
+    compile 'com.google.android.gms:play-services-ads:10.0.1'
+    compile 'com.cr5315:socialbuttons:0.2.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
     testCompile 'junit:junit:4.12'
     apt 'com.jakewharton:butterknife-compiler:8.3.0'
-    compile 'net.kianoni:fontloader:0.3.0'
-    compile 'com.google.android.gms:play-services-ads:8.4.0'
-    compile 'com.github.daniel-stoneuk:material-about-library:1.5.0'
 }

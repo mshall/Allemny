@@ -1,22 +1,24 @@
-package com.dialogs;
+package com.fragments;
 
-import android.app.Dialog;
+
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.allemny.R;
+import com.constants.Constants;
 import com.database.dao.MealDAO;
-import com.fragments.MyPlansFragment;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.InterstitialAd;
 import com.pojo.Food;
 import com.pojo.Meal;
-import com.tkurimura.flickabledialog.FlickableDialog;
 import com.util.FragmentUtils;
 
 import java.util.ArrayList;
@@ -25,11 +27,10 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 
 /**
- * Created by elsaidel on 1/27/2017.
+ * A simple {@link Fragment} subclass.
  */
-
-public class FlickableUpdateMealDialog extends FlickableDialog implements View.OnClickListener {
-
+public class UpdateMealFragment extends Fragment implements View.OnClickListener {
+    public static String TAG = "UpdateMealFragment";
     @BindView(R.id.ivDialogUpdateMealClose)
     ImageView ivClose;
     @BindView(R.id.ivDialogUpdateMealProteinUp)
@@ -69,10 +70,17 @@ public class FlickableUpdateMealDialog extends FlickableDialog implements View.O
     String fatsName;
     static MyPlansFragment myPlansFragment;
     InterstitialAd mInterstitialAd;
+    View view;
 
-    public static FlickableUpdateMealDialog newInstance(Fragment fragment, Meal meal) {
-        myPlansFragment = (MyPlansFragment) fragment;
-        FlickableUpdateMealDialog.meal = meal;
+    public UpdateMealFragment() {
+        // Required empty public constructor
+    }
+
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        mealDAO = new MealDAO(getContext());
         proteins = new ArrayList<>();
         carbs = new ArrayList<>();
         fats = new ArrayList<>();
@@ -86,24 +94,19 @@ public class FlickableUpdateMealDialog extends FlickableDialog implements View.O
         for (Food fat : Food.fatFoods) {
             fats.add(fat.getFoodName());
         }
-
-
-        FlickableUpdateMealDialog flackablePremiumAppealDialog = new FlickableUpdateMealDialog();
-        Bundle bundle = new Bundle();
-        bundle.putInt(LAYOUT_RESOURCE_KEY, R.layout.dialog_update_meal);
-        flackablePremiumAppealDialog.setTargetFragment(fragment, 0);
-        flackablePremiumAppealDialog.setArguments(bundle);
-
-        return flackablePremiumAppealDialog;
     }
 
-
     @Override
-    public Dialog onCreateDialog(Bundle savedInstanceState) {
-        Dialog dialog = super.onCreateDialog(savedInstanceState);
-        this.setRetainInstance(true);
-        mealDAO = new MealDAO(getContext());
-        ButterKnife.bind(this, dialog);
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        view = inflater.inflate(R.layout.dialog_update_meal, container, false);
+        ButterKnife.bind(this, view);
+        UpdateMealFragment.meal = (Meal) getArguments().getSerializable(Constants.MEAL_ID);
+        initializeViews();
+        return view;
+    }
+
+    private void initializeViews() {
         initializeAds();
         proteinName = meal.getProteinFoodName();
         carbsName = meal.getCarbFoodName();
@@ -125,9 +128,6 @@ public class FlickableUpdateMealDialog extends FlickableDialog implements View.O
         ivCarbsDown.setOnClickListener(this);
         ivFatsUp.setOnClickListener(this);
         ivFatsDown.setOnClickListener(this);
-
-
-        return dialog;
     }
 
     private void initializeAds() {
@@ -188,15 +188,11 @@ public class FlickableUpdateMealDialog extends FlickableDialog implements View.O
     }
 
     @Override
-    public void onSaveInstanceState(Bundle outState) {
-        super.onSaveInstanceState(outState);
-    }
-
-    @Override
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.bDialogUpdateMealCancel:
-                dismiss();
+//                dismiss();
+                new FragmentUtils(getActivity()).popFragmentFromBackStack(getTag());
                 break;
             case R.id.bDialogUpdateMealUpdate:
                 proteinName = tvProtein.getText().toString();
@@ -208,10 +204,12 @@ public class FlickableUpdateMealDialog extends FlickableDialog implements View.O
                 mealDAO.updateMeal(meal);
                 Toast.makeText(getContext(), getString(R.string.record_has_been_updated), Toast.LENGTH_SHORT).show();
                 new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
-                dismiss();
+//                dismiss();
+                new FragmentUtils(getActivity()).popFragmentFromBackStack(getTag());
                 break;
             case R.id.ivDialogUpdateMealClose:
-                dismiss();
+//                dismiss();
+                new FragmentUtils(getActivity()).popFragmentFromBackStack(getTag());
                 break;
             case R.id.ivDialogUpdateMealProteinUp:
                 int proteinIndexUp = proteins.indexOf(proteinName);

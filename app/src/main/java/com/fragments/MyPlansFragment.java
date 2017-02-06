@@ -19,15 +19,12 @@ import com.allemny.R;
 import com.constants.Constants;
 import com.database.dao.MealDAO;
 import com.database.dao.PlanDAO;
-import com.dialogs.FlickableNotesDialog;
-import com.dialogs.FlickableUpdateMealDialog;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
 import com.pojo.Meal;
 import com.pojo.Plan;
-import com.tkurimura.flickabledialog.FlickableDialog;
 import com.util.FragmentUtils;
 import com.util.SharedPreferencesUtils;
 
@@ -57,6 +54,7 @@ public class MyPlansFragment extends Fragment {
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.setRetainInstance(true);
         planDAO = new PlanDAO(getContext());
         mealDAO = new MealDAO(getContext());
     }
@@ -95,8 +93,9 @@ public class MyPlansFragment extends Fragment {
         bNotes.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                FlickableNotesDialog notesDialog = FlickableNotesDialog.newInstance(MyPlansFragment.this);
-                notesDialog.show(getChildFragmentManager(), FlickableDialog.class.getSimpleName());
+                /*FlickableNotesDialog notesDialog = FlickableNotesDialog.newInstance(MyPlansFragment.this);
+                notesDialog.show(getChildFragmentManager(), FlickableDialog.class.getSimpleName());*/
+                new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new AppNotesFragment(), AppNotesFragment.TAG);
             }
         });
         //-------------------------------------
@@ -199,8 +198,13 @@ public class MyPlansFragment extends Fragment {
                 @Override
                 public void onClick(View v) {
                     ///Toast.makeText(getContext(), String.format("Clicked on position #%s of Section %s", sectionAdapter.getSectionPosition(itemHolder.getAdapterPosition()), title), Toast.LENGTH_SHORT).show();
-                    FlickableUpdateMealDialog updateMealDialog = FlickableUpdateMealDialog.newInstance(MyPlansFragment.this, meal);
-                    updateMealDialog.show(getChildFragmentManager(), FlickableDialog.class.getSimpleName());
+//                    FlickableUpdateMealDialog updateMealDialog = FlickableUpdateMealDialog.newInstance(MyPlansFragment.this, meal);
+//                    updateMealDialog.show(getChildFragmentManager(), FlickableDialog.class.getSimpleName());
+                    UpdateMealFragment fragment = new UpdateMealFragment();
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable(Constants.MEAL_ID, meal);
+                    fragment.setArguments(bundle);
+                    new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, fragment, UpdateMealFragment.TAG);
                 }
             });
             itemHolder.rootView.setOnLongClickListener(new View.OnLongClickListener() {
