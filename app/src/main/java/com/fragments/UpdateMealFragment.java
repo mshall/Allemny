@@ -76,7 +76,7 @@ public class UpdateMealFragment extends Fragment implements View.OnClickListener
         // Required empty public constructor
     }
 
-
+    //initalize basic data structures
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
