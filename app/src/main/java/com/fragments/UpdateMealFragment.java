@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import com.allemny.R;
 import com.constants.Constants;
+import com.database.dao.FoodDAO;
 import com.database.dao.MealDAO;
 import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
@@ -81,6 +82,7 @@ public class UpdateMealFragment extends Fragment implements View.OnClickListener
     public void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         mealDAO = new MealDAO(getContext());
+        new FoodDAO(getContext()).initializeAllFoods();
         proteins = new ArrayList<>();
         carbs = new ArrayList<>();
         fats = new ArrayList<>();
@@ -213,60 +215,54 @@ public class UpdateMealFragment extends Fragment implements View.OnClickListener
                 break;
             case R.id.ivDialogUpdateMealProteinUp:
                 int proteinIndexUp = proteins.indexOf(proteinName);
-                if (proteinIndexUp - 1 <= 0) {
+                proteinIndexUp--;
+                if (proteinIndexUp < 0) {
                     proteinIndexUp = proteins.size() - 1;
-                } else {
-                    proteinIndexUp--;
                 }
                 proteinName = proteins.get(proteinIndexUp);
                 tvProtein.setText(proteinName);
                 break;
             case R.id.ivDialogUpdateMealProteinDown:
                 int proteinIndexDown = proteins.indexOf(proteinName);
-                if (proteinIndexDown + 1 >= proteins.size()) {
+                proteinIndexDown++;
+                if (proteinIndexDown >= proteins.size()) {
                     proteinIndexDown = 0;
-                } else {
-                    proteinIndexDown++;
                 }
                 proteinName = proteins.get(proteinIndexDown);
                 tvProtein.setText(proteinName);
                 break;
             case R.id.ivDialogUpdateMealCarbsUp:
                 int carbsIndexUp = carbs.indexOf(carbsName);
-                if (carbsIndexUp - 1 <= 0) {
+                carbsIndexUp--;
+                if (carbsIndexUp < 0) {
                     carbsIndexUp = carbs.size() - 1;
-                } else {
-                    carbsIndexUp--;
                 }
                 carbsName = carbs.get(carbsIndexUp);
                 tvCarbs.setText(carbsName);
                 break;
             case R.id.ivDialogUpdateMealCarbsDown:
                 int carbsIndexDown = carbs.indexOf(carbsName);
-                if (carbsIndexDown + 1 >= carbs.size()) {
+                carbsIndexDown++;
+                if (carbsIndexDown >= carbs.size()) {
                     carbsIndexDown = 0;
-                } else {
-                    carbsIndexDown++;
                 }
                 carbsName = carbs.get(carbsIndexDown);
                 tvCarbs.setText(carbsName);
                 break;
             case R.id.ivDialogUpdateMealFatsUp:
                 int fatsIndexUp = fats.indexOf(fatsName);
-                if (fatsIndexUp - 1 <= 0) {
+                fatsIndexUp--;
+                if (fatsIndexUp <= 0) {
                     fatsIndexUp = fats.size() - 1;
-                } else {
-                    fatsIndexUp--;
                 }
                 fatsName = fats.get(fatsIndexUp);
                 tvFats.setText(fatsName);
                 break;
             case R.id.ivDialogUpdateMealFatsDown:
                 int fatsIndexDown = fats.indexOf(fatsName);
-                if (fatsIndexDown + 1 >= fats.size()) {
+                fatsIndexDown++;
+                if (fatsIndexDown >= fats.size()) {
                     fatsIndexDown = 0;
-                } else {
-                    fatsIndexDown++;
                 }
                 fatsName = fats.get(fatsIndexDown);
                 tvFats.setText(fatsName);

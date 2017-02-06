@@ -118,7 +118,7 @@ public class FoodDAO {
         Food carbFood4 = new Food(context.getString(R.string.whole_grain_cereals), Constants.FOOD_CARB, .77, 3.33);
         Food carbFood5 = new Food(context.getString(R.string.baked_potatoes), Constants.FOOD_CARB, .21, .93);
         Food carbFood6 = new Food(context.getString(R.string.red_kidney_beans), Constants.FOOD_CARB, .22, 1.24);
-        Food carbFood7 = new Food(context.getString(R.string.whole_wheat_bread), Constants.FOOD_CARB, .27, 1.24);
+        Food carbFood7 = new Food(context.getString(R.string.whole_wheat_pasta), Constants.FOOD_CARB, .27, 1.24);
         Food carbFood8 = new Food(context.getString(R.string.apple), Constants.FOOD_CARB, .247, .905);
         Food carbFood9 = new Food(context.getString(R.string.banana), Constants.FOOD_CARB, .198, .775);
         Food carbFood10 = new Food(context.getString(R.string.orange), Constants.FOOD_CARB, .178, .65);
