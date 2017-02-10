@@ -39,11 +39,11 @@
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
+
     <android.support.v7.widget.CardView
-        android:id="@+id/cv2"
+        android:id="@+id/cv3"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentEnd="true"
         android:layout_below="@+id/cv1"
         android:layout_marginEnd="20dp"
         android:layout_marginStart="20dp"
@@ -55,55 +55,11 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:id="@+id/ivInfo"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:src="@drawable/ic_info_outline_blue_grey_200_24dp" />
-
             <phelat.TextView.Plus
-                android:id="@+id/tvVersion"
+                android:id="@+id/tvContactUs"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_centerHorizontal="true"
-                android:layout_weight=".8"
-                android:text="@string/version"
-                android:textSize="20sp"
-                app:font="fonts/slimjim.ttf" />
-
-            <phelat.TextView.Plus
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvVersion"
-                android:layout_marginStart="15dp"
-                android:layout_centerHorizontal="true"
-                android:layout_weight=".8"
-                android:text="@string/version_number"
-                android:textSize="20sp"
-                app:font="fonts/slimjim.ttf" />
-        </RelativeLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/cv3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cv2"
-        android:layout_marginEnd="20dp"
-        android:layout_marginStart="20dp"
-        app:cardCornerRadius="6dp"
-        app:cardElevation="3dp"
-        app:cardUseCompatPadding="true">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <phelat.TextView.Plus
-                android:id="@+id/tvCoach"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/coach"
+                android:text="@string/contact_us"
                 android:textSize="20sp"
                 app:font="fonts/slimjim.ttf" />
 
@@ -111,26 +67,15 @@
                 android:id="@+id/ivCoach"
                 android:layout_width="50dp"
                 android:layout_height="50dp"
-                android:layout_below="@+id/tvCoach"
+                android:layout_below="@+id/tvContactUs"
                 android:src="@drawable/ic_mail_outline_blue_grey_200_24dp" />
 
-            <phelat.TextView.Plus
-                android:id="@+id/tvCoachName"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@+id/tvCoach"
-                android:layout_centerHorizontal="true"
-                android:layout_weight=".8"
-                android:text="@string/coach_name"
-                android:textSize="20sp"
-                app:font="fonts/slimjim.ttf" />
 
             <phelat.TextView.Plus
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_below="@+id/tvCoachName"
-                android:layout_marginStart="15dp"
                 android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
                 android:layout_weight=".8"
                 android:text="@string/coach_email_link" />
         </RelativeLayout>
@@ -214,8 +159,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/tvAppMaker"
-                android:layout_marginStart="15dp"
                 android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
                 android:text="@string/app_maker_name"
                 android:textSize="20sp"
                 app:font="fonts/slimjim.ttf" />
@@ -237,6 +182,51 @@
                 android:layout_marginStart="15dp"
                 android:layout_toRightOf="@+id/ivAppMaker"
                 android:text="mohamed.s.elshall2011@gmail.com" />
+        </RelativeLayout>
+    </android.support.v7.widget.CardView>
+
+    <android.support.v7.widget.CardView
+        android:id="@+id/cv2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_below="@+id/cv5"
+        android:layout_marginEnd="20dp"
+        android:layout_marginStart="20dp"
+        app:cardCornerRadius="6dp"
+        app:cardElevation="3dp"
+        app:cardUseCompatPadding="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/ivInfo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/ic_info_outline_blue_grey_200_24dp" />
+
+            <phelat.TextView.Plus
+                android:id="@+id/tvVersion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_weight=".8"
+                android:text="@string/version"
+                android:textSize="20sp"
+                app:font="fonts/slimjim.ttf" />
+
+            <phelat.TextView.Plus
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tvVersion"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_weight=".8"
+                android:text="@string/version_number"
+                android:textSize="20sp"
+                app:font="fonts/slimjim.ttf" />
         </RelativeLayout>
     </android.support.v7.widget.CardView>
 </RelativeLayout>

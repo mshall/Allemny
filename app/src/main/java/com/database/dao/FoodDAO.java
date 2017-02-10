@@ -140,10 +140,10 @@ public class FoodDAO {
             Food.carbFoods.add(carbFood12);
         }
         //---------- Fat foods
-        Food fatFood = new Food(context.getString(R.string.olive_oil), Constants.FOOD_FAT, 5, 40);
+        Food fatFood = new Food(context.getString(R.string.olive_oil), Constants.FOOD_FAT, 1, 40);
         Food fatFood1 = new Food(context.getString(R.string.almonds), Constants.FOOD_FAT, .6, 7.4);
-        Food fatFood2 = new Food(context.getString(R.string.peanut_butter), Constants.FOOD_FAT, 8, 94);
-        Food fatFood3 = new Food(context.getString(R.string.flaxseed_oil), Constants.FOOD_FAT, 5, 40);
+        Food fatFood2 = new Food(context.getString(R.string.peanut_butter), Constants.FOOD_FAT, .5, 94);
+        Food fatFood3 = new Food(context.getString(R.string.flaxseed_oil), Constants.FOOD_FAT, 1, 40);
         Food fatFood4 = new Food(context.getString(R.string.peanuts), Constants.FOOD_FAT, .6, 7.04);
         Food fatFood5 = new Food(context.getString(R.string.avocado), Constants.FOOD_FAT, .15, 1.6);
         if (Food.fatFoods.isEmpty()) {

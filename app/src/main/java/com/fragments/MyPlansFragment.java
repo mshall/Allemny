@@ -23,6 +23,7 @@ import com.google.android.gms.ads.AdListener;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 import com.google.android.gms.ads.InterstitialAd;
+import com.pojo.Food;
 import com.pojo.Meal;
 import com.pojo.Plan;
 import com.util.FragmentUtils;
@@ -158,6 +159,23 @@ public class MyPlansFragment extends Fragment {
         public void onBindItemViewHolder(RecyclerView.ViewHolder holder, int position) {
             final ItemViewHolder itemHolder = (ItemViewHolder) holder;
             final Meal meal = list.get(position);
+            String proteinName = meal.getProteinFoodName();
+            //--------------Handling the error of empty protein at the last meal------
+            if (proteinName.isEmpty()) {//This is an error
+                String updatedProteinName = getString(R.string.tuna_in_water);
+                Food proteinFood = null;
+                for (Food food : Food.proteinFoods) {
+                    if (food.getFoodName().equalsIgnoreCase(updatedProteinName)) {//This is the desited one
+                        proteinFood = food;
+                    }
+                }
+
+                meal.setProteinFoodName(updatedProteinName);
+                double proteinGramsNumber = meal.getActualProteinGrams() / proteinFood.getFoodValue();
+                meal.setProteinGrams(proteinGramsNumber);
+                mealDAO.updateMeal(meal);
+            }
+            //-------------------------------------------------------------------------
 
             itemHolder.tvMealNumber.setText((position + 1) + "");
             itemHolder.tvProtein.setText(meal.getProteinFoodName());

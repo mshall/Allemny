@@ -203,6 +203,27 @@ public class UpdateMealFragment extends Fragment implements View.OnClickListener
                 meal.setProteinFoodName(proteinName);
                 meal.setCarbFoodName(carbsName);
                 meal.setFatFoodName(fatsName);
+                double proteinGrams = 0, carbsGrams = 0, fatsGrams = 0;
+                //-----------------Now start updating the foods values -----------------------------
+                for (Food proteinFood : Food.proteinFoods) {
+                    if (proteinFood.getFoodName().equalsIgnoreCase(proteinName)) {//Now get the value
+                        proteinGrams = meal.getActualProteinGrams() / proteinFood.getFoodValue();
+                    }
+                }
+                for (Food carbsFood : Food.carbFoods) {
+                    if (carbsFood.getFoodName().equalsIgnoreCase(carbsName)) {//Now get the value
+                        carbsGrams = meal.getActualCarbsGrams() / carbsFood.getFoodValue();
+                    }
+                }
+                for (Food fatsFood : Food.fatFoods) {
+                    if (fatsFood.getFoodName().equalsIgnoreCase(fatsName)) {//Now get the value
+                        fatsGrams = meal.getActualFatsGrams() / fatsFood.getFoodValue();
+                    }
+                }
+                meal.setFatGrams(fatsGrams);
+                meal.setProteinGrams(proteinGrams);
+                meal.setCarbGrams(carbsGrams);
+                //----------------------------------------------------------------------------------
                 mealDAO.updateMeal(meal);
                 Toast.makeText(getContext(), getString(R.string.record_has_been_updated), Toast.LENGTH_SHORT).show();
                 new FragmentUtils(getActivity()).navigateToFragment(R.id.content_home, new MyPlansFragment(), MyPlansFragment.TAG);
