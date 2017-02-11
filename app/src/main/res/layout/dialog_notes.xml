@@ -21,23 +21,24 @@
             app:cardElevation="3dp"
             app:cardUseCompatPadding="true">
 
-            <RelativeLayout
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-              <!--  <ImageView
-                    android:id="@+id/ivDialogClose"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentEnd="true"
-                    android:src="@drawable/ic_close_teal" />-->
+                <!--  <ImageView
+                      android:id="@+id/ivDialogClose"
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_alignParentEnd="true"
+                      android:src="@drawable/ic_close_teal" />-->
 
                 <phelat.TextView.Plus
                     android:id="@+id/tvTitle"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="0dp"
                     android:gravity="center"
-                    android:text="@string/nutrition_facts"
+                    android:text=""
                     android:textSize="35sp"
                     app:font="fonts/slimjim.ttf" />
 
@@ -47,10 +48,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_below="@+id/tvTitle"
-                    android:layout_marginTop="20dp"
+                    android:layout_marginTop="0dp"
                     android:gravity="center"
-                    android:text="@string/protein"
-                    android:textSize="25sp"
+                    android:text="@string/notes"
+                    android:textSize="30sp"
                     app:font="fonts/slimjim.ttf" />
 
                 <android.support.v7.widget.CardView
@@ -77,7 +78,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginTop="20dp"
                             android:gravity="center"
-                            android:text="@string/note_protein_egg"
+                            android:text="All nutrition based on cooked items"
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
@@ -90,7 +91,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/cvProtein"
                     android:layout_centerVertical="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:paddingEnd="5dp"
                     android:paddingStart="5dp"
                     app:cardCornerRadius="6dp"
@@ -106,9 +107,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="5dp"
                             android:gravity="center"
-                            android:text="@string/note_protein_egg_2"
+                            android:text="You have to change your nutrition plan every 3 + / - kilos."
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
@@ -121,7 +122,7 @@
                     android:layout_below="@+id/cvProtein2"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
-                    android:text="@string/carbs"
+                    android:text="Supplementation"
                     android:textSize="25sp"
                     app:font="fonts/slimjim.ttf" />
 
@@ -132,7 +133,7 @@
                     android:layout_height="wrap_content"
                     android:layout_below="@id/tvCarb"
                     android:layout_centerVertical="true"
-                    android:layout_marginTop="10dp"
+                    android:layout_marginTop="0dp"
                     android:paddingEnd="5dp"
                     android:paddingStart="5dp"
                     app:cardCornerRadius="6dp"
@@ -148,9 +149,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="5dp"
                             android:gravity="center"
-                            android:text="@string/note_carb_1"
+                            android:text="Take multivitamins daily at the morning"
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
@@ -179,9 +180,9 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center"
-                            android:text="@string/note_carb_2"
+                            android:text="Take vitamin B12 injection once a week to enhance the nervous system performance"
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
@@ -210,13 +211,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="0dp"
                             android:gravity="center"
-                            android:text="@string/note_carb_3"
+                            android:text="Drink 3 – 4.5 liters of water daily."
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/cvCarb4"
 
@@ -240,23 +242,97 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="0dp"
                             android:gravity="center"
-                            android:text="@string/note_carb_4"
+                            android:text="Take amino acids or whey protein “20-30 grams” with simple carbs “40-50 grams” immediately (within 5 mints) after gym session"
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvCarb5"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCarb4"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:id="@+id/tvCarbsNote1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:text="Consume a meal after 30 mints of gym session."
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cvCarb6"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvCarb5"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="0dp"
+                            android:gravity="center"
+                            android:text="Consume a meal at least 90 mints prior gym session."
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvServing"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvCarb6"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Servings"
+                    android:textSize="35sp"
+                    app:font="fonts/slimjim.ttf" />
+
                 <phelat.TextView.Plus
                     android:id="@+id/tvFats"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@+id/cvCarb4"
+                    android:layout_below="@+id/tvServing"
                     android:layout_marginTop="10dp"
                     android:gravity="center"
                     android:text="@string/fats"
                     android:textSize="25sp"
                     app:font="fonts/slimjim.ttf" />
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/cvFats"
 
@@ -282,7 +358,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginTop="20dp"
                             android:gravity="center"
-                            android:text="@string/note_Fats_1"
+                            android:text="Almonds and peanuts: 1 gram = 1 kernel"
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
@@ -313,7 +389,7 @@
                             android:layout_centerVertical="true"
                             android:layout_marginTop="20dp"
                             android:gravity="center"
-                            android:text="@string/note_fats_2"
+                            android:text="Olive oil and flaxseed oil: 5 grams = 1 tea spoon"
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
@@ -344,17 +420,29 @@
                             android:layout_centerVertical="true"
                             android:layout_marginTop="20dp"
                             android:gravity="center"
-                            android:text="@string/note_fats_3"
+                            android:text="Peanut butter: 16 grams = table spoon"
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
+
+                <phelat.TextView.Plus
+                    android:id="@+id/tvCarbs"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cvFats3"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Carbs"
+                    android:textSize="35sp"
+                    app:font="fonts/slimjim.ttf" />
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/cvFats4"
 
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_below="@id/cvFats3"
+                    android:layout_below="@id/tvCarbs"
                     android:layout_centerVertical="true"
                     android:layout_marginTop="10dp"
                     android:paddingEnd="5dp"
@@ -372,13 +460,14 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center"
-                            android:text="@string/note_fats_4"
+                            android:text="Whole wheat bread :46 gr = 1 slice"
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
+
                 <android.support.v7.widget.CardView
                     android:id="@+id/cvFats5"
 
@@ -402,15 +491,170 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
-                            android:layout_marginTop="20dp"
+                            android:layout_marginTop="10dp"
                             android:gravity="center"
-                            android:text="@string/note_fats_5"
+                            android:text="Apple: 182 gr =1 medium apple"
                             android:textSize="19sp"
                             app:font="fonts/slimjim.ttf" />
                     </RelativeLayout>
                 </android.support.v7.widget.CardView>
-            </RelativeLayout>
-        </android.support.v7.widget.CardView>
 
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/cvFats4"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="Banana:118 gr = 1 medium banana"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="Orange: 130 gr = medium orange"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <phelat.TextView.Plus
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvServing"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="@string/protein"
+                    android:textSize="25sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="Egg (1 gr)= 0.13 gr protein (44 gr for 1 medium egg)"
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="Egg white (1 gr)= 0.12 gr protein (28 gr for 1 medium egg white) "
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+
+                <phelat.TextView.Plus
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tvServing"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Acceptable sauces and herbs:"
+                    android:textSize="25sp"
+                    app:font="fonts/slimjim.ttf" />
+
+                <android.support.v7.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginTop="10dp"
+                    android:paddingEnd="5dp"
+                    android:paddingStart="5dp"
+                    app:cardCornerRadius="6dp"
+                    app:cardElevation="3dp"
+                    app:cardUseCompatPadding="true">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <phelat.TextView.Plus
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="Mustard, All Herbs and Spices (cinnamon, coriander, Pepper, curry, ginger, basil, rosemary, Chili Powder, cilantro, parsley, etc.), Low-sodium soy sauce, BBQ and Ketchup Sauce (low sugar variety), Low-calorie salad dressings."
+                            android:textSize="19sp"
+                            app:font="fonts/slimjim.ttf" />
+                    </RelativeLayout>
+                </android.support.v7.widget.CardView>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
     </RelativeLayout>
 </ScrollView>

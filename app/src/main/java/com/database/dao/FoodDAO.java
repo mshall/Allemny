@@ -91,7 +91,7 @@ public class FoodDAO {
         Food food6 = new Food(context.getString(R.string.egg_white), Constants.FOOD_PROTEIN, .127, 1);
         Food food7 = new Food(context.getString(R.string.cottage_cheese), Constants.FOOD_PROTEIN, .12, .72);
         Food food8 = new Food(context.getString(R.string.fish_fillet), Constants.FOOD_PROTEIN, .18, .82);
-        Food food9 = new Food(context.getString(R.string.whey_protein_low_carb), Constants.FOOD_PROTEIN, .2, .9);
+        Food food9 = new Food(context.getString(R.string.whey_protein_low_carb), Constants.FOOD_PROTEIN, .7, .9);
         Food food10 = new Food(context.getString(R.string.salmon), Constants.FOOD_PROTEIN, .22, 2.06);
         Food food11 = new Food(context.getString(R.string.turkey_sausage_low_fat), Constants.FOOD_PROTEIN, .24, 1.96);
         Food food12 = new Food(context.getString(R.string.greek_yogurt_low_fat), Constants.FOOD_PROTEIN, .11, .59);
