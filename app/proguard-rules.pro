@@ -15,3 +15,23 @@
 #-keepclassmembers class fqcn.of.javascript.interface.for.webview {
 #   public *;
 #}
+-keep class com.zzoome.android.Views.TagGroup { *; }
+-keepattributes Exceptions
+-keepattributes EnclosingMethod
+-keepattributes InnerClasses
+-keepattributes Signature
+-keepattributes Deprecated
+-keepattributes SourceFile
+-keepattributes LineNumberTable
+-keepattributes *Annotation*
+-keep class sun.misc.Unsafe { *; }
+-keepclassmembers class * implements android.os.Parcelable {
+    static ** CREATOR;}
+-keep class com.google.gson.examples.android.model.** { *; }
+-keep class com.pojo.** { *; }
+-keep class         org.apache.commons.beanutils.** { *; }
+-keep interface     org.apache.commons.beanutils.** { *; }
+-keep enum          org.apache.commons.beanutils.** { *; }
+-dontoptimize
+-ignorewarnings
+
